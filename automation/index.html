@@ -5,9 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="张晨的研发自动化实践：把协作平台、代码分析、测试生成、真实设备与证据回写连接成稳定执行链路。">
     <meta name="theme-color" content="#080b12">
+    <link rel="canonical" href="https://maple42.github.io/automation/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:title" content="自动化｜张晨">
+    <meta property="og:description" content="把协作平台、代码分析、测试生成、真实设备与证据回写连接成稳定执行链路。">
+    <meta property="og:url" content="https://maple42.github.io/automation/">
+    <meta property="og:image" content="https://maple42.github.io/assets/automation.webp">
+    <meta name="twitter:card" content="summary_large_image">
     <title>自动化｜张晨</title>
-    <link rel="stylesheet" href="/styles.css?v=airtest-architecture">
-    <script src="/app.js?v=subpages" defer></script>
+    <link rel="stylesheet" href="/styles.css?v=20260930-opt1">
+    <script src="/app.js?v=20260930-opt1" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">跳到主要内容</a>
@@ -21,12 +29,12 @@
         <span class="sr-only">打开导航</span>
         <span></span><span></span>
       </button>
-      <nav class="primary-nav" id="primary-nav" aria-label="本页导航" data-nav>
-        <a href="#architecture">技术架构</a>
-        <a href="#automation">执行链路</a>
-        <a href="#resilience">异常恢复</a>
-        <a href="#method">运行观测</a>
-        <a href="/">个人主页</a>
+      <nav class="primary-nav" id="primary-nav" aria-label="主要导航" data-nav>
+        <a href="/">主页</a>
+        <a href="/agent/">Agent</a>
+        <a class="active" href="/automation/" aria-current="page">自动化</a>
+        <a href="/efficiency/">效能提升</a>
+        <a href="/evidence/">公开证据</a>
       </nav>
     </header>
 
@@ -101,12 +109,13 @@
         </div>
 
         <figure class="architecture-board reveal">
-          <a href="/assets/automation-layered-architecture.svg" target="_blank" rel="noopener" aria-label="在新窗口查看移动端自动化多层架构原图">
-            <img src="/assets/automation-layered-architecture.svg" alt="移动端自动化多层架构：协作与编排、业务场景、Poco UIAutomator OCR CV 多模态感知、大模型视觉兜底、Airtest 原生执行、真实设备和证据闭环" width="1600" height="1050" loading="lazy">
+          <a href="/assets/automation-layered-architecture.svg" target="_blank" rel="noopener" aria-label="查看移动端自动化多层架构大图，可在新窗口打开" aria-describedby="architecture-scroll-hint">
+            <img src="/assets/automation-layered-architecture.svg" alt="移动端自动化多层架构：协作与编排、业务场景、Poco UIAutomator OCR CV 多模态感知、大模型视觉兜底、Airtest 原生执行、真实设备和证据闭环" width="1600" height="1050" loading="lazy" decoding="async">
           </a>
           <figcaption>
             <span>AUTO SELECTOR / NATIVE EXECUTION</span>
             <p>结构化 UI 优先，OCR 与 CV 按场景增强，大模型视觉在低置信或复杂画面下兜底；识别能力可以替换，业务语义和原生执行链路保持稳定。</p>
+            <span class="mobile-scroll-hint" id="architecture-scroll-hint">左右滑动查看完整架构图</span>
           </figcaption>
         </figure>
 
@@ -132,7 +141,7 @@
       <section class="capability section-pad" id="automation" aria-label="自动化执行链路">
         <article class="capability-row">
           <div class="capability-media reveal">
-            <img src="/assets/automation.webp" alt="协作触发、代码分析、真实设备、验证与报告互相连接的自动化流水线" width="1536" height="1024">
+            <img src="/assets/automation.webp" alt="协作触发、代码分析、真实设备、验证与报告互相连接的自动化流水线" width="1200" height="800" loading="lazy" decoding="async">
             <span class="image-tag">TRIGGER · EXECUTE · VERIFY · WRITE BACK</span>
           </div>
           <div class="capability-copy reveal">
@@ -232,7 +241,7 @@
       <section class="capability section-pad" id="resilience" aria-label="异常恢复机制">
         <article class="capability-row reverse">
           <div class="capability-media reveal">
-            <img src="/assets/efficiency.webp" alt="分散任务汇入统一执行与恢复通道的抽象系统图" width="1536" height="1024" loading="lazy">
+            <img src="/assets/efficiency.webp" alt="分散任务汇入统一执行与恢复通道的抽象系统图" width="1200" height="800" loading="lazy" decoding="async">
             <span class="image-tag">RECOVER · RESUME · PRESERVE EVIDENCE</span>
           </div>
           <div class="capability-copy reveal">
@@ -284,8 +293,8 @@
     </main>
 
     <footer>
-      <p>张晨 · AI Agent / Harness 工程师</p>
-      <p>自动化 · 稳定执行</p>
+      <p>张晨 · 研发自动化</p>
+      <p>稳定执行 · 证据回写</p>
     </footer>
   </body>
 </html>
