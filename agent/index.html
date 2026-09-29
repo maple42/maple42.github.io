@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="张晨的 AI Agent 与 Harness 工程能力：面向生产环境构建可控、可验证、可持续运行的智能体系统。">
-    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="张晨的 Agent 与 Harness 工程实践：规则、权限、工具、运行时、评测和运行证据。">
+    <meta name="theme-color" content="#f3f1eb">
     <link rel="canonical" href="https://maple42.github.io/agent/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="zh_CN">
-    <meta property="og:title" content="张晨｜AI Agent / Harness 工程师">
-    <meta property="og:description" content="面向生产环境构建可控、可验证、可持续运行的智能体系统。">
+    <meta property="og:title" content="张晨｜Agent / Harness 工程实践">
+    <meta property="og:description" content="规则、权限、工具、运行时、评测和运行证据。">
     <meta property="og:url" content="https://maple42.github.io/agent/">
-    <meta property="og:image" content="https://maple42.github.io/assets/agent.webp">
+    <meta property="og:image" content="https://maple42.github.io/assets/ai-quality-overview-redacted.webp">
     <meta name="twitter:card" content="summary_large_image">
-    <title>张晨｜AI Agent / Harness 工程师</title>
-    <link rel="stylesheet" href="/styles.css?v=20260930-opt1">
-    <script src="/app.js?v=20260930-opt1" defer></script>
+    <title>张晨｜Agent / Harness 工程实践</title>
+    <link rel="stylesheet" href="/styles.css?v=20260930-editorial">
+    <script src="/app.js?v=20260930-editorial" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">跳到主要内容</a>
@@ -40,80 +40,71 @@
 
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-title">
-        <div class="hero-orbit" aria-hidden="true"></div>
         <div class="hero-copy reveal">
-          <p class="eyebrow"><span></span> AI 质量工程与研发自动化</p>
-          <h1 id="hero-title">AI Agent /<br><em>Harness 工程师</em></h1>
+          <p class="eyebrow"><span></span> 工程实践 · Agent / Harness</p>
+          <h1 id="hero-title">把 Agent 做成<br><em>工程系统，而不是演示</em></h1>
           <p class="hero-lede">
-            我是张晨，面向生产环境构建<strong>可控、可验证、可持续运行</strong>的智能体系统。
-            让 Agent 不止能生成，也能在规则、权限、工具、评测和运行证据中可靠完成任务。
+            我负责把规则、权限、工具、执行环境和验证接到 Agent 周围，
+            让任务可以暂停、恢复、复核，也能在失败时安全停下。
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#orchestration">查看能力闭环 <span aria-hidden="true">↘</span></a>
+            <a class="button button-primary" href="#orchestration">从第一个环节看起 <span aria-hidden="true">↓</span></a>
             <a class="text-link" href="/evidence/">查看公开证据 <span aria-hidden="true">→</span></a>
           </div>
         </div>
 
         <aside class="hero-panel reveal" aria-label="岗位定位">
-          <div class="signal" aria-hidden="true">
-            <span class="signal-core"></span>
-            <span class="signal-ring ring-one"></span>
-            <span class="signal-ring ring-two"></span>
-            <span class="signal-node node-one"></span>
-            <span class="signal-node node-two"></span>
-            <span class="signal-node node-three"></span>
-          </div>
-          <p class="panel-kicker">CURRENT ROLE</p>
-          <p class="panel-title">Agent Engineering<br>with Quality Guardrails</p>
-          <div class="panel-status"><span></span> Production-minded agent systems</div>
+          <p class="panel-kicker">这页讲什么</p>
+          <p class="panel-title">规划 / 工具<br>运行时 / 评测</p>
+          <div class="panel-status">4 个工程环节，均有运行记录</div>
         </aside>
 
-        <div class="proof-strip reveal" aria-label="能力达成度">
+        <div class="proof-strip reveal" aria-label="Agent 运行数据摘要">
           <article>
-            <strong>已落地</strong>
-            <span>核心流程已接入</span>
+            <strong>468</strong>
+            <span>受控压测单元</span>
           </article>
           <article>
-            <strong>已验证</strong>
-            <span>真实场景已验证</span>
+            <strong>82</strong>
+            <span>校验后安全写回</span>
           </article>
           <article>
-            <strong>持续运行</strong>
-            <span>协作链路已贯通</span>
+            <strong>5</strong>
+            <span>重点风险通知送达</span>
           </article>
           <article>
-            <strong>已复用</strong>
-            <span>能力资产已沉淀</span>
+            <strong>0</strong>
+            <span>既有原文被替换</span>
           </article>
         </div>
       </section>
 
       <section class="manifesto section-pad reveal" aria-label="Agent 工程主张">
-        <p class="section-index">Agent Engineering</p>
-        <h2>智能来自模型，<br>可靠性来自<strong>模型之外的系统</strong>。</h2>
+        <p class="section-index">工作重点</p>
+        <h2>Agent 负责判断，<br><strong>工程系统负责让它可靠</strong>。</h2>
         <p>
           Agent 负责判断、规划和生成；Harness 负责上下文、权限、执行环境、异常恢复与验证。
-          两者共同构成可以进入真实工程现场的智能体能力。
+          这套分工让任务能够暂停、复核和恢复，而不是只得到一次模型输出。
         </p>
       </section>
 
       <section class="capability section-pad" aria-label="Agent 与 Harness 能力链路">
         <article class="capability-row" id="orchestration">
           <div class="capability-media reveal">
-            <img src="/assets/agent.webp" alt="由规划节点、任务依赖与验证关卡构成的抽象 Agent 编排网络" width="1200" height="800" loading="lazy" decoding="async">
-            <span class="image-tag">AGENT ORCHESTRATION · 已落地</span>
+            <img src="/assets/ai-quality-overview-redacted.webp" alt="脱敏后的 AI 工程质量运行总览" width="1672" height="941" loading="lazy" decoding="async">
+            <span class="image-tag">任务规划 · 工具调用 · 验证</span>
           </div>
           <div class="capability-copy reveal">
-            <p class="section-index">Agent Orchestration</p>
-            <h2>把复杂目标拆成<br>可执行的任务闭环。</h2>
+            <p class="section-index">Agent 编排</p>
+            <h2>把复杂目标拆成<br>任务、依赖和验收条件。</h2>
             <p class="capability-intro">
               从成功标准出发，将模糊目标转成计划、任务节点、工具动作与验收条件，
               让依赖、阻塞和下一步都处于可判断状态。
             </p>
             <ul class="detail-list">
-              <li><span>PLAN</span><div><strong>目标到计划</strong><p>先明确结果、边界与风险，再决定执行路线。</p></div></li>
-              <li><span>GRAPH</span><div><strong>任务与依赖</strong><p>复杂工作通过状态和条件流转，失败进入明确处理路径。</p></div></li>
-              <li><span>GATE</span><div><strong>结果验收</strong><p>完成必须绑定验证证据，而不是依赖 Agent 自述。</p></div></li>
+              <li><span>计划</span><div><strong>目标到计划</strong><p>先明确结果、边界与风险，再决定执行路线。</p></div></li>
+              <li><span>依赖</span><div><strong>任务与依赖</strong><p>复杂工作通过状态和条件流转，失败进入明确处理路径。</p></div></li>
+              <li><span>验收</span><div><strong>结果验收</strong><p>完成必须绑定验证证据，而不是依赖 Agent 自述。</p></div></li>
             </ul>
             <div class="tag-cloud" aria-label="Agent 编排能力">
               <span>已落地</span><span>任务规划</span><span>条件路由</span><span>完成语义</span>
@@ -123,20 +114,20 @@
 
         <article class="capability-row reverse" id="context">
           <div class="capability-media reveal">
-            <img src="/assets/efficiency.webp" alt="规则、上下文与执行边界汇聚为统一输入的抽象图景" width="1200" height="800" loading="lazy" decoding="async">
-            <span class="image-tag">CONTEXT &amp; RULES · 已复用</span>
+            <img src="/assets/rule-center-redacted.webp" alt="脱敏后的工程规则中心" width="1672" height="941" loading="lazy" decoding="async">
+            <span class="image-tag">规则匹配 · 上下文边界</span>
           </div>
           <div class="capability-copy reveal">
-            <p class="section-index">Context &amp; Rules</p>
-            <h2>让正确的规则，<br>在正确的时机进入上下文。</h2>
+            <p class="section-index">上下文与规则</p>
+            <h2>按任务装配规则，<br>控制上下文范围。</h2>
             <p class="capability-intro">
               依据仓库、技术栈、任务类型和风险等级匹配必要约束，控制上下文范围，
               避免规则缺失、信息过载和跨边界执行。
             </p>
             <ul class="detail-list">
-              <li><span>MATCH</span><div><strong>规则匹配</strong><p>让任务只加载与当前场景相关的工程要求。</p></div></li>
-              <li><span>SCOPE</span><div><strong>上下文边界</strong><p>区分事实、假设与历史证据，控制敏感信息暴露。</p></div></li>
-              <li><span>AUTH</span><div><strong>权限约束</strong><p>按任务所需授权工具和动作，超出范围时停止并确认。</p></div></li>
+              <li><span>匹配</span><div><strong>规则匹配</strong><p>让任务只加载与当前场景相关的工程要求。</p></div></li>
+              <li><span>范围</span><div><strong>上下文边界</strong><p>区分事实、假设与历史证据，控制敏感信息暴露。</p></div></li>
+              <li><span>权限</span><div><strong>权限约束</strong><p>按任务所需授权工具和动作，超出范围时停止并确认。</p></div></li>
             </ul>
             <div class="tag-cloud" aria-label="上下文与规则能力">
               <span>已复用</span><span>规则前置</span><span>上下文治理</span><span>最小权限</span>
@@ -146,20 +137,20 @@
 
         <article class="capability-row" id="runtime">
           <div class="capability-media reveal">
-            <img src="/assets/automation.webp" alt="执行环境、状态控制与异常恢复组成的抽象运行时链路" width="1200" height="800" loading="lazy" decoding="async">
-            <span class="image-tag">HARNESS RUNTIME · 持续运行</span>
+            <img src="/assets/automation-layered-architecture.svg" alt="移动端自动化多层架构图" width="1600" height="1050" loading="lazy" decoding="async">
+            <span class="image-tag">状态管理 · 异常恢复</span>
           </div>
           <div class="capability-copy reveal">
-            <p class="section-index">Harness Runtime</p>
-            <h2>让 Agent 进入<br>可控制、可恢复的运行环境。</h2>
+            <p class="section-index">Harness 运行时</p>
+            <h2>运行时负责状态、<br>工具调用和恢复。</h2>
             <p class="capability-intro">
               Harness 承接模型之外的执行责任：维护任务状态、工具权限、环境隔离、异常路径与恢复策略，
               让一次执行能够安全暂停、重试和继续。
             </p>
             <ul class="detail-list">
-              <li><span>STATE</span><div><strong>状态可见</strong><p>区分进行中、完成、阻断和残余风险，避免假完成。</p></div></li>
-              <li><span>FAIL</span><div><strong>失败可控</strong><p>失败关闭高风险动作，并保留诊断与人工接管入口。</p></div></li>
-              <li><span>RECOVER</span><div><strong>执行可恢复</strong><p>在保留上下文和证据的前提下，从明确节点继续工作。</p></div></li>
+              <li><span>状态</span><div><strong>状态可见</strong><p>区分进行中、完成、阻断和残余风险，避免假完成。</p></div></li>
+              <li><span>工具</span><div><strong>调用受控</strong><p>统一工具输入输出、错误语义和权限范围，减少隐性副作用。</p></div></li>
+              <li><span>恢复</span><div><strong>执行可恢复</strong><p>失败时关闭高风险动作，并从有记录的节点继续工作。</p></div></li>
             </ul>
             <div class="tag-cloud" aria-label="Harness Runtime 能力">
               <span>持续运行</span><span>状态管理</span><span>失败关闭</span><span>异常恢复</span>
@@ -167,48 +158,25 @@
           </div>
         </article>
 
-        <article class="capability-row reverse" id="tools">
+        <article class="capability-row reverse" id="evaluation">
           <div class="capability-media reveal">
-            <img src="/assets/automation.webp" alt="协作平台、代码工具、测试设备与质量系统相互连接的抽象工具网络" width="1200" height="800" loading="lazy" decoding="async">
-            <span class="image-tag">TOOL &amp; SKILL INTEGRATION · 已落地</span>
+            <img src="/assets/risk-observations-redacted.webp" alt="脱敏后的变更风险观测列表" width="1672" height="941" loading="lazy" decoding="async">
+            <span class="image-tag">评测 · 门禁 · 人工复核</span>
           </div>
           <div class="capability-copy reveal">
-            <p class="section-index">Tool &amp; Skill Integration</p>
-            <h2>把分散工具，<br>变成 Agent 可调用的能力。</h2>
-            <p class="capability-intro">
-              将协作平台、代码平台、测试设备、质量系统和通知链路封装为稳定工具与技能，
-              统一输入输出、错误语义与权限边界。
-            </p>
-            <ul class="detail-list">
-              <li><span>TOOL</span><div><strong>工具标准化</strong><p>以清晰契约封装外部系统，减少调用差异和隐性副作用。</p></div></li>
-              <li><span>SKILL</span><div><strong>经验技能化</strong><p>把高频判断、步骤与验收条件沉淀为可复用能力。</p></div></li>
-              <li><span>FLOW</span><div><strong>跨系统编排</strong><p>触发、执行、验证与回写形成稳定协作链路。</p></div></li>
-            </ul>
-            <div class="tag-cloud" aria-label="工具与技能集成能力">
-              <span>已落地</span><span>Tool Contract</span><span>Skill</span><span>工作流编排</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="capability-row" id="evaluation">
-          <div class="capability-media reveal">
-            <img src="/assets/agent.webp" alt="模型输出经过规则、评测与人工关卡的抽象质量守护图景" width="1200" height="800" loading="lazy" decoding="async">
-            <span class="image-tag">EVALUATION &amp; GUARDRAILS · 已验证</span>
-          </div>
-          <div class="capability-copy reveal">
-            <p class="section-index">Evaluation &amp; Guardrails</p>
-            <h2>让质量判断<br>有门禁，也有边界。</h2>
+            <p class="section-index">评测与门禁</p>
+            <h2>检查、复核和结论范围，<br>一个都不能省。</h2>
             <p class="capability-intro">
               将工程规则、确定性检查、多模型复核与人工判断组合使用。
               已有场景完成真实验证；对尚不足以形成稳定结论的方向，明确标记为扩大验证中。
             </p>
             <ul class="detail-list">
-              <li><span>CHECK</span><div><strong>确定性门禁</strong><p>用测试、静态检查、权限与结果回读守住质量底线。</p></div></li>
-              <li><span>REVIEW</span><div><strong>独立复核</strong><p>候选结论经过证据校验，只有高置信增量可以进入产物。</p></div></li>
-              <li><span>BOUND</span><div><strong>结论边界</strong><p>区分已验证、局部验证与扩大验证中，不用演示结果替代生产证据。</p></div></li>
+              <li><span>检查</span><div><strong>确定性门禁</strong><p>用测试、静态检查、权限与结果回读守住质量底线。</p></div></li>
+              <li><span>复核</span><div><strong>独立复核</strong><p>候选结论经过证据校验，只有通过校验的增量可以进入产物。</p></div></li>
+              <li><span>边界</span><div><strong>结论边界</strong><p>区分已验证、局部验证与扩大验证中，不用演示结果替代生产证据。</p></div></li>
             </ul>
             <section aria-labelledby="agent-evidence-title">
-              <p class="section-index">Verified Runtime Evidence</p>
+              <p class="section-index">运行数据</p>
               <h3 id="agent-evidence-title">真实运行数据，<br>只隐藏身份，不隐藏结果。</h3>
               <p class="evidence-source">
                 项目
@@ -225,17 +193,17 @@
                   </div>
                 </li>
                 <li>
-                  <span>REPLAY</span>
+                  <span>回放</span>
                   <div>
                     <strong>63 个任务回放 · 48 个成功 · 44 组成对</strong>
                     <p>124 个候选中，82 个验证后增量安全写入 14 份既有产物，替换原文 0 次。验证批次分别为全量回归 337、专项 32、部署环境 8，三类批次不合并计数。</p>
                   </div>
                 </li>
                 <li>
-                  <span>RISK</span>
+                  <span>风险</span>
                   <div>
                     <strong>7 次变更完成风险分类</strong>
-                    <p>识别出的 5 个重点风险均已送达对应责任人，风险判断、验证结果与责任触达形成闭环。</p>
+                    <p>识别出的 5 个重点风险均已送达对应责任人，每条记录都包含风险判断、验证结果与通知对象。</p>
                   </div>
                 </li>
               </ul>
@@ -243,7 +211,7 @@
                 <div><strong>21 ms → 8 ms</strong><span>受控缓存故障恢复中位数</span></div>
                 <div><strong>337 / 32 / 8</strong><span>全量 / 专项 / 部署环境验证，三个批次不合并</span></div>
               </div>
-              <p class="evidence-note">结论仍为 MIXED：方向有效，但证据不足以宣布全面胜出，当前继续扩大样本验证。</p>
+              <p class="evidence-note">当前结论：方向有效，但样本还不足以说明所有场景都能改善，正在继续扩大验证。</p>
             </section>
             <div class="tag-cloud" aria-label="评测与质量门禁能力">
               <span>已验证</span><span>扩大验证中</span><span>质量门禁</span><span>人工接管</span>
@@ -254,89 +222,67 @@
           </div>
         </article>
 
-        <article class="capability-row reverse" id="observability">
-          <div class="capability-media reveal">
-            <img src="/assets/efficiency.webp" alt="运行状态、质量信号和反馈持续回流的抽象可观测闭环" width="1200" height="800" loading="lazy" decoding="async">
-            <span class="image-tag">OBSERVABILITY &amp; EVOLUTION · 持续运行</span>
-          </div>
-          <div class="capability-copy reveal">
-            <p class="section-index">Observability &amp; Evolution</p>
-            <h2>让运行证据，<br>持续反哺下一次执行。</h2>
-            <p class="capability-intro">
-              记录计划、工具动作、验证结果、阻断与人工判断，将真实运行信号回流到规则、工作流与技能资产，
-              让能力在使用中逐步演进。
-            </p>
-            <ul class="detail-list">
-              <li><span>TRACE</span><div><strong>过程留证</strong><p>关键决策和结果可追溯，问题能够回到发生现场。</p></div></li>
-              <li><span>SIGNAL</span><div><strong>状态观测</strong><p>持续关注质量、风险与执行状态，而不是只看调用量。</p></div></li>
-              <li><span>LOOP</span><div><strong>闭环演进</strong><p>把有效做法固化为规则、工具、技能和标准流程。</p></div></li>
-            </ul>
-            <div class="tag-cloud" aria-label="可观测与演进能力">
-              <span>持续运行</span><span>已复用</span><span>Evidence Loop</span><span>能力演进</span>
-            </div>
-          </div>
-        </article>
       </section>
 
       <section class="case-section section-pad" aria-labelledby="loop-title">
         <div class="section-heading reveal">
-          <p class="section-index">Operating Loop</p>
-          <h2 id="loop-title">从目标到证据，<br>形成可持续运行的闭环。</h2>
-          <p>公开页面展示经过证据核验的准确运行数据；仅对项目、人员与内部地址做脱敏，并完整保留结论边界。</p>
+          <p class="section-index">执行顺序</p>
+          <h2 id="loop-title">我按这四步判断任务<br>是否真的完成。</h2>
+          <p>计划、执行、验证和复用都要留下记录；公开页面仅对项目、人员与内部地址做脱敏。</p>
         </div>
         <div class="case-grid">
           <article class="case-card reveal">
-            <span class="case-number">DECIDE</span>
+            <span class="case-number">定义</span>
             <p class="case-label">判断与规划</p>
             <h3>先定义什么叫完成</h3>
             <p>明确目标、边界、风险和验收方式，再让 Agent 进入执行。</p>
             <div class="case-metrics"><strong>已落地</strong><span>规则与计划前置</span></div>
           </article>
           <article class="case-card reveal">
-            <span class="case-number">EXECUTE</span>
+            <span class="case-number">执行</span>
             <p class="case-label">Harness 执行</p>
-            <h3>让任务在边界内运行</h3>
+            <h3>任务在边界内运行</h3>
             <p>工具调用、权限控制、状态管理和异常路径共同保障执行可控。</p>
             <div class="case-metrics"><strong>持续运行</strong><span>协作链路贯通</span></div>
           </article>
           <article class="case-card reveal">
-            <span class="case-number">VERIFY</span>
+            <span class="case-number">验证</span>
             <p class="case-label">评测与门禁</p>
-            <h3>让证据决定是否完成</h3>
+            <h3>证据决定是否完成</h3>
             <p>确定性检查、独立复核与人工判断共同约束结果质量。</p>
             <div class="case-metrics"><strong>已验证</strong><span>真实场景回读</span></div>
           </article>
           <article class="case-card reveal">
-            <span class="case-number">EVOLVE</span>
+            <span class="case-number">复用</span>
             <p class="case-label">观测与复用</p>
-            <h3>让运行反馈进入下一轮</h3>
-            <p>有效经验沉淀为工具、技能和流程，未充分验证的结论继续扩大样本。</p>
-            <div class="case-metrics"><strong>已复用</strong><span>能力资产沉淀</span></div>
+            <h3>运行结果用于下一轮</h3>
+            <p>验证有效的做法整理成工具、技能和流程；证据不足的结论继续扩大样本。</p>
+            <div class="case-metrics"><strong>已复用</strong><span>工具与流程可直接使用</span></div>
           </article>
         </div>
       </section>
 
       <section class="method section-pad" id="method" aria-labelledby="boundary-title">
         <div class="method-copy reveal">
-          <p class="section-index">Capability Boundary</p>
+          <p class="section-index">能力边界</p>
           <h2 id="boundary-title">聚焦真实工程能力，<br>不扩大未经验证的标签。</h2>
           <p>
-            当前优势集中在 Agent 编排、Harness、工具集成、质量评测、可观测治理与能力产品化。
+            当前做过的工作集中在 Agent 编排、Harness、工具集成、质量评测、运行记录与工具复用。
             基础模型训练、超大规模推理优化和成熟多智能体平台属于扩展方向，不作为既有成果呈现。
           </p>
         </div>
         <ol class="method-flow reveal">
-          <li><span>ORCH</span><div><strong>Agent 任务编排</strong><p>计划、节点、工具调用与验证闭环</p></div></li>
-          <li><span>RUN</span><div><strong>Harness / Runtime</strong><p>规则、权限、环境、异常与恢复</p></div></li>
-          <li><span>EVAL</span><div><strong>质量与评测</strong><p>确定性门禁、多模型复核与验收</p></div></li>
-          <li><span>OBS</span><div><strong>可观测与产品化</strong><p>过程证据、风险信号、工具、技能与标准流程</p></div></li>
+          <li><span>编排</span><div><strong>Agent 任务编排</strong><p>计划、节点、工具调用与验收记录</p></div></li>
+          <li><span>运行</span><div><strong>Harness / Runtime</strong><p>规则、权限、环境、异常与恢复</p></div></li>
+          <li><span>评测</span><div><strong>质量与评测</strong><p>确定性门禁、多模型复核与验收</p></div></li>
+          <li><span>观测</span><div><strong>运行记录与复用</strong><p>过程证据、风险信号、工具、技能与标准流程</p></div></li>
         </ol>
       </section>
 
       <section class="closing section-pad reveal" aria-labelledby="closing-title">
-        <p class="eyebrow"><span></span> BUILD RELIABLE AGENTS</p>
-        <h2 id="closing-title">让 Agent 有能力，<br><em>也有边界。</em></h2>
-        <p>从规划、执行到验证与演进，把智能体能力建设成可持续运行的工程系统。</p>
+        <p class="eyebrow"><span></span> 我的关注点</p>
+        <h2 id="closing-title">任务能完成，<br><em>过程可回读，结果有证据。</em></h2>
+        <p>这也是我判断一个 Agent 系统能不能进入真实工程现场的标准。</p>
         <div class="hero-actions" style="justify-content: center;">
           <a class="button button-primary" href="/">返回个人主页 <span aria-hidden="true">←</span></a>
           <a class="text-link" href="/evidence/">查看公开证据 <span aria-hidden="true">→</span></a>
@@ -345,8 +291,8 @@
     </main>
 
     <footer>
-      <p>张晨 · AI Agent / Harness 工程师</p>
-      <p>AI 质量工程与研发自动化</p>
+      <p>张晨 · Agent / Harness 工程实践</p>
+      <p>质量工程与研发自动化</p>
     </footer>
   </body>
 </html>
