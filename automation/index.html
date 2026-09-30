@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="张晨的研发自动化实践：把协作平台、代码分析、测试生成、真实设备与证据回写连接成稳定执行链路。">
+    <meta name="description" content="张晨的自动化应用实践：移动端 App、游戏与 H5 测试，perfX 客户端性能专项、真机池兼容回归，以及用户反馈 SOP 自动化。">
     <meta name="theme-color" content="#102f57">
     <link rel="canonical" href="https://maple42.github.io/automation/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="zh_CN">
-    <meta property="og:title" content="自动化｜张晨">
-    <meta property="og:description" content="需求触发、代码分析、真实设备执行、异常恢复和结果回写。">
+    <meta property="og:title" content="自动化应用｜张晨">
+    <meta property="og:description" content="从移动端测试与专项治理，扩展到跨团队业务流程自动化。">
     <meta property="og:url" content="https://maple42.github.io/automation/">
     <meta property="og:image" content="https://maple42.github.io/assets/risk-observations-redacted.webp">
     <meta name="twitter:card" content="summary_large_image">
-    <title>自动化｜张晨</title>
+    <title>自动化应用｜张晨</title>
     <link rel="stylesheet" href="/styles.css?v=20260930-blue">
     <script src="/app.js?v=20260930-blue" defer></script>
   </head>
@@ -42,43 +42,43 @@
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="hero-copy reveal">
           <p class="eyebrow"><span></span> 张晨 / 工作记录</p>
-          <h1 id="hero-title">研发自动化</h1>
+          <h1 id="hero-title">自动化应用</h1>
           <p class="hero-lede">
-            一次任务从协作平台进入，经过代码分析、测试设计和真实设备执行，
-            最后把结果、录屏和异常现场写回原来的工作项。
+            自动化不只用于项目测试。我把同一套编排、执行和证据方法用于 App、游戏与 H5，
+            也用于性能、兼容专项，以及跨客服、运营、产品和研发的业务流程。
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#architecture">查看技术架构 <span aria-hidden="true">↓</span></a>
-            <a class="text-link" href="/evidence/">查看公开证据 <span aria-hidden="true">→</span></a>
+            <a class="button button-primary" href="#test-case">查看自动化案例 <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="#feedback-sop">查看业务流程自动化 <span aria-hidden="true">→</span></a>
           </div>
         </div>
 
         <div class="proof-strip reveal" aria-label="自动化运行数据摘要">
           <article>
+            <strong>3 类</strong>
+            <span>App、游戏与 H5</span>
+          </article>
+          <article>
             <strong>64</strong>
             <span>真机多语言场景</span>
           </article>
           <article>
-            <strong>116</strong>
-            <span>现场截图与标注</span>
+            <strong>2 项</strong>
+            <span>性能与深度兼容专项</span>
           </article>
           <article>
-            <strong>74</strong>
-            <span>自动回归检查</span>
-          </article>
-          <article>
-            <strong>281</strong>
-            <span>目标记录完成回补</span>
+            <strong>每日</strong>
+            <span>用户反馈增量同步</span>
           </article>
         </div>
       </section>
 
-      <section class="manifesto section-pad reveal" aria-label="自动化职责">
-        <p class="section-index">职责划分</p>
-        <h2>系统处理重复执行，人处理风险和例外</h2>
+      <section class="manifesto section-pad reveal" aria-label="自动化应用范围">
+        <p class="section-index">应用范围</p>
+        <h2>把重复判断与重复搬运交给系统</h2>
         <p>
-          每一次自动执行都要有明确入口、可追踪状态和可复核结果。
-          成功时保存记录，失败时保留现场并进入恢复路径，而不是静默结束。
+          项目内，自动化负责真实设备执行、专项采集和结果归档；跨团队流程中，
+          自动化负责数据接入、日常处理、异常提醒与按需交付。两类场景都要求来源可追踪、结果可复核、失败可恢复。
         </p>
       </section>
 
@@ -99,7 +99,7 @@
           </a>
           <figcaption>
             <span>识别层 / 原生执行层</span>
-            <p>结构化 UI 优先，OCR 与 CV 按场景增强，大模型视觉在低置信或复杂画面下兜底；识别能力可以替换，业务语义和原生执行链路保持稳定。</p>
+            <p>结构化控件 → OCR / CV → VLM 兜底 → Airtest 执行。</p>
             <span class="mobile-scroll-hint" id="architecture-scroll-hint">左右滑动查看完整架构图</span>
           </figcaption>
         </figure>
@@ -123,153 +123,116 @@
         </div>
       </section>
 
-      <section class="capability section-pad" id="automation" aria-label="自动化执行链路">
+      <section class="capability section-pad" id="test-case" aria-labelledby="test-case-title">
+        <div class="section-heading reveal">
+          <p class="section-index">综合案例</p>
+          <h2 id="test-case-title">一套框架覆盖 App、游戏与 H5</h2>
+          <p>
+            三类产品形态共用场景建模、设备编排、动作执行和证据归档；差异留在识别适配层，
+            避免为每个项目重新搭建一套脚本与报告链路。
+          </p>
+        </div>
+
         <article class="capability-row">
           <div class="capability-media reveal">
             <img src="/assets/ai-quality-overview-redacted.webp" alt="脱敏后的自动化任务与质量运行总览" width="1672" height="941" loading="lazy" decoding="async">
-            <span class="image-tag">触发 · 执行 · 验证 · 回写</span>
+            <span class="image-tag">场景建模 · 真机执行 · 识别断言 · 证据归档</span>
           </div>
           <div class="capability-copy reveal">
-            <p class="section-index">执行链路</p>
-            <h2>协作流程中的自动化执行</h2>
+            <p class="section-index">跨形态测试</p>
+            <h2>业务语义保持稳定，识别方式按界面变化</h2>
             <p class="capability-intro">
-              项目节点或协作动作触发任务后，系统获取必要上下文，完成代码与变更分析，生成测试资产，
-              调度真实设备执行，再把结论、附件和状态回写到原协作节点。
+              用例描述登录、发布、互动、权限和结果校验等业务动作。结构化控件、OCR、CV 与视觉模型按场景协作，
+              执行结果统一进入截图、录屏、动作轨迹和报告。
             </p>
             <ul class="detail-list">
-              <li><span>触发</span><div><strong>飞书与项目流程接入</strong><p>将评审、验收和测试节点转成结构化任务，保留来源与处理状态。</p></div></li>
-              <li><span>分析</span><div><strong>代码上下文与风险识别</strong><p>提取与改动相关的信息，为测试设计和执行范围提供依据。</p></div></li>
-              <li><span>生成</span><div><strong>测试资产自动准备</strong><p>在规则约束下生成测试用例与执行输入，并保留人工复核入口。</p></div></li>
-              <li><span>执行</span><div><strong>真实设备任务编排</strong><p>统一设备租约、安装、账号前置、动作运行、录屏和现场采集。</p></div></li>
-              <li><span>回写</span><div><strong>证据与状态回写</strong><p>将通过、失败、待确认与阻断如实回写，避免只返回一句完成。</p></div></li>
+              <li><span>App</span><div><strong>完整业务链路与跨端约束</strong><p>覆盖 AI 角色创建与连续对话、跨账号隐私隔离，以及双机来电、三机语音房角色与权限校验。</p></div></li>
+              <li><span>游戏</span><div><strong>动态画面与状态识别</strong><p>对骰子对战、龙虎斗、宠物玩法等 Canvas 场景，以 CV / VLM 识别局面、按钮与结果，再交给原生动作层执行。</p></div></li>
+              <li><span>H5</span><div><strong>多语言活动深度遍历</strong><p>在真机上遍历 8 种语言与 8 个页面状态，覆盖 OCR、RTL 排版、跳转、登录态和活动结果页。</p></div></li>
             </ul>
-            <div class="tag-cloud" aria-label="自动化执行能力">
-              <span>项目触发</span><span>代码分析</span><span>测试生成</span><span>真机调度</span><span>证据回写</span>
+            <div class="evidence-numbers" aria-label="跨形态自动化案例数据">
+              <div><strong>64</strong><span>多语言场景单元</span></div>
+              <div><strong>116</strong><span>截图与标注证据</span></div>
+              <div><strong>74</strong><span>自动回归检查</span></div>
+              <div><strong>4 类</strong><span>通过、失败、待确认与阻断</span></div>
             </div>
           </div>
         </article>
       </section>
 
-      <section class="case-section section-pad" aria-labelledby="flow-title">
+      <section class="case-section section-pad" id="specialties" aria-labelledby="specialties-title">
         <div class="section-heading reveal">
-          <p class="section-index">运行阶段</p>
-          <h2 id="flow-title">任务受理、设计、执行与回传</h2>
-          <p>下方数据来自真实执行与结果回读，只对项目与人员身份做视觉脱敏。</p>
+          <p class="section-index">专项应用</p>
+          <h2 id="specialties-title">客户端性能与深度兼容</h2>
+          <p>专项能力直接接入现有自动化场景和真机资源，采集、执行、证据与报告不再是彼此割裂的工具。</p>
         </div>
         <div class="case-grid">
           <article class="case-card reveal">
-            <span class="case-number">受理</span>
-            <p class="case-label">任务受理</p>
-            <h3>从协作节点获取最小必要上下文</h3>
-            <p>校验触发来源、任务类型、目标范围和前置条件；信息不足时明确阻断，不带着猜测继续执行。</p>
-            <div class="case-metrics"><strong>已落地</strong><span>核心流程接入</span></div>
-          </article>
-          <article class="case-card reveal">
-            <span class="case-number">设计</span>
-            <p class="case-label">分析与设计</p>
-            <h3>代码变化与验证范围</h3>
-            <p>结合变更范围、工程规则和风险信号形成检查点，让测试用例与真实改动保持关联。</p>
-            <div class="case-metrics"><strong>已复用</strong><span>分析与生成能力</span></div>
-          </article>
-          <article class="case-card reveal">
-            <span class="case-number">执行</span>
-            <p class="case-label">设备执行</p>
-            <h3>真实环境运行并保留完整现场</h3>
-            <p>任务独占设备与账号资源，采集稳定帧、动作轨迹、截图和录屏；异常结果同样进入报告。</p>
-            <div class="case-metrics"><strong>已验证</strong><span>真实场景执行</span></div>
-          </article>
-          <article class="case-card reveal">
-            <span class="case-number">回传</span>
-            <p class="case-label">结果回传</p>
-            <h3>结论回到原工作上下文</h3>
-            <p>状态、问题、证据和下一步动作回写到协作节点，使研发、测试与管理角色看到同一事实。</p>
-            <div class="case-metrics"><strong>持续运行</strong><span>证据与状态回写</span></div>
-          </article>
-          <article class="case-card reveal" id="device-evidence">
-            <span class="case-number">设备运行记录</span>
-            <p class="case-label">
-              项目 <span class="redaction" aria-label="项目名称已脱敏">████████</span>
-              · 责任人 <span class="redaction" aria-label="责任人已脱敏">████</span>
-            </p>
-            <h3>真机多语言矩阵：覆盖完整，结果不粉饰</h3>
+            <span class="case-number">客户端性能专项</span>
+            <p class="case-label">perfX × 自动化框架</p>
+            <h3>性能采集跟随业务场景自动启停</h3>
             <p>
-              在真实设备上完成 <strong>8 种语言 × 8 个页面状态 = 64 个场景单元</strong>，
-              留存 <strong>116 份截图与标注证据</strong>。64 表示覆盖范围，不代表全部通过。
+              自研 perfX 通过 ADB、设备端采集进程与 gRPC 通道连接 Android 真机，
+              再由适配层接入自动化框架，让性能数据与具体业务步骤处于同一次运行中。
             </p>
-            <ul class="detail-list" aria-label="真机矩阵运行数据">
-              <li><span>结果</span><div><strong>21 通过 / 38 失败 / 1 待确认 / 4 阻断</strong><p>四类结果之和对应全部 64 个场景单元，失败与阻断均保留现场。</p></div></li>
-              <li><span>回归</span><div><strong>74 项自动回归测试</strong><p>用于验证执行链路、证据产物和结果分类的稳定性。</p></div></li>
+            <ul class="detail-list" aria-label="perfX 客户端性能能力">
+              <li><span>采集</span><div><strong>资源、流畅度与链路指标</strong><p>覆盖 CPU、内存、FPS / 卡顿、GPU、网络与电量，并保留过程截图。</p></div></li>
+              <li><span>联动</span><div><strong>用例控制采集边界</strong><p>业务场景开始时启动采集，结束时停止并关联步骤、时间线与设备信息。</p></div></li>
+              <li><span>交付</span><div><strong>功能与性能证据一起归档</strong><p>报告、测试附件与云端证据使用同一运行标识，减少人工对齐。</p></div></li>
             </ul>
-            <div class="case-metrics"><strong>全矩阵已执行</strong><span>覆盖完成不等于全部通过</span></div>
+            <div class="case-metrics"><strong>已接入自动化</strong><span>当前公开范围未公布性能收益比例</span></div>
           </article>
-          <article class="case-card reveal" id="feedback-evidence">
-            <span class="case-number">反馈处理记录</span>
-            <p class="case-label">
-              项目 <span class="redaction" aria-label="项目名称已脱敏">████████</span>
-              · 责任人 <span class="redaction" aria-label="责任人已脱敏">████</span>
-            </p>
-            <h3>反馈工作台：从多源汇集到安全导出</h3>
+          <article class="case-card reveal">
+            <span class="case-number">深度兼容专项</span>
+            <p class="case-label">并行回归 × 真机池 × 统一报告</p>
+            <h3>把设备矩阵从串行操作变成可追踪的并发任务</h3>
             <p>
-              汇集 <strong>3 类反馈来源、351 条记录与 423 个附件标记</strong>，
-              将分散信息整理为可检索、可回补、可验证的统一事实口径。
+              按系统版本、机型、分辨率、语言与网络条件生成兼容矩阵；多线程分发回归任务，
+              通过异步调用接收设备状态和执行结果，并与真机池租约统一管理。
             </p>
-            <ul class="detail-list" aria-label="反馈工作台运行数据">
-              <li><span>回补</span><div><strong>281 / 281 条目标记录完成字段回补</strong><p>目标集合全部处理，并保留字段来源与回读结果。</p></div></li>
-              <li><span>导出</span><div><strong>281 行安全导出，其中 23 行完成翻译</strong><p>公式单元格为 0，避免二次分发时触发公式注入风险。</p></div></li>
-              <li><span>验证</span><div><strong>后端 78 项 + 前端 8 项，分批通过</strong><p>两批验证口径独立，不合并放大；类型检查与生产构建另行通过。</p></div></li>
+            <ul class="detail-list" aria-label="深度兼容自动化能力">
+              <li><span>并发</span><div><strong>多线程回归与异步结果收敛</strong><p>设备执行互不阻塞；任务完成、超时和异常通过统一状态模型返回。</p></div></li>
+              <li><span>真机</span><div><strong>租约、安装、恢复与释放</strong><p>自动选择可用设备并管理占用关系，支持多设备互动与远程链路长稳复验。</p></div></li>
+              <li><span>报告</span><div><strong>矩阵结果与现场证据整合</strong><p>按设备、用例和失败类型汇总，截图、日志、录屏与结论可回到同一报告。</p></div></li>
             </ul>
-            <div class="case-metrics"><strong>全量回补</strong><span>导出安全与构建结果已验证</span></div>
+            <div class="case-metrics"><strong>并行执行</strong><span>每台设备的结果和证据分别保留</span></div>
           </article>
         </div>
       </section>
 
-      <section class="capability section-pad" id="resilience" aria-label="异常恢复机制">
-        <article class="capability-row reverse">
-          <div class="capability-media reveal">
-            <img src="/assets/risk-observations-redacted.webp" alt="脱敏后的变更风险观测列表" width="1672" height="941" loading="lazy" decoding="async">
-            <span class="image-tag">恢复 · 续跑 · 保留现场</span>
-          </div>
-          <div class="capability-copy reveal">
-            <p class="section-index">异常恢复</p>
-            <h2>异常状态与断点恢复</h2>
-            <p class="capability-intro">
-              网络波动、设备占用、账号前置不满足或外部系统暂时不可用，都应成为明确状态。
-              自动化保留现场、释放资源，并从可恢复节点继续，而不是重复整条链路。
-            </p>
-            <ul class="detail-list">
-              <li><span>隔离</span><div><strong>资源边界清晰</strong><p>设备、账号与任务保持独占关系，异常不会扩散到其他运行实例。</p></div></li>
-              <li><span>恢复</span><div><strong>从最近可信节点继续</strong><p>保留完成状态与中间产物，避免恢复时重复执行已确认步骤。</p></div></li>
-              <li><span>兜底</span><div><strong>人工判断有明确入口</strong><p>遇到权限、业务决策或环境阻断时，主动转交并说明所需动作。</p></div></li>
-            </ul>
-            <div class="tag-cloud" aria-label="异常恢复能力">
-              <span>状态机</span><span>失败留证</span><span>资源释放</span><span>断点恢复</span><span>人工接管</span>
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <section class="method section-pad" id="method" aria-labelledby="method-title">
+      <section class="method section-pad" id="feedback-sop" aria-labelledby="feedback-sop-title">
         <div class="method-copy reveal">
-          <p class="section-index">状态可观测</p>
-          <h2 id="method-title">运行状态与问题定位</h2>
+          <p class="section-index">业务流程 SOP 自动化</p>
+          <h2 id="feedback-sop-title">线上用户反馈从周期汇总变成持续处理</h2>
           <p>
-            运行状态同时服务于现场处理与持续改进：触发是否有效、任务是否开始、资源是否就绪、
-            检查是否通过、证据是否回写，以及还剩哪些风险，都可以被追踪。
+            过去由客服和产品运营分别登录各应用市场后台、内部运营后台，人工收集、整理与汇总，
+            再按周期反馈给研发。来源分散、口径不一，紧急线上问题也容易被批次节奏延后。
           </p>
-          <a class="text-link" href="/evidence/">查看脱敏运行证据与统计口径 <span aria-hidden="true">→</span></a>
+          <p>
+            新方案以开源采集能力为基础，整合内部与外部 API，建立按业务线组织的用户反馈数据底座；
+            日常任务每日增量同步，紧急信号单独触发通知，不再依赖人工搬运才能进入研发视野。
+          </p>
+          <p>
+            系统接管收集、去重、归并、打标、监测、分发和导出等重复环节，
+            人工主要负责业务判断、优先级决策与问题处置。
+          </p>
+          <div class="evidence-note">
+            <strong>工作方式：</strong>这类落地接近 Forward-Deployed Engineering（FDE）：工程工作进入具体业务流程、连接现有系统并持续维护，而不是只交付一次性脚本。
+          </div>
         </div>
         <ol class="method-flow reveal">
-          <li><span>可见</span><div><strong>运行状态</strong><p>任务从受理到完成的当前阶段清晰可查。</p></div></li>
-          <li><span>可查</span><div><strong>问题现场</strong><p>日志、截图、录屏与检查结果指向同一执行实例。</p></div></li>
-          <li><span>可控</span><div><strong>异常处理</strong><p>重试、阻断、恢复和人工接管都有明确条件。</p></div></li>
-          <li><span>改进</span><div><strong>调整下一次运行</strong><p>真实运行记录用于修改规则、流程和公共工具。</p></div></li>
+          <li><span>接入</span><div><strong>多源反馈统一入库</strong><p>连接应用市场、内部运营后台及其他公开或授权来源，保留业务线、平台与原始出处。</p></div></li>
+          <li><span>同步</span><div><strong>每日增量更新</strong><p>按游标或时间窗口拉取新增与变更记录，完成去重、状态更新和失败补偿。</p></div></li>
+          <li><span>理解</span><div><strong>大模型归并与打标</strong><p>合并同类问题，补充主题、版本、场景与情绪标签，降低人工逐条整理成本。</p></div></li>
+          <li><span>预警</span><div><strong>正负向反馈突刺检测</strong><p>识别短时间异常波动；命中紧急发布问题规则后，第一时间通知责任团队。</p></div></li>
+          <li><span>交付</span><div><strong>多条件筛选与格式化导出</strong><p>按团队所需字段、版本、渠道、时间和标签筛选，输出各自可直接使用的数据格式。</p></div></li>
         </ol>
       </section>
 
     </main>
 
     <footer>
-      <p>张晨 · 研发自动化</p>
+      <p>张晨 · 自动化应用</p>
       <p>工作内容与公开记录</p>
     </footer>
   </body>
