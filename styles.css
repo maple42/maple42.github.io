@@ -619,6 +619,38 @@ footer {
 .architecture-board figcaption p { margin: 0; }
 .mobile-scroll-hint { display: none; }
 
+.agent-architecture-hero {
+  display: grid;
+  align-items: center;
+  width: min(calc(100% - 32px), 1500px);
+  min-height: calc(100vh - 64px);
+  min-height: calc(100svh - 64px);
+  margin-inline: auto;
+  padding: 20px 0 30px;
+}
+
+.architecture-board-primary {
+  width: 100%;
+  margin: 0;
+  background: var(--surface);
+}
+
+.architecture-board-primary > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.architecture-board-primary img {
+  width: auto;
+  max-width: 100%;
+  max-height: calc(100vh - 142px);
+  max-height: calc(100svh - 142px);
+  object-fit: contain;
+}
+
+.architecture-board-primary figcaption { background: var(--bg); }
+
 .architecture-principles {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -855,6 +887,26 @@ footer p { margin: 0; }
   .architecture-board img { min-width: 760px; }
   .architecture-board figcaption { grid-template-columns: 1fr; gap: 4px; }
   .mobile-scroll-hint { display: inline; }
+
+  .agent-architecture-hero {
+    width: 100%;
+    min-height: 0;
+    padding: 12px 0 26px;
+  }
+
+  .architecture-board-primary {
+    border-right: 0;
+    border-left: 0;
+  }
+
+  .architecture-board-primary img {
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    min-width: 900px;
+  }
+
+  .architecture-board-primary figcaption { padding-inline: 16px; }
 
   footer { display: block; }
   footer p + p { margin-top: 4px; }

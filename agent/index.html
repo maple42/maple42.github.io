@@ -14,7 +14,7 @@
     <meta property="og:image" content="https://maple42.github.io/assets/ai-quality-overview-redacted.webp">
     <meta name="twitter:card" content="summary_large_image">
     <title>张晨｜Agent / Harness 工程实践</title>
-    <link rel="stylesheet" href="/styles.css?v=20260930-evidence-wall">
+    <link rel="stylesheet" href="/styles.css?v=20260930-agent-architecture-hero">
     <script src="/app.js?v=20260930-evidence-wall" defer></script>
   </head>
   <body>
@@ -39,47 +39,24 @@
     </header>
 
     <main id="main">
-      <section class="hero" id="top" aria-labelledby="hero-title">
-        <div class="hero-copy reveal">
-          <p class="eyebrow"><span></span> 张晨 / 工作记录</p>
-          <h1 id="hero-title">Agent / Harness 工程实践</h1>
-          <p class="hero-lede">
-            我负责把规则、权限、工具、执行环境和验证接到 Agent 周围。qa-manager 负责质量任务编排与资源协调，
-            feishu-cli 负责项目语义、交付物和结果回写，使任务可以暂停、恢复、复核，也能在失败时安全停下。
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#quality-control-plane">查看质量工程控制平面 <span aria-hidden="true">↓</span></a>
-            <a class="text-link" href="/evidence/">查看公开数据 <span aria-hidden="true">→</span></a>
-          </div>
-        </div>
-
-        <div class="proof-strip reveal" aria-label="Agent 运行数据摘要">
-          <article>
-            <strong>468</strong>
-            <span>受控压测单元</span>
-          </article>
-          <article>
-            <strong>82</strong>
-            <span>校验后安全写回</span>
-          </article>
-          <article>
-            <strong>5</strong>
-            <span>重点风险通知送达</span>
-          </article>
-          <article>
-            <strong>0</strong>
-            <span>既有原文被替换</span>
-          </article>
-        </div>
-      </section>
-
-      <section class="manifesto section-pad reveal" aria-label="Agent 工程主张">
-        <p class="section-index">职责划分</p>
-        <h2>Agent 与 Harness 分别负责什么</h2>
-        <p>
-          Agent 负责判断、规划和生成；Harness 负责上下文、权限、执行环境、异常恢复与验证。
-          这套分工让任务能够暂停、复核和恢复，而不是只得到一次模型输出。
-        </p>
+      <section class="agent-architecture-hero" id="top" aria-labelledby="agent-architecture-title">
+        <h1 class="sr-only" id="agent-architecture-title">Spook AI Guard：AI 工程治理与生成前质量合同</h1>
+        <figure class="architecture-board architecture-board-primary">
+          <a href="/assets/ai-engineering-governance-architecture.svg" aria-label="查看 Spook AI Guard 架构图原图">
+            <img
+              src="/assets/ai-engineering-governance-architecture.svg"
+              alt="Spook AI Guard AI 工程治理与生成前质量合同架构图，包含确定性接入、策略与知识装配、生成前合同、质量门禁决策和事件账本"
+              width="1600"
+              height="1050"
+              fetchpriority="high"
+              decoding="async"
+            >
+          </a>
+          <figcaption>
+            <p><strong>Spook AI Guard</strong> · 生成前质量合同与质量门禁</p>
+            <p>点击查看原图<span class="mobile-scroll-hint"> · 可横向滚动查看细节</span></p>
+          </figcaption>
+        </figure>
       </section>
 
       <section class="control-plane section-pad" id="quality-control-plane" aria-labelledby="control-plane-title">
