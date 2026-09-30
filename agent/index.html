@@ -3,18 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="张晨的 Agent 工程实践：QA Manager 与 Feishu CLI 驱动需求 AC、多模型交叉校验、自动化代码生成与真机验证。">
+    <meta name="description" content="张晨的 Agent 工程实践：Spook AI Guard、QA Manager 与 Feishu CLI，以及基于真实业务任务的多模型效果评估与回归验证。">
     <meta name="theme-color" content="#102f57">
     <link rel="canonical" href="https://maple42.github.io/agent/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="zh_CN">
     <meta property="og:title" content="张晨｜Agent / Harness 工程实践">
-    <meta property="og:description" content="QA Manager 与 Feishu CLI 驱动需求 AC、多模型交叉校验、自动化代码生成与真机验证。">
+    <meta property="og:description" content="Spook AI Guard、QA Manager 与 Feishu CLI，以及基于真实业务任务的多模型效果评估与回归验证。">
     <meta property="og:url" content="https://maple42.github.io/agent/">
     <meta property="og:image" content="https://maple42.github.io/assets/ai-quality-overview-redacted.webp">
     <meta name="twitter:card" content="summary_large_image">
     <title>张晨｜Agent / Harness 工程实践</title>
-    <link rel="stylesheet" href="/styles.css?v=20261001-spook-guard">
+    <link rel="stylesheet" href="/styles.css?v=20261001-model-eval-jd">
     <script src="/app.js?v=20260930-case-carousel" defer></script>
   </head>
   <body>
@@ -32,7 +32,7 @@
       <nav class="primary-nav" id="primary-nav" aria-label="主要导航" data-nav>
         <a class="active" href="/agent/" aria-current="page">Agent</a>
         <a href="/automation/">自动化</a>
-        <a href="/efficiency/">效能提升</a>
+        <a href="/efficiency/">效能与左移</a>
         <a href="/evidence/">公开数据</a>
       </nav>
     </header>
@@ -185,6 +185,99 @@
             </tbody>
           </table>
         </div>
+      </section>
+
+      <section class="control-plane section-pad" id="model-evaluation" aria-labelledby="model-evaluation-title">
+        <div class="section-heading reveal">
+          <p class="section-index">大模型效果评估</p>
+          <h2 id="model-evaluation-title">多模型横向对比与业务适配验证</h2>
+          <p>
+            探索选型阶段，围绕活动、App 与小游戏等真实需求，对 Haiku、Sonnet、Opus、GPT-5.4、GPT-5.5、DeepSeek 开展横向测试，并通过 <strong>Union 多模型并行生成</strong>改善用例质量与产出数量。
+            产品回归阶段，以<strong>版本化评测集</strong>和 Baseline / Candidate A/B 为统一契约，将确定性规则、产品 Judge 与独立 Shadow Judge 分层组合，持续记录候选胜率、Judge 覆盖率、P95 延迟、成本、任务状态与证据引用，综合判断不同模型在具体业务任务中的<strong>效果、稳定性与成本差异</strong>。
+          </p>
+        </div>
+
+        <figure class="architecture-board reveal">
+          <a href="/assets/model-evaluation-quality-pipeline.svg" aria-label="查看大模型效果评估架构图原图">
+            <img
+              src="/assets/model-evaluation-quality-pipeline.svg"
+              alt="大模型效果评估架构图，展示真实业务样本、版本化评测集、多模型横向对比、三类业务适配器、规则与 Judge 校准、效果指标和证据归档"
+              width="1600"
+              height="1040"
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+          <figcaption>
+            <strong>模型效果对比</strong>
+            <p>在相同真实业务样本与版本化数据集上，对比各模型的输出质量、任务完成情况、延迟与成本；规则与 Judge 用于校准结论，质量门禁是评估结果的后续应用。<span class="mobile-scroll-hint">移动端可横向查看完整图。</span></p>
+          </figcaption>
+        </figure>
+
+        <section class="eval-jd-map reveal" aria-labelledby="eval-jd-map-title">
+          <div class="component-detail">
+            <p class="section-index">JD Match · Business Evidence</p>
+            <h3 id="eval-jd-map-title">从评测资产到平台化的业务证据链</h3>
+            <p>
+              将模型评测岗位高频要求绑定到真实业务任务、产品适配器和运行证据，呈现的不只是关键词，而是<strong>能力、机制与结果</strong>之间的对应关系。
+            </p>
+          </div>
+          <ol class="shift-rail eval-jd-rail" aria-label="Benchmark、Judge、Agent 指标、失败归因、质量门禁与平台化能力链">
+            <li>
+              <span>01 · ASSET</span>
+              <strong>Benchmark / Regression</strong>
+              <p>7 个真实需求覆盖活动、App 与小游戏；版本、SHA-256 和 Baseline / Candidate 让同一任务可以重复回归。</p>
+            </li>
+            <li>
+              <span>02 · JUDGE</span>
+              <strong>Rules + LLM Judge</strong>
+              <p>Yovela 用泄漏、空输出、语言漂移、截断和 Turn 失败守底线；Cuddmi Multi-Judge 与 Shadow Judge 独立复核。</p>
+            </li>
+            <li>
+              <span>03 · METRIC</span>
+              <strong>Agent Task Metrics</strong>
+              <p>Mochi 对话、Cuddmi 记忆、Yovela 叙事统一记录 Winner、Judge Coverage、P95、Cost 与任务状态。</p>
+            </li>
+            <li>
+              <span>04 · RCA</span>
+              <strong>Failure RCA</strong>
+              <p>Failed、Blocked、Timeout 与 Stale 分开归因；逐 Case 保存错误摘要和 Evidence Ref，避免环境失败污染质量结论。</p>
+            </li>
+            <li>
+              <span>05 · GATE</span>
+              <strong>Quality Gate</strong>
+              <p>候选胜率、Judge 覆盖、P95、成本、阻断上限与零容忍规则共同形成 PASS / FAIL / BLOCKED / N/A。</p>
+            </li>
+            <li>
+              <span>06 · PLATFORM</span>
+              <strong>Platformization</strong>
+              <p>3 个固定业务适配器由 Worker 领取任务，以租约、心跳、幂等键和不可变归档支撑复用；Yovela 接入 3/3 检查通过。</p>
+            </li>
+          </ol>
+        </section>
+
+        <div class="proof-strip reveal" aria-label="大模型效果评估已验证成果">
+          <article>
+            <strong>7 需求 · 6 模型</strong>
+            <span>真实业务横评；样本中 GPT-5.4 表现较好</span>
+          </article>
+          <article>
+            <strong>3 类业务评测</strong>
+            <span>Mochi 对话 · Cuddmi 记忆 · Yovela 叙事</span>
+          </article>
+          <article>
+            <strong>3/3 · 135 QA tests</strong>
+            <span>Yovela 接入机器检查与 QA Manager 工程验收</span>
+          </article>
+          <article>
+            <strong>473 条真机校准</strong>
+            <span>426 高置信 · 38 中置信 · 2 人工复核</span>
+          </article>
+        </div>
+
+        <p class="evidence-note reveal">
+          <strong>证据边界：</strong>Union 的质量与数量改善来自业务样本观察，暂不展示未形成统一口径的提升比例；473 条为多模态视觉校准集，不计入 LLM Benchmark；Shadow Judge 只记录独立意见，不修改正式 Winner 或 Gate。
+        </p>
       </section>
 
     </main>
