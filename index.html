@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="张晨的个人主页：质量工程、Agent 工程、研发自动化，以及脱敏后的项目记录。">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="张晨的 AI / Agent 质量工程主页：AI 工程治理、Agent 质量工作流、真机多模态自动化与模型评测。">
+    <meta name="theme-color" content="#102f57">
     <link rel="canonical" href="https://maple42.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="zh_CN">
-    <meta property="og:title" content="张晨｜质量工程与研发自动化">
-    <meta property="og:description" content="质量工程、Agent 工程、研发自动化，以及脱敏后的项目记录。">
+    <meta property="og:title" content="张晨｜AI / Agent 质量工程与研发效能">
+    <meta property="og:description" content="AI 工程治理、Agent 质量工作流、真机多模态自动化与模型评测。">
     <meta property="og:url" content="https://maple42.github.io/">
     <meta property="og:image" content="https://maple42.github.io/assets/ai-quality-overview-redacted.webp">
     <meta name="twitter:card" content="summary_large_image">
-    <title>张晨｜质量工程与研发自动化</title>
-    <link rel="stylesheet" href="/styles.css?v=20260930-qa-platform">
-    <script src="/app.js?v=20260930-qa-platform" defer></script>
+    <title>张晨｜AI / Agent 质量工程与研发效能</title>
+    <link rel="stylesheet" href="/styles.css?v=20260930-blue">
+    <script src="/app.js?v=20260930-blue" defer></script>
   </head>
   <body class="resume-home">
     <a class="skip-link" href="#main">跳到主要内容</a>
@@ -38,14 +38,14 @@
     <main id="main" class="resume-main">
       <section class="profile-intro" aria-labelledby="profile-title">
         <p class="profile-name">张晨</p>
-        <h1 id="profile-title">质量工程 / 研发自动化</h1>
+        <h1 id="profile-title">AI / Agent 质量工程与研发效能</h1>
         <p class="profile-summary">
-          主要做 Agent 工程、测试自动化和质量治理。我的工作通常从团队规则、代码变更或项目任务开始，
-          经过工具与真实设备执行，最后把检查结果和现场记录写回原来的协作流程。
+          围绕 AI 与 Agent 研发质量，建设从工程规则、需求评审、自动化执行到模型评测与结果回写的闭环；
+          让质量能力进入真实研发流程，并留下可以复核的过程和结论。
         </p>
         <dl class="profile-meta">
-          <div><dt>工作方向</dt><dd>Agent / Harness、研发自动化、工程效能</dd></div>
-          <div><dt>关注问题</dt><dd>执行是否可靠、结果能否复核、工具能否重复使用</dd></div>
+          <div><dt>核心方向</dt><dd>AI 工程治理、Agent 质量工作流、真机多模态自动化、模型评测</dd></div>
+          <div><dt>关注问题</dt><dd>执行是否可靠、评测是否可信、结果能否复核、能力能否规模化复用</dd></div>
           <div><dt>页面内容</dt><dd>来自真实项目的脱敏记录，不包含公司内部地址和人员信息</dd></div>
         </dl>
         <div class="intro-links">
@@ -56,47 +56,60 @@
 
       <section class="resume-section" id="work" aria-labelledby="work-title">
         <header class="resume-section-heading">
-          <h2 id="work-title">工作内容</h2>
-          <p>下面是目前公开的三个方向。详情页保留实现方式、运行数据和结论范围。</p>
+          <h2 id="work-title">AI / Agent 四个方向</h2>
+          <p>首页聚焦四项相互连接的工作：先约束工程过程，再编排 Agent 质量工作流，连接真实设备执行，并以模型评测持续校准结果。</p>
         </header>
 
         <div class="work-list">
-          <article>
+          <article id="engineering-governance">
             <div class="work-title-row">
-              <h3>Agent / Harness 工程</h3>
+              <h3>AI 工程治理与 Construct AI Guard</h3>
               <a href="/agent/">查看详情</a>
             </div>
-            <p>以 qa-manager 编排质量任务、资源和执行状态，以 feishu-cli 处理项目语义、交付物与结果回读，使任务可以暂停、恢复和复核。</p>
+            <p>将工程规则、风险分级和质量事件接入 AI 编码生命周期，以缺陷知识库与仓库级治理支撑计划、变更、验证和复盘。</p>
             <ul class="fact-list">
-              <li><strong>468</strong> 个受控性能压测单元</li>
-              <li><strong>82</strong> 条校验后增量安全写回</li>
-              <li><strong>0</strong> 次既有原文替换</li>
+              <li><strong>规则</strong> 工程约束与风险边界</li>
+              <li><strong>事件</strong> 生命周期证据链</li>
+              <li><strong>治理</strong> 缺陷知识与仓库覆盖</li>
             </ul>
           </article>
 
-          <article>
+          <article id="agent-quality-workflow">
             <div class="work-title-row">
-              <h3>研发自动化</h3>
+              <h3>Feishu CLI 与 Agent 质量工作流</h3>
+              <a href="/agent/">查看详情</a>
+            </div>
+            <p>打通 PRD、Review、AC、Testcase、Webhook、执行与报告，让 Agent 生成的交付物进入原有协作流程并可追踪、可回读。</p>
+            <ul class="fact-list">
+              <li><strong>输入</strong> PRD → Review</li>
+              <li><strong>设计</strong> AC → Testcase</li>
+              <li><strong>闭环</strong> Webhook → 执行 → 报告</li>
+            </ul>
+          </article>
+
+          <article id="multimodal-automation">
+            <div class="work-title-row">
+              <h3>真机多模态自动化与视觉评测</h3>
               <a href="/automation/">查看详情</a>
             </div>
-            <p>连接协作平台、代码分析、测试设计和真实设备，把执行状态、截图、录屏与异常结果写回原工作项。</p>
+            <p>原生动作保障稳定执行，OCR / CV 穿透 UI 树盲区，大模型在语义理解、动态页面和异常恢复中提供兜底，并保留截图、录屏与断言证据。</p>
             <ul class="fact-list">
-              <li><strong>64</strong> 个真机多语言场景</li>
-              <li><strong>116</strong> 份现场截图与标注</li>
-              <li><strong>74</strong> 项自动回归检查</li>
+              <li><strong>执行</strong> 原生动作与真机控制</li>
+              <li><strong>感知</strong> OCR / CV / YOLO</li>
+              <li><strong>兜底</strong> 大模型语义判断与恢复</li>
             </ul>
           </article>
 
-          <article>
+          <article id="model-evaluation">
             <div class="work-title-row">
-              <h3>效能与质量治理</h3>
-              <a href="/efficiency/">查看详情</a>
+              <h3>模型评测</h3>
+              <a href="/evidence/">查看证据边界</a>
             </div>
-            <p>把重复操作整理成命令行工具、工作流和固定检查，并用运行数据判断优化是否真的减少返工和等待。</p>
+            <p>围绕任务成功率、结果正确性、工具调用、鲁棒性与安全性，建设 Benchmark、Golden Set、Rubric、自动评测和 Bad Case 回流机制。</p>
             <ul class="fact-list">
-              <li><strong>351</strong> 条多来源反馈记录</li>
-              <li><strong>423</strong> 个附件标记</li>
-              <li><strong>281 / 281</strong> 条目标记录完成字段回补</li>
+              <li><strong>方法</strong> 数据集、指标与评分规则</li>
+              <li><strong>校准</strong> 自动评测与人工复核</li>
+              <li><strong>阶段</strong> 体系化建设中</li>
             </ul>
           </article>
         </div>
@@ -132,7 +145,7 @@
     </main>
 
     <footer>
-      <p>张晨 · 质量工程与研发自动化</p>
+      <p>张晨 · AI / Agent 质量工程与研发效能</p>
       <p>公开脱敏版</p>
     </footer>
   </body>

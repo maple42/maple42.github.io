@@ -20,6 +20,25 @@
       .rail-title { fill: #9a4b2f; font-size: 13px; font-weight: 700; }
       .rail-item { fill: #1b1b19; font-size: 15px; font-weight: 650; }
       .rail-note { fill: #66655f; font-size: 12px; }
+      /* Shared site palette: calm editorial blue, without gradients or glow. */
+      [fill="#f3f1eb"] { fill: #edf5ff; }
+      [fill="#fbfaf7"] { fill: #ffffff; }
+      [fill="#1b1b19"] { fill: #17243a; }
+      [fill="#66655f"] { fill: #5a687b; }
+      [fill="#1f5b4c"] { fill: #1d5fc4; }
+      [fill="#9a4b2f"] { fill: #356da8; }
+      [fill="#e8efeb"] { fill: #dcecff; }
+      [fill="#edf2ee"] { fill: #e8f1ff; }
+      [fill="#eeeae0"] { fill: #e5edf7; }
+      [fill="#f4e9e4"] { fill: #e8f1ff; }
+      [stroke="#1b1b19"] { stroke: #17243a; }
+      [stroke="#66655f"] { stroke: #5a687b; }
+      [stroke="#1f5b4c"] { stroke: #1d5fc4; }
+      [stroke="#9a4b2f"] { stroke: #356da8; }
+      .title, .layer-title, .node-title, .rail-item { fill: #17243a; }
+      .subtitle, .layer-note, .node-note, .rail-note { fill: #5a687b; }
+      .layer-num, .tech { fill: #1d5fc4; }
+      .warm, .rail-title { fill: #356da8; }
     </style>
   </defs>
 
