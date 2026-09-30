@@ -128,34 +128,35 @@
           <p class="section-index">综合案例</p>
           <h2 id="test-case-title">一套框架覆盖 App、游戏与 H5</h2>
           <p>
-            三类产品形态共用场景建模、设备编排、动作执行和证据归档；差异留在识别适配层，
-            避免为每个项目重新搭建一套脚本与报告链路。
+            依据历史飞书报告与本地运行记录归并。三类产品形态共用场景建模、设备编排、动作执行和证据归档，
+            但按照各自证据强度分别陈述，不把截图数量当成测试成果。
           </p>
         </div>
 
         <article class="capability-row">
           <div class="capability-media reveal">
             <img src="/assets/ai-quality-overview-redacted.webp" alt="脱敏后的自动化任务与质量运行总览" width="1672" height="941" loading="lazy" decoding="async">
-            <span class="image-tag">场景建模 · 真机执行 · 识别断言 · 证据归档</span>
+            <span class="image-tag">历史报告 · 真机记录 · 运行截图</span>
           </div>
           <div class="capability-copy reveal">
-            <p class="section-index">跨形态测试</p>
-            <h2>业务语义保持稳定，识别方式按界面变化</h2>
+            <p class="section-index">案例归并</p>
+            <h2>三类界面，共用一条执行与证据链</h2>
             <p class="capability-intro">
-              用例描述登录、发布、互动、权限和结果校验等业务动作。结构化控件、OCR、CV 与视觉模型按场景协作，
-              执行结果统一进入截图、录屏、动作轨迹和报告。
+              用例仍然描述登录、发布、互动、权限和结果校验等业务动作；结构化控件、OCR、CV 与视觉模型只负责适配不同界面，
+              最终都输出可回看的动作轨迹、截图、录屏和报告。
             </p>
             <ul class="detail-list">
-              <li><span>App</span><div><strong>完整业务链路与跨端约束</strong><p>覆盖 AI 角色创建与连续对话、跨账号隐私隔离，以及双机来电、三机语音房角色与权限校验。</p></div></li>
-              <li><span>游戏</span><div><strong>动态画面与状态识别</strong><p>对骰子对战、龙虎斗、宠物玩法等 Canvas 场景，以 CV / VLM 识别局面、按钮与结果，再交给原生动作层执行。</p></div></li>
-              <li><span>H5</span><div><strong>多语言活动深度遍历</strong><p>在真机上遍历 8 种语言与 8 个页面状态，覆盖 OCR、RTL 排版、跳转、登录态和活动结果页。</p></div></li>
+              <li><span>App</span><div><strong>Cuddmi、Mochi 与 NIMI 业务链路</strong><p>Cuddmi 覆盖 AI 角色创建与连续对话；Mochi 验证跨账号隐私隔离；NIMI 完成双机系统来电与三机语音房角色、权限校验。</p></div></li>
+              <li><span>游戏</span><div><strong>骰子对战、龙虎斗与宠物玩法</strong><p>运行态素材覆盖 Canvas 动态画面中的目标定位、局面判断与结果标注，用于验证 CV / VLM 感知层，不据此推导完整通过率。</p></div></li>
+              <li><span>H5</span><div><strong>重点案例：Litmatch H5 8 语种本地化适配验证</strong><p>在真机上覆盖英语、泰语、越南语、印尼语、葡萄牙语、土耳其语、阿拉伯语与繁体中文；逐状态检查文本可见性、换行与截断、RTL 排版、登录态和页面跳转，而不是只确认翻译文本存在。</p></div></li>
             </ul>
             <div class="evidence-numbers" aria-label="跨形态自动化案例数据">
-              <div><strong>64</strong><span>多语言场景单元</span></div>
+              <div><strong>8 种</strong><span>本地化语言</span></div>
+              <div><strong>8 个</strong><span>页面状态</span></div>
+              <div><strong>64</strong><span>真机场景单元</span></div>
               <div><strong>116</strong><span>截图与标注证据</span></div>
-              <div><strong>74</strong><span>自动回归检查</span></div>
-              <div><strong>4 类</strong><span>通过、失败、待确认与阻断</span></div>
             </div>
+            <p class="evidence-note"><strong>证据边界：</strong>App 与 H5 依据完整报告；游戏部分依据运行态截图库，只用于说明动态画面识别与标注能力。</p>
           </div>
         </article>
       </section>
