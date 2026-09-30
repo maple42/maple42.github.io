@@ -14,7 +14,7 @@
     <meta property="og:image" content="https://maple42.github.io/assets/ai-quality-overview-redacted.webp">
     <meta name="twitter:card" content="summary_large_image">
     <title>张晨｜公开工程记录</title>
-    <link rel="stylesheet" href="/styles.css?v=20260930-case-carousel">
+    <link rel="stylesheet" href="/styles.css?v=20261001-replayable-evidence">
     <script src="/app.js?v=20260930-case-carousel" defer></script>
   </head>
   <body>
@@ -174,6 +174,63 @@
             </div>
             <p class="evidence-note">当前结论：方向有效，但数据还不足以说明所有场景都能改善。</p>
             <a class="text-link" href="/agent/">查看 Agent / Harness 能力页 <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <article class="capability-row text-only evidence-mechanisms" id="replayable-quality">
+          <div class="capability-copy reveal">
+            <p class="section-index">可复核的运行机制</p>
+            <h2>结果能够重放、纠正并追溯到执行边界</h2>
+            <p class="capability-intro">
+              以下内容保留可核验的数量、状态流转与适用范围；项目、仓库、分支、账号及内部地址均不公开。
+              机制用于约束执行和复核结果，不把局部验证扩大为全局结论。
+            </p>
+
+            <div class="evidence-mechanism-grid">
+              <section class="evidence-mechanism-card" aria-labelledby="ledger-evidence-title">
+                <span class="case-number">01 / 可信质量账本</span>
+                <p class="case-label">幂等事件 · 分支关联 · 历史重算</p>
+                <h3 id="ledger-evidence-title">统计口径可以回放纠正</h3>
+                <p>
+                  对历史失败会话执行口径复核，检查 34 条、纠正 27 条；修正内容包括验证失败但关注项为 0 等分类与统计问题，证明账本具备重放、重算和纠正能力。
+                </p>
+                <div class="case-metrics"><strong>34 / 27</strong><span>复核条目 / 口径纠正</span></div>
+              </section>
+
+              <section class="evidence-mechanism-card" aria-labelledby="harness-evidence-title">
+                <span class="case-number">02 / 上下文与确定性执行</span>
+                <p class="case-label">结构化输入 · 约束路由 · 失败回写</p>
+                <h3 id="harness-evidence-title">上下文到工具调用不靠临场猜测</h3>
+                <p>
+                  在特定飞书工作流中，以 systemPrompt 约束既定工具入口；结构化读取 XMind 用例层级，并支持 Wiki 背后的 Sheet、多页签、富文本链接与图片。内部链接最多遍历三层，带去重、循环保护、读取失败通知及 AC 结果回写。
+                </p>
+                <div class="case-metrics"><strong>最多 3 层</strong><span>当前文档遍历边界，不作为效果指标</span></div>
+              </section>
+
+              <section class="evidence-mechanism-card" aria-labelledby="runtime-evidence-title">
+                <span class="case-number">03 / 运行底座与资源隔离</span>
+                <p class="case-label">预检 · 租约 · 独占 · 释放 · 隔离</p>
+                <h3 id="runtime-evidence-title">执行环境和测试资源都有状态</h3>
+                <p>
+                  QA Manager 将跨平台启动、健康检查、辅助恢复与共享配置收敛为统一入口；账号执行经过 doctor 预检、acquire 租约、独占使用、complete / release，以及冷却或隔离状态，降低并发污染与敏感信息暴露风险。
+                </p>
+                <div class="case-metrics"><strong>5 / 6</strong><span>匿名产品域 / 构建来源，仅表示能力覆盖</span></div>
+              </section>
+            </div>
+
+            <p class="evidence-source">成本观测 · 2026 年 5 月受控样本</p>
+            <div class="evidence-numbers evidence-cost-numbers" aria-label="AI 任务模型调用成本观测">
+              <div><strong>¥1.87</strong><span>Review 平均模型调用成本</span></div>
+              <div><strong>¥2.09</strong><span>AC 平均模型调用成本</span></div>
+              <div><strong>¥4.88</strong><span>Testcase 平均模型调用成本</span></div>
+            </div>
+            <p class="evidence-note">
+              口径边界：34 / 27 是历史统计分类纠正，不是产品缺陷修复数；确定性指工具路径与执行边界，不代表模型输出确定；成本仅为当期样本的模型调用成本，不包含完整交付成本，也不构成长期成本 SLA；账号租约用于降低并发污染风险，不代表零风险。
+            </p>
+            <div class="evidence-links" aria-label="相关能力页面">
+              <a class="text-link" href="/agent/">查看 Agent / Harness 能力页 <span aria-hidden="true">→</span></a>
+              <a class="text-link" href="/efficiency/">查看效能与左移页 <span aria-hidden="true">→</span></a>
+            </div>
           </div>
         </article>
 

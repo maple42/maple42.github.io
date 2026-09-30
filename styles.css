@@ -1346,6 +1346,51 @@ footer {
 .evidence-note,
 .snapshot-boundary { padding: 12px 14px; border-left: 3px solid var(--accent); color: var(--muted); background: var(--surface); font-size: 13px; }
 
+.evidence-mechanism-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 26px 0 28px;
+}
+
+.evidence-mechanism-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  background: var(--surface);
+}
+
+.evidence-mechanism-card .case-label {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.evidence-mechanism-card h3 {
+  margin: 0 0 10px;
+  color: var(--accent-deep);
+  font-size: 18px;
+}
+
+.evidence-mechanism-card > p:not(.case-label) {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.evidence-mechanism-card .case-metrics { margin-top: auto; }
+.evidence-numbers.evidence-cost-numbers { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.evidence-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  margin-top: 20px;
+}
+
 .snapshot-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1443,6 +1488,7 @@ footer p { margin: 0; }
   .case-carousel-numbers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
   .architecture-principles { grid-template-columns: 1fr; gap: 20px; }
+  .evidence-mechanism-grid { grid-template-columns: 1fr; }
   .case-grid { gap: 28px; }
 }
 
@@ -1567,6 +1613,7 @@ footer p { margin: 0; }
   .snapshot-grid { grid-template-columns: 1fr; }
   .snapshot-card-wide { grid-column: auto; }
   .evidence-numbers { grid-template-columns: 1fr; }
+  .evidence-numbers.evidence-cost-numbers { grid-template-columns: 1fr; }
   .evidence-numbers.case-carousel-numbers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
   .case-carousel-toolbar { flex-wrap: wrap; gap: 8px 18px; padding-inline: 14px; }
