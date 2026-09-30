@@ -72,9 +72,14 @@
       event.preventDefault();
       previewTrigger = link;
       const sourceImage = link.querySelector('img');
+      const figure = link.closest('figure');
+      const caption = figure?.querySelector('figcaption');
+      const captionParts = caption
+        ? [...caption.children].map((node) => node.textContent.trim()).filter(Boolean)
+        : [];
       dialogImage.src = link.href;
       dialogImage.alt = sourceImage?.alt || '大图预览';
-      dialogCaption.textContent = link.closest('figure')?.querySelector('h3, figcaption p')?.textContent || '';
+      dialogCaption.textContent = figure?.querySelector('h3, figcaption p')?.textContent || captionParts.join(' · ');
       dialog.showModal();
       closeButton.focus();
     });
