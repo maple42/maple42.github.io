@@ -14,8 +14,8 @@
     <meta property="og:image" content="https://maple42.github.io/assets/ai-quality-overview-redacted.webp">
     <meta name="twitter:card" content="summary_large_image">
     <title>张晨｜Agent / Harness 工程实践</title>
-    <link rel="stylesheet" href="/styles.css?v=20260930-agent-architecture-hero-v2">
-    <script src="/app.js?v=20260930-evidence-wall" defer></script>
+    <link rel="stylesheet" href="/styles.css?v=20260930-case-carousel">
+    <script src="/app.js?v=20260930-case-carousel" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">跳到主要内容</a>
@@ -68,6 +68,23 @@
             qa-manager 只负责跨域编排；具体能力仍由各自模块拥有，避免形成难以维护的巨型工具。
           </p>
         </div>
+
+        <figure class="architecture-board reveal">
+          <a href="/assets/feishu-agent-llm-full-architecture.svg" aria-label="查看 Feishu Agent 架构图原图">
+            <img
+              src="/assets/feishu-agent-llm-full-architecture.svg"
+              alt="Feishu Agent 架构图，展示飞书规则触发、Agent 多源知识装配与确定性编排、主模型与 Union 多模型生成、交叉去重、持久化回读和失败补偿闭环"
+              width="1600"
+              height="1120"
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+          <figcaption>
+            <p><strong>Feishu Agent</strong> · 从规则触发到多模型质量交付</p>
+            <p>点击查看原图<span class="mobile-scroll-hint"> · 可横向滚动查看细节</span></p>
+          </figcaption>
+        </figure>
 
         <ol class="system-stack reveal" aria-label="质量工程控制平面分层架构">
           <li>

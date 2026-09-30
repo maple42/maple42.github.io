@@ -1,0 +1,321 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120" role="img" aria-labelledby="title desc">
+  <title id="title">Feishu Agent：从规则触发到多模型质量交付</title>
+  <desc id="desc">以飞书系统、Agent 编排和大模型三条泳道，展示规则触发 Review、AC、Testcase 与 White-box，Agent 装配业务知识、历史缺陷和代码上下文，路由主模型、回退模型与 Union 多模型并行生成，再进行结构校验、交叉去重、持久化、回读验证和失败补偿的完整架构。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0L9 4.5L0 9Z" fill="#1d5fc4"/>
+    </marker>
+    <marker id="arrow-muted" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0L9 4.5L0 9Z" fill="#6f839b"/>
+    </marker>
+    <style>
+      .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+      .page-title { fill: #17243a; font-size: 40px; font-weight: 700; letter-spacing: -1px; }
+      .subtitle { fill: #5a687b; font-size: 17px; }
+      .lane-kicker { fill: #1d5fc4; font-size: 10px; font-weight: 700; letter-spacing: .65px; }
+      .lane-title { fill: #17243a; font-size: 23px; font-weight: 700; }
+      .lane-note { fill: #5a687b; font-size: 11px; }
+      .stage { fill: #1d5fc4; font-size: 10px; font-weight: 700; letter-spacing: .55px; }
+      .card-title { fill: #17243a; font-size: 15px; font-weight: 700; }
+      .card-title-sm { fill: #17243a; font-size: 13px; font-weight: 700; }
+      .card-note { fill: #5a687b; font-size: 11px; }
+      .card-note-sm { fill: #5a687b; font-size: 10px; }
+      .code { fill: #245ca6; font-size: 9px; font-weight: 700; letter-spacing: .25px; }
+      .metric { fill: #17243a; font-size: 19px; font-weight: 700; }
+      .metric-note { fill: #5a687b; font-size: 10px; }
+      .flow { fill: none; stroke: #1d5fc4; stroke-width: 1.8; marker-end: url(#arrow); }
+      .flow-soft { fill: none; stroke: #5f8fc8; stroke-width: 1.5; marker-end: url(#arrow); }
+      .feedback { fill: none; stroke: #6f839b; stroke-width: 1.55; stroke-dasharray: 6 5; marker-end: url(#arrow-muted); }
+      .divider { stroke: #17243a; stroke-opacity: .13; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1120" fill="#edf5ff"/>
+  <g class="sans">
+    <text class="page-title" x="72" y="70">Feishu Agent：从规则触发到多模型质量交付</text>
+    <text class="subtitle" x="72" y="106">飞书事件驱动 · 业务上下文装配 · Agent 确定性编排 · 多模型生成与交叉去重 · 持久化回读闭环</text>
+    <g transform="translate(1118 48)">
+      <rect width="410" height="46" rx="2" fill="#ffffff" stroke="#17243a" stroke-opacity=".42"/>
+      <rect width="7" height="46" fill="#1d5fc4"/>
+      <text class="mono" x="24" y="29" fill="#17243a" font-size="11">FEISHU SYSTEM · AGENT ORCHESTRATION · LLM</text>
+    </g>
+    <path d="M72 130H1528" stroke="#17243a" stroke-opacity=".42"/>
+
+    <!-- Swimlane headers -->
+    <g transform="translate(72 150)">
+      <rect width="348" height="66" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".42"/>
+      <rect width="7" height="66" fill="#1d5fc4"/>
+      <text class="lane-kicker mono" x="24" y="23">EVENT &amp; BUSINESS SYSTEM</text>
+      <text class="lane-title" x="24" y="50">飞书系统</text>
+      <text class="lane-note" x="162" y="49">触发入口 · 业务数据 · 成果承载</text>
+    </g>
+    <g transform="translate(436 150)">
+      <rect width="652" height="66" fill="#dcecff" stroke="#1d5fc4" stroke-opacity=".58"/>
+      <rect width="7" height="66" fill="#1d5fc4"/>
+      <text class="lane-kicker mono" x="24" y="23">DETERMINISTIC AGENT RUNTIME</text>
+      <text class="lane-title" x="24" y="50">Agent 编排与质量治理</text>
+      <text class="lane-note" x="260" y="49">理解 · 路由 · 校验 · 持久化 · 补偿</text>
+    </g>
+    <g transform="translate(1104 150)">
+      <rect width="424" height="66" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".42"/>
+      <rect width="7" height="66" fill="#1d5fc4"/>
+      <text class="lane-kicker mono" x="24" y="23">MODEL EXECUTION PLANE</text>
+      <text class="lane-title" x="24" y="50">大模型</text>
+      <text class="lane-note" x="126" y="49">主模型 · 回退 · Union 并行</text>
+    </g>
+
+    <!-- Stage 01 -->
+    <g transform="translate(72 230)">
+      <rect width="348" height="118" fill="#ffffff" stroke="#17243a" stroke-opacity=".18"/>
+      <text class="stage mono" x="18" y="22">01 · RULE TRIGGER</text>
+      <text class="card-title" x="18" y="48">自动化规则触发质量任务</text>
+      <text class="card-note" x="18" y="71">需求创建 / 状态变化 / 指定字段变化</text>
+      <g transform="translate(18 83)">
+        <rect width="86" height="22" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".42"/>
+        <text class="card-title-sm" x="43" y="15" text-anchor="middle">Review</text>
+        <rect x="94" width="58" height="22" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".42"/>
+        <text class="card-title-sm" x="123" y="15" text-anchor="middle">AC</text>
+        <rect x="160" width="84" height="22" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".42"/>
+        <text class="card-title-sm" x="202" y="15" text-anchor="middle">Testcase</text>
+        <rect x="252" width="78" height="22" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".42"/>
+        <text class="card-title-sm" x="291" y="15" text-anchor="middle">White-box</text>
+      </g>
+    </g>
+    <path class="flow" d="M420 289H448"/>
+    <g transform="translate(436 230)">
+      <rect width="652" height="118" fill="#ffffff" stroke="#17243a" stroke-opacity=".18"/>
+      <text class="stage mono" x="18" y="22">TRIGGER GATEWAY</text>
+      <g transform="translate(18 34)">
+        <rect width="286" height="66" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".52"/>
+        <text class="code mono" x="16" y="18">webhook_trigger.py</text>
+        <text class="card-title" x="16" y="40">事件接收与命令归一化</text>
+        <text class="card-note-sm" x="16" y="57">连字符归一 · 空白折叠 · 原始事件留痕</text>
+      </g>
+      <path class="flow" d="M310 67H334"/>
+      <g transform="translate(340 34)">
+        <rect width="294" height="66" fill="#dcecff" stroke="#1d5fc4" stroke-opacity=".64"/>
+        <text class="code mono" x="16" y="18">PROJECT-AWARE COMMAND ROUTER</text>
+        <text class="card-title" x="16" y="40">识别项目并锁定唯一工具路径</text>
+        <text class="card-note-sm" x="16" y="57">Litmatch / OFO / NIMI · command → workflow</text>
+      </g>
+    </g>
+    <path class="flow" d="M1088 289H1116"/>
+    <g transform="translate(1104 230)">
+      <rect width="424" height="118" fill="#ffffff" stroke="#17243a" stroke-opacity=".18"/>
+      <text class="stage mono" x="18" y="22">FAIL-CLOSED BEFORE MODEL</text>
+      <rect x="18" y="36" width="388" height="64" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".44"/>
+      <text class="card-title" x="36" y="63">上下文通过后才允许调用模型</text>
+      <text class="card-note" x="36" y="84">PRD 不可读 / 项目不明确 → 停止，不生成残缺结果</text>
+    </g>
+
+    <!-- Stage 02 -->
+    <g transform="translate(72 362)">
+      <rect width="348" height="160" fill="#ffffff" stroke="#17243a" stroke-opacity=".18"/>
+      <text class="stage mono" x="18" y="22">02 · BUSINESS CONTEXT</text>
+      <text class="card-title" x="18" y="48">需求与关联资料</text>
+      <path class="divider" d="M18 61H330"/>
+      <text class="card-note" x="18" y="82">工作项字段 · 项目身份 · 目标状态</text>
+      <text class="card-note" x="18" y="103">PRD · Wiki · Sheet · 评论 · 图片</text>
+      <text class="card-note" x="18" y="124">MR 链接 · 已有成果字段 · 测试计划</text>
+      <text class="code mono" x="18" y="146">requirement analyze · document read</text>
+    </g>
+    <path class="flow" d="M420 442H448"/>
+    <g transform="translate(436 362)">
+      <rect width="652" height="160" fill="#ffffff" stroke="#17243a" stroke-opacity=".18"/>
+      <text class="stage mono" x="18" y="22">CONTEXT RESOLVER</text>
+      <text class="card-title" x="18" y="46">多源知识按任务装配，而不是整库灌入</text>
+      <g transform="translate(18 60)">
+        <rect width="192" height="70" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".46"/>
+        <text class="code mono" x="14" y="17">BUSINESS KNOWLEDGE</text>
+        <text class="card-title-sm" x="14" y="38">业务语义</text>
+        <text class="card-note-sm" x="14" y="56">PRD · 评论 · 文档 · 图像</text>
+        <rect x="210" width="192" height="70" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".46"/>
+        <text class="code mono" x="224" y="17">QA / DEFECT KNOWLEDGE</text>
+        <text class="card-title-sm" x="224" y="38">质量经验</text>
+        <text class="card-note-sm" x="224" y="56">16,041 缺陷 · 精确 / 混合检索</text>
+        <rect x="420" width="196" height="70" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".46"/>
+        <text class="code mono" x="434" y="17">CODE &amp; EXISTING STATE</text>
+        <text class="card-title-sm" x="434" y="38">代码与现状</text>
+        <text class="card-note-sm" x="434" y="56">MR Diff · 仓库 · 已有结果</text>
+      </g>
+      <text class="code mono" x="18" y="149">PluginAPIClient · DocAPIClient · 3-level traversal / dedupe / cycle guard</text>
+    </g>
+    <path class="flow" d="M1088 442H1116"/>
+    <g transform="translate(1104 362)">
+      <rect width="424" height="160" fill="#ffffff" stroke="#17243a" stroke-opacity=".18"/>
+      <text class="stage mono" x="18" y="22">TASK-SPECIFIC PROMPT CONTRACT</text>
+      <rect x="18" y="39" width="388" height="101" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".44"/>
+      <text class="card-title" x="36" y="66">只接收当前任务所需上下文</text>
+      <text class="card-note" x="36" y="89">事实 / 假设分离 · 角色与场景 · 验收口径</text>
+      <text class="card-note" x="36" y="110">历史缺陷证据 · 代码覆盖边界 · 输出 Schema</text>
+      <text class="code mono" x="36" y="130">context → prompt contract → model request</text>
+    </g>
+
+    <!-- Stage 03 -->
+    <g transform="translate(72 536)">
+      <rect width="348" height="158" fill="#ffffff" stroke="#17243a" stroke-opacity=".18"/>
+      <text class="stage mono" x="18" y="22">03 · QUALITY WORKFLOW</text>
+      <text class="card-title" x="18" y="48">同一工作项，按目标进入不同任务</text>
+      <g transform="translate(18 64)">
+        <rect width="148" height="31" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".42"/>
+        <text class="card-title-sm" x="74" y="20" text-anchor="middle">需求 Review</text>
+        <rect x="164" width="148" height="31" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".42"/>
+        <text class="card-title-sm" x="238" y="20" text-anchor="middle">AC 生成</text>
+        <rect y="43" width="148" height="31" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".42"/>
+        <text class="card-title-sm" x="74" y="63" text-anchor="middle">Testcase 生成</text>
+        <rect x="164" y="43" width="148" height="31" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".42"/>
+        <text class="card-title-sm" x="238" y="63" text-anchor="middle">MR White-box</text>
+      </g>
+      <text class="card-note-sm" x="18" y="148">自动触发，也支持工作项 URL / CLI 定向执行</text>
+    </g>
+    <path class="flow" d="M420 615H448"/>
+    <g transform="translate(436 536)">
+      <rect width="652" height="158" fill="#dcecff" stroke="#1d5fc4" stroke-opacity=".58"/>
+      <text class="stage mono" x="18" y="22">CONSTRAINED MODEL ROUTER</text>
+      <g transform="translate(18 38)">
+        <rect width="188" height="94" fill="#ffffff" stroke="#1d5fc4" stroke-opacity=".52"/>
+        <text class="code mono" x="14" y="18">requirement.py</text>
+        <text class="card-title-sm" x="14" y="40">场景模板与固定流程</text>
+        <text class="card-note-sm" x="14" y="59">Review / AC / White-box</text>
+        <text class="card-note-sm" x="14" y="77">唯一工具路径 · 防止路由漂移</text>
+        <rect x="206" width="188" height="94" fill="#ffffff" stroke="#1d5fc4" stroke-opacity=".52"/>
+        <text class="code mono" x="220" y="18">testcase gen</text>
+        <text class="card-title-sm" x="220" y="40">用例生成策略</text>
+        <text class="card-note-sm" x="220" y="59">单模型默认 · Union 显式启用</text>
+        <text class="card-note-sm" x="220" y="77">解析失败 / 空结果不可导入</text>
+        <rect x="412" width="204" height="94" fill="#ffffff" stroke="#1d5fc4" stroke-opacity=".52"/>
+        <text class="code mono" x="426" y="18">MODEL ROUTER</text>
+        <text class="card-title-sm" x="426" y="40">路由与降级</text>
+        <text class="card-note-sm" x="426" y="59">Primary · Override · Fallback</text>
+        <text class="card-note-sm" x="426" y="77">超时 / 负载 / 资源保护</text>
+      </g>
+      <text class="code mono" x="18" y="149">systemPrompt → constrained command → model route → structured output</text>
+    </g>
+    <path class="flow" d="M1088 615H1116"/>
+    <g transform="translate(1104 536)">
+      <rect width="424" height="158" fill="#ffffff" stroke="#17243a" stroke-opacity=".18"/>
+      <text class="stage mono" x="18" y="22">MODEL EXECUTION</text>
+      <g transform="translate(18 39)">
+        <rect width="181" height="42" fill="#dcecff" stroke="#1d5fc4" stroke-opacity=".62"/>
+        <text class="card-title-sm" x="90.5" y="26" text-anchor="middle">Primary Model</text>
+        <rect x="207" width="181" height="42" fill="#ffffff" stroke="#1d5fc4" stroke-opacity=".48"/>
+        <text class="card-title-sm" x="297.5" y="26" text-anchor="middle">Fallback / Override</text>
+        <rect y="57" width="181" height="42" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".52"/>
+        <text class="card-title-sm" x="90.5" y="83" text-anchor="middle">Union Model A</text>
+        <rect x="207" y="57" width="181" height="42" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".52"/>
+        <text class="card-title-sm" x="297.5" y="83" text-anchor="middle">Union Model B</text>
+      </g>
+      <text class="card-note-sm" x="18" y="149">Union 按需并行；不是每次任务的默认路径</text>
+    </g>
+
+    <!-- Stage 04 -->
+    <g transform="translate(72 708)">
+      <rect width="348" height="142" fill="#ffffff" stroke="#17243a" stroke-opacity=".18"/>
+      <text class="stage mono" x="18" y="22">04 · TARGET ARTIFACT</text>
+      <text class="card-title" x="18" y="48">成果必须进入业务对象</text>
+      <path class="divider" d="M18 61H330"/>
+      <text class="card-note" x="18" y="82">Review / AC 文档</text>
+      <text class="card-note" x="18" y="103">XMind / Test Management / 测试计划</text>
+      <text class="card-note" x="18" y="124">White-box 报告 / 缺陷建议</text>
+    </g>
+    <path class="flow" d="M420 779H448"/>
+    <g transform="translate(436 708)">
+      <rect width="652" height="142" fill="#ffffff" stroke="#17243a" stroke-opacity=".18"/>
+      <text class="stage mono" x="18" y="22">RESULT GOVERNOR</text>
+      <text class="card-title" x="18" y="47">模型输出先治理，再进入飞书</text>
+      <g transform="translate(18 62)">
+        <rect width="140" height="54" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".46"/>
+        <text class="card-title-sm" x="70" y="22" text-anchor="middle">结构归一</text>
+        <text class="card-note-sm" x="70" y="40" text-anchor="middle">Schema / 非空 / 可解析</text>
+        <path class="flow-soft" d="M140 27H159"/>
+        <rect x="166" width="140" height="54" fill="#dcecff" stroke="#1d5fc4" stroke-opacity=".62"/>
+        <text class="card-title-sm" x="236" y="22" text-anchor="middle">交叉去重</text>
+        <text class="card-note-sm" x="236" y="40" text-anchor="middle">Union normalize / dedupe</text>
+        <path class="flow-soft" d="M306 27H325"/>
+        <rect x="332" width="140" height="54" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".46"/>
+        <text class="card-title-sm" x="402" y="22" text-anchor="middle">合并与覆盖</text>
+        <text class="card-note-sm" x="402" y="40" text-anchor="middle">冲突保留 · 证据引用</text>
+        <path class="flow-soft" d="M472 27H491"/>
+        <rect x="498" width="118" height="54" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".46"/>
+        <text class="card-title-sm" x="557" y="22" text-anchor="middle">结果校验</text>
+        <text class="card-note-sm" x="557" y="40" text-anchor="middle">覆盖缺口 ≠ 假成功</text>
+      </g>
+      <text class="code mono" x="18" y="133">candidate outputs → normalize → cross-model deduplicate → merge → validate</text>
+    </g>
+    <path class="feedback" d="M1288 704C1288 735 1190 736 1092 753"/>
+    <g transform="translate(1104 708)">
+      <rect width="424" height="142" fill="#ffffff" stroke="#17243a" stroke-opacity=".18"/>
+      <text class="stage mono" x="18" y="22">CANDIDATE OUTPUTS</text>
+      <rect x="18" y="40" width="181" height="38" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".44"/>
+      <text class="card-title-sm" x="108.5" y="24" text-anchor="middle" transform="translate(0 40)">Candidate A</text>
+      <rect x="225" y="40" width="181" height="38" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".44"/>
+      <text class="card-title-sm" x="315.5" y="24" text-anchor="middle" transform="translate(0 40)">Candidate B</text>
+      <text class="card-title" x="18" y="105">生成完成 ≠ 业务交付完成</text>
+      <text class="card-note" x="18" y="126">候选结果必须经过 Agent 校验、融合与持久化</text>
+    </g>
+
+    <!-- Stage 05 -->
+    <g transform="translate(72 864)">
+      <rect width="348" height="142" fill="#ffffff" stroke="#17243a" stroke-opacity=".18"/>
+      <text class="stage mono" x="18" y="22">05 · PERSIST &amp; VERIFY</text>
+      <text class="card-title" x="18" y="48">写回飞书并成为可用成果</text>
+      <path class="divider" d="M18 61H330"/>
+      <text class="card-note" x="18" y="82">创建文档 · 导入用例 · 关联测试计划</text>
+      <text class="card-note" x="18" y="103">字段写回 · PRD 评论同步 · 定向通知</text>
+      <text class="card-note" x="18" y="124">公司内可编辑权限与目标链接可访问</text>
+    </g>
+    <path class="feedback" d="M448 935H420"/>
+    <g transform="translate(436 864)">
+      <rect width="652" height="142" fill="#dcecff" stroke="#1d5fc4" stroke-opacity=".58"/>
+      <text class="stage mono" x="18" y="22">PERSISTENCE &amp; COMPENSATION</text>
+      <g transform="translate(18 39)">
+        <rect width="185" height="67" fill="#ffffff" stroke="#1d5fc4" stroke-opacity=".50"/>
+        <text class="code mono" x="14" y="18">DocAPIClient</text>
+        <text class="card-title-sm" x="14" y="39">文档与权限</text>
+        <text class="card-note-sm" x="14" y="56">create · write · permission</text>
+        <path class="flow" d="M185 33H204"/>
+        <rect x="211" width="185" height="67" fill="#ffffff" stroke="#1d5fc4" stroke-opacity=".50"/>
+        <text class="code mono" x="225" y="18">PluginAPIClient</text>
+        <text class="card-title-sm" x="225" y="39">字段与关系写回</text>
+        <text class="card-note-sm" x="225" y="56">link · field · relation</text>
+        <path class="flow" d="M396 33H415"/>
+        <rect x="422" width="194" height="67" fill="#ffffff" stroke="#1d5fc4" stroke-opacity=".50"/>
+        <text class="code mono" x="436" y="18">RE-READ VERIFIER</text>
+        <text class="card-title-sm" x="436" y="39">回读验证与精准补偿</text>
+        <text class="card-note-sm" x="436" y="56">空字段 / 无效链接才重放</text>
+      </g>
+      <text class="code mono" x="18" y="132">generate → persist → re-read → verify · repair relation only · avoid duplicate artifact</text>
+    </g>
+    <path class="feedback" d="M1104 935H1080"/>
+    <g transform="translate(1104 864)">
+      <rect width="424" height="142" fill="#ffffff" stroke="#17243a" stroke-opacity=".18"/>
+      <text class="stage mono" x="18" y="22">COMPLETION BOUNDARY</text>
+      <rect x="18" y="40" width="388" height="76" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity=".44"/>
+      <text class="card-title" x="36" y="68">成功以业务产物为准</text>
+      <text class="card-note" x="36" y="90">不是“模型返回 / 进程退出 0 / 通知已发送”</text>
+      <text class="code mono" x="36" y="108">artifact exists · field linked · permission verified</text>
+    </g>
+
+    <!-- Closed loop and evidence strip -->
+    <g transform="translate(72 1022)">
+      <rect width="1456" height="62" fill="#ffffff" stroke="#17243a" stroke-opacity=".18"/>
+      <rect width="7" height="62" fill="#1d5fc4"/>
+      <text class="stage mono" x="22" y="21">CLOSED DELIVERY LOOP</text>
+      <text class="card-title-sm" x="22" y="44">规则触发 → Context → Model → Fusion → Persist → Re-read → Replay</text>
+      <path d="M420 12V50" class="divider"/>
+      <text class="metric" x="448" y="30">16,041</text>
+      <text class="metric-note" x="448" y="47">历史缺陷 · 精确/混合检索 · 10 分钟增量</text>
+      <path d="M782 12V50" class="divider"/>
+      <text class="metric" x="810" y="30">7 需求 × 6 模型家族</text>
+      <text class="metric-note" x="810" y="47">历史对照评测 · Union 并行与去重</text>
+      <path d="M1164 12V50" class="divider"/>
+      <text class="metric" x="1192" y="30">4 类核心成果</text>
+      <text class="metric-note" x="1192" y="47">Review · AC · Testcase · White-box</text>
+    </g>
+
+    <path d="M72 1100H1528" stroke="#17243a" stroke-opacity=".30"/>
+    <text x="72" y="1112" fill="#5a687b" font-size="9">公开架构图 · 内部凭据、地址、字段标识与业务数据均已脱敏</text>
+    <text x="1528" y="1112" text-anchor="end" fill="#5a687b" font-size="9">张晨 / Agent 质量工程</text>
+  </g>
+</svg>

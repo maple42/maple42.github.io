@@ -14,8 +14,8 @@
     <meta property="og:image" content="https://maple42.github.io/assets/risk-observations-redacted.webp">
     <meta name="twitter:card" content="summary_large_image">
     <title>自动化应用｜张晨</title>
-    <link rel="stylesheet" href="/styles.css?v=20260930-evidence-wall">
-    <script src="/app.js?v=20260930-evidence-wall" defer></script>
+    <link rel="stylesheet" href="/styles.css?v=20260930-case-carousel">
+    <script src="/app.js?v=20260930-case-carousel" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">跳到主要内容</a>
@@ -84,54 +84,76 @@
         <div class="section-heading reveal">
           <p class="section-index">综合案例</p>
           <h2 id="test-case-title">一套框架覆盖 App、游戏与 H5</h2>
-          <p>
-            依据历史飞书报告与本地运行记录归并。三类产品形态共用场景建模、设备编排、动作执行和数据归档，
-            但按照各自数据完整度分别陈述，不把截图数量当成测试成果。
-          </p>
+          <p>Cuddmi、Mochi、NIMI、Litmatch H5 与游戏运行态案例，均来自历史报告和本地运行记录。</p>
         </div>
 
-        <article class="capability-row case-study-row">
-          <div class="case-evidence-gallery reveal" role="group" aria-label="桌面案例包中的真实运行数据">
-            <figure class="case-evidence-card case-evidence-card-wide">
-              <a class="snapshot-image-link" href="/assets/litmatch-h5-localization-public-01.jpg" target="_blank" rel="noopener" aria-label="查看 Litmatch H5 多语种真机遍历运行数据一大图">
-                <img src="/assets/litmatch-h5-localization-public-01.jpg" alt="Litmatch H5 英语、泰语和越南语真机遍历精选截图，标识信息已遮挡" width="1030" height="1160" loading="lazy" decoding="async">
-              </a>
-              <figcaption><strong>H5 / 运行数据 01</strong><span>英语、泰语、越南语 · 原报告精选帧，标识已遮挡</span></figcaption>
-            </figure>
-            <figure class="case-evidence-card">
-              <a class="snapshot-image-link" href="/assets/litmatch-h5-localization-public-02.jpg" target="_blank" rel="noopener" aria-label="查看 Litmatch H5 多语种真机遍历运行数据二大图">
-                <img src="/assets/litmatch-h5-localization-public-02.jpg" alt="Litmatch H5 葡萄牙语、土耳其语、阿拉伯语和繁体中文真机遍历精选截图，标识信息已遮挡" width="1030" height="1160" loading="lazy" decoding="async">
-              </a>
-              <figcaption><strong>H5 / 运行数据 02</strong><span>葡萄牙语、土耳其语、阿拉伯语、繁体中文 · 原报告精选帧</span></figcaption>
-            </figure>
-            <figure class="case-evidence-card">
-              <a class="snapshot-image-link" href="/assets/game-visual-annotation-redacted.png" target="_blank" rel="noopener" aria-label="查看已遮挡的游戏视觉识别标注样本大图">
-                <img src="/assets/game-visual-annotation-redacted.png" alt="已遮挡的骰子对战游戏界面元素定位与区域标注样本" width="828" height="1792" loading="lazy" decoding="async">
-              </a>
-              <figcaption><strong>游戏 / 识别样本</strong><span>关键 UI 区域、识别锚点与赔率信息标注</span></figcaption>
-            </figure>
-          </div>
-          <div class="capability-copy reveal">
-            <p class="section-index">案例归并</p>
-            <h2>三类界面，共用一条执行与数据链</h2>
-            <p class="capability-intro">
-              用例仍然描述登录、发布、互动、权限和结果校验等业务动作；结构化控件、OCR、CV 与视觉模型只负责适配不同界面，
-              最终都输出可回看的动作轨迹、截图、录屏和报告。
-            </p>
-            <ul class="detail-list">
-              <li><span>App</span><div><strong>Cuddmi、Mochi 与 NIMI 业务链路</strong><p>Cuddmi 覆盖 AI 角色创建与连续对话；Mochi 验证跨账号隐私隔离；NIMI 完成双机系统来电与三机语音房角色、权限校验。</p></div></li>
-              <li><span>游戏</span><div><strong>骰子对战、龙虎斗与宠物玩法</strong><p>运行态素材覆盖 Canvas 动态画面中的目标定位、局面判断与结果标注，用于验证 CV / VLM 感知层，不据此推导完整通过率。</p></div></li>
-              <li><span>H5</span><div><strong>重点案例：Litmatch H5 8 语种本地化适配验证</strong><p>在真机上覆盖英语、泰语、越南语、印尼语、葡萄牙语、土耳其语、阿拉伯语与繁体中文；逐状态检查文本可见性、换行与截断、RTL 排版、登录态和页面跳转，而不是只确认翻译文本存在。</p></div></li>
-            </ul>
-            <div class="evidence-numbers" aria-label="跨形态自动化案例数据">
-              <div><strong>8 种</strong><span>本地化语言</span></div>
-              <div><strong>8 个</strong><span>页面状态</span></div>
-              <div><strong>64</strong><span>真机场景单元</span></div>
-              <div><strong>116</strong><span>截图与标注数据</span></div>
+        <div class="case-carousel reveal" role="region" data-case-carousel aria-roledescription="轮播图" aria-label="App、游戏与 H5 自动化案例">
+          <div class="case-carousel-toolbar">
+            <div class="case-carousel-tabs" role="tablist" aria-label="选择案例">
+              <button id="case-tab-app" type="button" role="tab" aria-selected="true" aria-controls="case-slide-app" tabindex="0" data-carousel-tab data-carousel-index="0">App</button>
+              <button id="case-tab-game" type="button" role="tab" aria-selected="false" aria-controls="case-slide-game" tabindex="-1" data-carousel-tab data-carousel-index="1">游戏</button>
+              <button id="case-tab-h5" type="button" role="tab" aria-selected="false" aria-controls="case-slide-h5" tabindex="-1" data-carousel-tab data-carousel-index="2">H5</button>
             </div>
-            <p class="evidence-note"><strong>数据范围：</strong>App 与 H5 依据完整报告；游戏部分依据运行态截图库，只用于说明动态画面识别与标注能力。</p>
+            <div class="case-carousel-controls" aria-label="切换案例">
+              <button type="button" aria-label="上一个案例" data-carousel-prev>←</button>
+              <span aria-live="polite" aria-atomic="true" data-carousel-status>1 / 3</span>
+              <button type="button" aria-label="下一个案例" data-carousel-next>→</button>
+            </div>
           </div>
-        </article>
+
+          <div class="case-carousel-viewport" tabindex="0" data-carousel-viewport aria-label="案例画廊，可左右滑动">
+            <div class="case-carousel-track">
+              <figure class="case-slide" id="case-slide-app" role="tabpanel" aria-labelledby="case-tab-app" data-carousel-slide>
+                <a class="snapshot-image-link case-slide-media" href="/assets/app-automation-cuddmi-public.jpg" target="_blank" rel="noopener" aria-label="查看 Cuddmi App 角色创建自动化运行图大图">
+                  <img src="/assets/app-automation-cuddmi-public.jpg" alt="Cuddmi App 角色创建流程的六张真实运行截图" width="1200" height="1358" loading="lazy" decoding="async">
+                </a>
+                <figcaption>
+                  <p class="section-index">App</p>
+                  <h3>Cuddmi、Mochi 与 NIMI 业务链路</h3>
+                  <p>画面展示 Cuddmi；同批历史报告还包含 Mochi 的跨账号隐私隔离，以及 NIMI 的双机来电与三机语音房权限校验。</p>
+                  <span>角色创建 · 隐私隔离 · 多设备互动</span>
+                </figcaption>
+              </figure>
+
+              <figure class="case-slide" id="case-slide-game" role="tabpanel" aria-labelledby="case-tab-game" aria-hidden="true" data-carousel-slide>
+                <a class="snapshot-image-link case-slide-media" href="/assets/game-pet-runtime-public.jpg" target="_blank" rel="noopener" aria-label="查看宠物玩法真实运行图大图" tabindex="-1">
+                  <img src="/assets/game-pet-runtime-public.jpg" alt="宠物玩法移动端真实运行页面与关键区域局部图" width="1200" height="900" loading="lazy" decoding="async">
+                </a>
+                <figcaption>
+                  <p class="section-index">游戏</p>
+                  <h3>动态画面的运行与识别</h3>
+                  <p>画面展示宠物玩法真实运行页面；同批运行素材还包含骰子对战的 UI 区域和识别锚点。这些截图只说明识别方式，不代表整体通过率。</p>
+                  <span>运行态 · UI 区域识别 · CV / VLM</span>
+                </figcaption>
+              </figure>
+
+              <figure class="case-slide" id="case-slide-h5" role="tabpanel" aria-labelledby="case-tab-h5" aria-hidden="true" data-carousel-slide>
+                <div class="case-slide-media case-slide-media-pair">
+                  <a class="snapshot-image-link" href="/assets/litmatch-h5-localization-public-01.jpg" target="_blank" rel="noopener" aria-label="查看 Litmatch H5 英语、泰语和越南语真机遍历图大图" tabindex="-1">
+                    <img src="/assets/litmatch-h5-localization-public-01.jpg" alt="Litmatch H5 英语、泰语和越南语真机遍历精选截图，标识信息已遮挡" width="1030" height="1160" loading="lazy" decoding="async">
+                  </a>
+                  <a class="snapshot-image-link" href="/assets/litmatch-h5-localization-public-02.jpg" target="_blank" rel="noopener" aria-label="查看 Litmatch H5 葡萄牙语、土耳其语、阿拉伯语和繁体中文真机遍历图大图" tabindex="-1">
+                    <img src="/assets/litmatch-h5-localization-public-02.jpg" alt="Litmatch H5 葡萄牙语、土耳其语、阿拉伯语和繁体中文真机遍历精选截图，标识信息已遮挡" width="1030" height="1160" loading="lazy" decoding="async">
+                  </a>
+                </div>
+                <figcaption>
+                  <p class="section-index">H5</p>
+                  <h3>Litmatch H5 8 语种真机遍历</h3>
+                  <p>完整报告覆盖 8 种语言，本页选取其中 7 种公开展示；逐状态检查文本可见性、换行与截断、RTL 排版、登录态和页面跳转。</p>
+                  <span>8 语种 · 8 页面状态 · 64 场景单元</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="evidence-numbers case-carousel-numbers" aria-label="H5 多语言验证数据">
+          <div><strong>8 种</strong><span>本地化语言</span></div>
+          <div><strong>8 个</strong><span>页面状态</span></div>
+          <div><strong>64</strong><span>真机场景单元</span></div>
+          <div><strong>116</strong><span>份截图及标注</span></div>
+        </div>
+        <p class="evidence-note"><strong>数据范围：</strong>App 与 H5 依据完整报告；游戏部分依据运行态截图库，只用于说明动态画面识别与标注能力。</p>
       </section>
 
       <section class="case-section section-pad" id="specialties" aria-labelledby="specialties-title">
