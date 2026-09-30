@@ -45,7 +45,8 @@
             <h1 id="agent-architecture-title">Spook AI Guard</h1>
             <p>
               通过本地 Skill 或插件，将 Codex、Claude Code 等 AI 编码任务的生命周期事件<strong>自动上报</strong>至治理平台；代码生成前，按仓库、语言和任务场景装配工程规则、历史缺陷库与业务知识库，形成可追溯的<strong>生成前上下文</strong>。
-              执行过程中，通过 GitLab、Codeup 等代码库 API 回读提交、分支、MR 与流水线事件，并与本地 Agent 轨迹进行<strong>交叉验证与风险识别</strong>；最终依据业务规则完成<strong>风险路由与责任人推送</strong>，将风险项和处置建议定向送达研发、QA 与产运，形成生成前约束、过程观测、结果验证和风险处置闭环。
+              生成过程中，将计划、工具调用、代码变更、验证结果与风险信号统一记录为质量事件，建立可检索、可回放、可审计的<strong>全过程可观测</strong>链路；同时通过 GitLab、Codeup 等代码库 API 回读提交、分支、MR 与流水线事件，与本地 Agent 轨迹进行<strong>交叉验证与风险识别</strong>。
+              系统依据规则命中、确定性检查、风险等级和验证证据执行<strong>质量门禁决策</strong>，对低风险变更放行、异常结果进入复核、高风险变更阻断并要求修复重验；最终依据业务规则完成<strong>风险路由与责任人推送</strong>，将风险项、证据和处置建议定向送达研发、QA 与产运，形成生成前约束、过程观测、门禁决策、结果验证和风险处置闭环。
             </p>
           </div>
         </div>
@@ -60,10 +61,6 @@
               decoding="async"
             >
           </a>
-          <figcaption>
-            <p><strong>Spook AI Guard</strong> · 生成前质量合同与质量门禁</p>
-            <p>点击查看原图<span class="mobile-scroll-hint"> · 可横向滚动查看细节</span></p>
-          </figcaption>
         </figure>
       </section>
 
@@ -89,10 +86,6 @@
               decoding="async"
             >
           </a>
-          <figcaption>
-            <p><strong>Feishu Agent</strong> · 从规则触发到多模型质量交付</p>
-            <p>点击查看原图<span class="mobile-scroll-hint"> · 可横向滚动查看细节</span></p>
-          </figcaption>
         </figure>
 
         <ol class="system-stack reveal" aria-label="质量工程控制平面分层架构">
