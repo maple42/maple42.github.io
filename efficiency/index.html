@@ -3,21 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="张晨的效能提升实践：把重复工作做成工具，再用运行数据判断优化是否真的有效。">
+    <meta name="description" content="张晨的研发效能与质量左移实践：覆盖测试回归、研发协作与跨团队业务流程，把需求、执行资源和结果回写接成可复用链路。">
     <meta name="theme-color" content="#102f57">
     <link rel="canonical" href="https://maple42.github.io/efficiency/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="zh_CN">
-    <meta property="og:title" content="效能提升｜张晨">
-    <meta property="og:description" content="把重复工作做成工具，用运行数据判断一次优化是否真的有效。">
+    <meta property="og:title" content="研发效能与质量左移｜张晨">
+    <meta property="og:description" content="让问题更早发现，减少测试、研发与业务流程中的等待和重复搬运。">
     <meta property="og:url" content="https://maple42.github.io/efficiency/">
-    <meta property="og:image" content="https://maple42.github.io/assets/rule-center-redacted.webp">
     <meta name="twitter:card" content="summary_large_image">
-    <title>效能提升｜张晨</title>
-    <link rel="stylesheet" href="/styles.css?v=20260930-case-carousel">
-    <script src="/app.js?v=20260930-case-carousel" defer></script>
+    <title>研发效能与质量左移｜张晨</title>
+    <link rel="stylesheet" href="/styles.css?v=20261001-efficiency-scope">
+    <script src="/app.js?v=20261001-efficiency-shift-left" defer></script>
   </head>
-  <body>
+  <body class="efficiency-page">
     <a class="skip-link" href="#main">跳到主要内容</a>
 
     <header class="site-header" data-header>
@@ -32,139 +31,366 @@
       <nav class="primary-nav" id="primary-nav" aria-label="主要导航" data-nav>
         <a href="/agent/">Agent</a>
         <a href="/automation/">自动化</a>
-        <a class="active" href="/efficiency/" aria-current="page">效能提升</a>
-        <a href="/evidence/">公开数据</a>
+        <a class="active" href="/efficiency/" aria-current="page">效能与左移</a>
+        <a href="/evidence/">部分脱敏数据</a>
       </nav>
     </header>
 
     <main id="main">
-      <section class="hero" id="top" aria-labelledby="hero-title">
+      <section class="hero efficiency-hero" id="top" aria-labelledby="hero-title">
         <div class="hero-copy reveal">
-          <p class="eyebrow"><span></span> 张晨 / 工作记录</p>
-          <h1 id="hero-title">工程效能与质量治理</h1>
+          <p class="eyebrow">研发效能 / 质量左移</p>
+          <h1 id="hero-title">问题更早发现，<br>交付更少等待</h1>
           <p class="hero-lede">
-            我会先找出真正消耗时间的环节，再把稳定做法做成 CLI、Skill、SOP 或工作台，
-            最后用<strong>时间、成本、质量和交付稳定性</strong>检查它有没有产生收益。
+            把质量判断前移到需求、编码和提交阶段，同时减少测试回归、资源准备、结果整理和跨团队反馈中的重复搬运。
+            PRD、Review、AC、包、设备、账号与报告沿同一条交付链运行。
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#practice">查看实际做法 <span aria-hidden="true">↓</span></a>
-            <a class="text-link" href="/evidence/">查看脱敏运行数据 <span aria-hidden="true">→</span></a>
+            <a class="button button-primary" href="#efficiency-scope">查看三类效率 <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="#shift-left">查看质量如何左移 <span aria-hidden="true">→</span></a>
           </div>
         </div>
 
-        <div class="proof-strip reveal" aria-label="效能运行数据摘要">
+        <div class="proof-strip efficiency-proof reveal" aria-label="研发效能与质量左移运行数据摘要">
           <article>
-            <strong>14</strong>
-            <span>既有产物安全补充</span>
+            <strong>16,041 条</strong>
+            <span>编码前可检索的历史缺陷</span>
           </article>
           <article>
-            <strong>0</strong>
-            <span>既有原文被替换</span>
+            <strong>AI 友好</strong>
+            <span>业务知识库</span>
           </article>
           <article>
-            <strong>351</strong>
-            <span>多来源反馈记录</span>
+            <strong>30 条</strong>
+            <span>公共与端侧工程规则</span>
           </article>
           <article>
-            <strong>6.6 GB</strong>
-            <span>待归档校验空间</span>
+            <strong>104 个</strong>
+            <span>核心仓库治理视角</span>
           </article>
         </div>
       </section>
 
-      <section class="manifesto section-pad reveal" aria-label="效能提升定位">
-        <p class="section-index">判断标准</p>
-        <h2>用速度、质量和复用成本判断优化是否有效</h2>
-        <p>
-          Agent 负责判断与生成，自动化负责稳定执行；效能提升负责衡量真实收益，
-          把有效做法整理成团队能用的工具，再根据运行结果调整规则与工作流。
+      <section class="section-pad efficiency-scope" id="efficiency-scope" aria-labelledby="efficiency-scope-title">
+        <div class="section-heading reveal">
+          <p class="section-index">三类效率</p>
+          <h2 id="efficiency-scope-title">不只让测试跑得更快</h2>
+          <p>测试侧减少无效执行，研发侧减少等待与交接，跨团队流程减少人工搬运；三条链分别用真实运行结果衡量。</p>
+        </div>
+
+        <div class="efficiency-lanes">
+          <article class="efficiency-lane reveal">
+            <span>01 / 测试效率</span>
+            <h3>缩小回归范围，批量执行后只看异常</h3>
+            <p>精准回归将 Lit 核心回归集从 1,500 条收敛到 800 条；473 条素材完成真机批量验证，并按置信度把 2 条保守项交给人工复核。</p>
+            <dl class="lane-metrics">
+              <div><dt>核心回归集</dt><dd>1,500 → 800</dd></div>
+              <div><dt>真机批量验证</dt><dd>473 条</dd></div>
+            </dl>
+            <a class="text-link" href="#precision-regression">查看精准回归 <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="efficiency-lane reveal">
+            <span>02 / 研发效率</span>
+            <h3>把取包、设备、账号和回写接到同一入口</h3>
+            <p>QA-manager 与 Feishu CLI 承接从需求输入到报告回写的连续任务，公共能力覆盖五个项目；六个 Jenkins 包源统一完成入库、去重、解析与部署。</p>
+            <dl class="lane-metrics">
+              <div><dt>统一入口</dt><dd>5 个项目</dd></div>
+              <div><dt>自动接入</dt><dd>6 个包源</dd></div>
+            </dl>
+            <a class="text-link" href="#delivery-system">查看交付链路 <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="efficiency-lane reveal">
+            <span>03 / 业务流程效率</span>
+            <h3>把跨团队汇总改成持续流转</h3>
+            <p>用户反馈 SOP 连接应用市场和内部运营后台，统一处理 351 条反馈与 423 个附件；系统负责每日同步、归并、预警和按需导出。</p>
+            <dl class="lane-metrics">
+              <div><dt>统一接入</dt><dd>3 类来源</dd></div>
+              <div><dt>更新方式</dt><dd>每日增量</dd></div>
+            </dl>
+            <a class="text-link" href="#feedback-loop">查看业务流程 <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-pad shift-section" id="shift-left" aria-labelledby="shift-title">
+        <div class="section-heading reveal">
+          <p class="section-index">发现位置前移</p>
+          <h2 id="shift-title">同一个问题，更早被看见</h2>
+          <p>左侧是现在的处理位置，右侧是过去更依赖的发现位置；箭头表示检查向需求与编码阶段移动。</p>
+        </div>
+        <div class="shift-move-list reveal">
+          <article class="shift-move">
+            <div class="shift-now">
+              <span>前移到 · 需求进入时</span>
+              <strong>PRD 读取 + Review / AC</strong>
+              <p>需求触发后自动读取正文、评论、链接与图片，并按角色推送分析结果。</p>
+            </div>
+            <div class="shift-arrow" aria-hidden="true"><span>←</span><b>↑</b></div>
+            <div class="shift-before">
+              <span>原本更依赖 · 测试设计时</span>
+              <strong>需求理解与验收遗漏</strong>
+              <p>到准备用例或联调时再人工补齐上下文。</p>
+            </div>
+          </article>
+          <article class="shift-move">
+            <div class="shift-now">
+              <span>前移到 · 编码之前</span>
+              <strong>业务知识库 + 工程规则检索</strong>
+              <p>16,041 条历史缺陷被整理为 AI 友好的业务知识库，与公共规则一起在生成、编码和测试分析前进入上下文。</p>
+            </div>
+            <div class="shift-arrow" aria-hidden="true"><span>←</span><b>↑</b></div>
+            <div class="shift-before">
+              <span>原本更依赖 · 回归与复盘</span>
+              <strong>同类问题再次出现</strong>
+              <p>依靠个人经验在回归或线上问题复盘时重新识别。</p>
+            </div>
+          </article>
+          <article class="shift-move">
+            <div class="shift-now">
+              <span>前移到 · 接口与白盒阶段</span>
+              <strong>业务规则先于 App 回归执行</strong>
+              <p>越权、幂等、回调来源与资产对账规则先在接口和代码上下文中检查。</p>
+            </div>
+            <div class="shift-arrow" aria-hidden="true"><span>←</span><b>↑</b></div>
+            <div class="shift-before">
+              <span>原本更依赖 · 客户端回归</span>
+              <strong>业务逻辑风险</strong>
+              <p>等待可运行版本后，再通过端到端流程发现问题。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-pad left-shift-cases" id="left-shift-cases" aria-labelledby="left-shift-title">
+        <div class="section-heading reveal">
+          <p class="section-index">三个左移落点</p>
+          <h2 id="left-shift-title">检查真正进入需求、编码与提交阶段</h2>
+          <p>不是把测试动作简单提前，而是让每个阶段拿到适合自己的上下文、规则和结果。</p>
+        </div>
+        <div class="left-shift-grid">
+          <article class="left-shift-card reveal">
+            <span>01 / 需求阶段</span>
+            <h3>需求进入时就开始 Review</h3>
+            <p>Review、AC 和用例生成按规则自动触发；PRD 摘要、评论、内外部链接与历史缺陷一起进入分析，并按 PM、RD、QA 角色精准推送。</p>
+            <div class="left-shift-result"><strong>Review · AC · Testcase</strong><small>从独立动作变成连续入口</small></div>
+          </article>
+          <article class="left-shift-card reveal">
+            <span>02 / 编码阶段</span>
+            <h3>先检索历史问题，再开始实现</h3>
+            <p>四个产品的历史缺陷持续增量同步，并整理为 AI 可检索、可引用的业务知识库；配合 30 条公共与端侧规则，在编码和测试分析中直接复用。</p>
+            <div class="left-shift-result"><strong>16,041 条 · 结构化沉淀</strong><small>历史问题成为 AI 可复用的业务上下文</small></div>
+          </article>
+          <article class="left-shift-card reveal">
+            <span>03 / 提交与联调阶段</span>
+            <h3>业务逻辑不必等 App 可测</h3>
+            <p>白盒检查已在多个项目、十余个需求中运行；接口规则覆盖越权、幂等、回调来源与资产对账，并在真实项目完成验证。</p>
+            <div class="left-shift-result"><strong>多个项目 · 十余个需求</strong><small>客户端回归之前先挡住逻辑风险</small></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-pad precision-regression" id="precision-regression" aria-labelledby="precision-title">
+        <div class="section-heading reveal">
+          <p class="section-index">精准回归</p>
+          <h2 id="precision-title">从“参考一下”变成回归前固定检查</h2>
+          <p>
+            精准结果不再只做辅助判断：先分析本次变更可能波及的模块与测试点，
+            再把反馈补进回归清单，并在执行前与研发共同 Review。
+          </p>
+        </div>
+
+        <div class="precision-layout reveal">
+          <div class="precision-flow" aria-label="精准回归工作流">
+            <article class="precision-step">
+              <span>01</span>
+              <div>
+                <small>变更输入</small>
+                <h3>把本次改动放回需求上下文</h3>
+                <p>结合变更范围、需求信息和已有回归集，确定这次分析的边界。</p>
+              </div>
+            </article>
+            <article class="precision-step">
+              <span>02</span>
+              <div>
+                <small>影响判断</small>
+                <h3>定位可能受影响的业务与测试点</h3>
+                <p>先输出候选影响范围，避免默认把整套回归集从头跑一遍。</p>
+              </div>
+            </article>
+            <article class="precision-step">
+              <span>03</span>
+              <div>
+                <small>共同确认</small>
+                <h3>按精准反馈补测试点，并与研发 Review</h3>
+                <p>把分析结果转成可执行的检查项，由研发和测试一起确认遗漏与优先级。</p>
+              </div>
+            </article>
+            <article class="precision-step">
+              <span>04</span>
+              <div>
+                <small>定向执行</small>
+                <h3>围绕确认后的风险点组织回归</h3>
+                <p>自助链路已经初步可用，回归范围随反馈持续校准，而不是一次性固化。</p>
+              </div>
+            </article>
+          </div>
+
+          <aside class="precision-proof" aria-label="精准回归落地结果">
+            <p>落地结果</p>
+            <div class="precision-metric"><strong>1,500</strong><span>→</span><strong>800</strong></div>
+            <small>Lit 核心回归用例完成收敛</small>
+            <ol class="precision-maturity">
+              <li><strong>链路跑通</strong><span>精准反馈进入回归准备</span></li>
+              <li><strong>初步自助</strong><span>从点对点同步转向自助方式</span></li>
+              <li><strong>固定环节</strong><span>补测试点并与研发 Review</span></li>
+            </ol>
+          </aside>
+        </div>
+
+        <p class="precision-boundary reveal">
+          <strong>当前边界：</strong>精准结果仍需持续校准；交付窗口较短时，只承诺测试点级回归覆盖，不把它写成对完整回归的自动替代。
         </p>
       </section>
 
-      <section class="capability section-pad" id="practice" aria-label="效能提升方法">
-        <article class="capability-row">
-          <div class="capability-media reveal">
-            <img src="/assets/rule-center-redacted.webp" alt="脱敏后的工程规则中心" width="1672" height="941" loading="lazy" decoding="async">
-            <span class="image-tag">规则复用 · 工具整理 · 收益核验</span>
-          </div>
-          <div class="capability-copy reveal">
-            <p class="section-index">工作方式</p>
-            <h2>效能改进的工作方法</h2>
-            <p class="capability-intro">
-              我把效能拆成运行数据、可复用做法和适用边界。每项优化都需要回答：
-              是否降低了重复劳动，是否守住了质量，是否缩短了有效交付路径。
-            </p>
-            <ul class="detail-list">
-              <li><span>观测</span><div><strong>成本、质量、交付同屏判断</strong><p>不以单一速度指标替代真实收益，保留等待、返工、风险与人工判断的影响。</p></div></li>
-              <li><span>复用</span><div><strong>整理成公共工具</strong><p>将验证过的操作做成命令行工具、Skill、工作流与 SOP，减少重复搭建。</p></div></li>
-              <li><span>推广</span><div><strong>用运行结果继续调整</strong><p>只有在实际场景中保持有效的做法，才逐步扩大适用范围并进入长期维护。</p></div></li>
-            </ul>
-            <div class="tag-cloud" aria-label="效能提升能力标签">
-              <span>增量机制</span><span>反馈治理</span><span>数据资产</span><span>成本质量交付</span>
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <section class="case-section section-pad" aria-labelledby="case-title">
+      <section class="section-pad delivery-system" id="delivery-system" aria-labelledby="delivery-title">
         <div class="section-heading reveal">
-          <p class="section-index">代表实践</p>
-          <h2 id="case-title">已公开的四项实践</h2>
-          <p>下列数据来自真实运行结果；项目名和人员名以遮罩占位呈现，公开页面不留存真实标识。</p>
-        </div>
-        <div class="case-grid">
-          <article class="case-card reveal">
-            <span class="case-number">已落地</span>
-            <p class="case-label">增量补充</p>
-            <h3>校验后增量写回</h3>
-            <p class="evidence-source">项目 <span class="redaction" aria-label="项目名称已脱敏"><span aria-hidden="true">████████</span></span> · 责任人 <span class="redaction redaction-short" aria-label="人员姓名已脱敏"><span aria-hidden="true">████</span></span></p>
-            <p>候选内容经过数据校验、去重与失败关闭写入后，累计形成 <strong>82 条</strong>可验证增量，安全补回 <strong>14 份</strong>既有产物，原文替换为 <strong>0 次</strong>。</p>
-            <div class="case-metrics"><strong>82 条</strong><span>验证后增量</span><strong>0 次</strong><span>原文替换</span></div>
-          </article>
-          <article class="case-card reveal">
-            <span class="case-number">持续运行</span>
-            <p class="case-label">质量工作台</p>
-            <h3>多来源反馈工作台</h3>
-            <p class="evidence-source">项目 <span class="redaction" aria-label="项目名称已脱敏"><span aria-hidden="true">████████</span></span> · 协作方 <span class="redaction redaction-short" aria-label="人员姓名已脱敏"><span aria-hidden="true">████</span></span></p>
-            <p>聚合 3 类来源的 351 条反馈与 423 个附件标记，让分析、补充、复核和安全导出在同一处完成；对外保留运行事实，不暴露用户或协作方身份。</p>
-            <div class="case-metrics"><strong>351 条</strong><span>反馈记录</span><strong>423 个</strong><span>附件标记</span></div>
-          </article>
-          <article class="case-card reveal">
-            <span class="case-number">扩大验证中</span>
-            <p class="case-label">数据资产治理</p>
-            <h3>数据文件归档审计</h3>
-            <p class="evidence-source">项目 <span class="redaction" aria-label="项目名称已脱敏"><span aria-hidden="true">████████</span></span> · 存储位置 <span class="redaction redaction-short" aria-label="环境标识已脱敏"><span aria-hidden="true">████</span></span></p>
-            <p>只读审计覆盖 <strong>147 段录屏</strong>、<strong>4,047 张截图</strong>和约 <strong>1,257 份执行留痕</strong>，识别出约 <strong>6.6 GB</strong>候选释放空间。</p>
-            <div class="case-metrics"><strong>约 6.6 GB</strong><span>归档校验后可释放</span><strong>尚未删除</strong><span>保留完整性门禁</span></div>
-          </article>
-          <article class="case-card reveal">
-            <span class="case-number">已复用</span>
-            <p class="case-label">定点文档增补</p>
-            <h3>既有文档定点增补</h3>
-            <p class="evidence-source">文档 <span class="redaction" aria-label="文档名称已脱敏"><span aria-hidden="true">████████</span></span> · 负责人 <span class="redaction redaction-short" aria-label="人员姓名已脱敏"><span aria-hidden="true">████</span></span></p>
-            <p>既有文档由 <strong>7,423</strong> 增至 <strong>10,327 字符</strong>；回读确认原文前缀保持不变、新章节唯一，且权限状态已验证。</p>
-            <div class="case-metrics"><strong>7,423 → 10,327</strong><span>字符</span><strong>0 处</strong><span>原文前缀变化</span></div>
-          </article>
-        </div>
-      </section>
-
-      <section class="method section-pad" id="observation" aria-labelledby="method-title">
-        <div class="method-copy reveal">
-          <p class="section-index">观测框架</p>
-          <h2 id="method-title">成本、质量与交付指标</h2>
+          <p class="section-index">执行承接</p>
+          <h2 id="delivery-title">前面得到的判断，继续进入同一条执行链</h2>
           <p>
-            速度提升如果带来更多返工，成本下降如果损害结论可信度，都不算真正的效能收益。
-            我用统一口径判断变化，并说明技术指标与业务验收之间的边界。
+            左移不止生成一份分析文档。Feishu CLI 负责输入与回写，QA-manager 继续准备包、设备和账号，
+            并把执行、报告与失败恢复接到同一任务中。
           </p>
         </div>
-        <ol class="method-flow reveal">
-          <li><span>成本</span><div><strong>减少无效消耗</strong><p>关注重复劳动、等待、调用与维护负担</p></div></li>
-          <li><span>质量</span><div><strong>守住可信底线</strong><p>关注验证覆盖、失败关闭与残余风险</p></div></li>
-          <li><span>交付</span><div><strong>缩短有效路径</strong><p>关注从触发、执行、复核到回写的完整周期</p></div></li>
-          <li><span>边界</span><div><strong>不扩大结论</strong><p>区分已完成、已验证与仍需扩大验证的事项</p></div></li>
-        </ol>
+
+        <div class="delivery-facts reveal" aria-label="从需求输入到结果回写的五层交付链路">
+          <article>
+            <strong>01</strong>
+            <span>输入自动化</span>
+            <p>需求、PRD、MR 与 Webhook 自动读取，并归一为统一任务输入。</p>
+          </article>
+          <article>
+            <strong>02</strong>
+            <span>流程模板复用</span>
+            <p>Review、AC、Testcase 等任务复用稳定的计划、检查和验证路径。</p>
+          </article>
+          <article>
+            <strong>03</strong>
+            <span>资源自动准备与执行</span>
+            <p>包、设备、账号与 OCR/CV 服务由 QA-manager 统一准备和协调。</p>
+          </article>
+          <article>
+            <strong>04</strong>
+            <span>运行数据与报告自动化</span>
+            <p>断言、截图、录屏和轨迹自动关联任务，统一生成报告与状态。</p>
+          </article>
+          <article>
+            <strong>05</strong>
+            <span>自动交付与局部补偿</span>
+            <p>结果写回后自动回读；失败只补缺失步骤，保留已经完成的结果。</p>
+          </article>
+        </div>
+
       </section>
 
+      <section class="section-pad impact-section" id="results" aria-labelledby="results-title">
+        <div class="section-heading reveal">
+          <p class="section-index">执行端结果</p>
+          <h2 id="results-title">左移减少无效执行，自动化处理剩余批量工作</h2>
+          <p>前面的检查负责减少遗漏与重复，执行层继续保证核心回归和批量验证能够稳定完成。</p>
+        </div>
+
+        <div class="impact-list">
+          <article class="impact-case reveal">
+            <div class="impact-stat">
+              <strong>100+ 次</strong>
+              <span>连续构建</span>
+            </div>
+            <div class="impact-copy">
+              <p class="case-label">执行稳定性</p>
+              <h3>链路稳定后，再扩大自动覆盖</h3>
+              <p>
+                登录流程参数化后连续构建 100+ 次，未出现误报或其他稳定性问题。
+                CV 服务通过截图压缩和 SIFT 回退，将一次识别由约 1 秒降到 500ms 内。
+              </p>
+              <dl class="impact-facts">
+                <div><dt>范围</dt><dd>登录核心流程</dd></div>
+                <div><dt>稳定性</dt><dd>100+ 次连续构建</dd></div>
+                <div><dt>识别耗时</dt><dd>约 1s → 500ms 内</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="impact-case reveal">
+            <div class="impact-stat">
+              <strong>473 条</strong>
+              <span>素材真机验证</span>
+            </div>
+            <div class="impact-copy">
+              <p class="case-label">批量验证</p>
+              <h3>机器跑全量，人工只看不确定项</h3>
+              <p>
+                将后台素材获取、客户端真实渲染、真机截图与录屏、自动视觉比对和结果归档接成完整流程。
+                466 条通过项继续按置信度分流，其余结果保留原状态进入后续处理。
+              </p>
+              <dl class="impact-facts">
+                <div><dt>高置信</dt><dd>426 条</dd></div>
+                <div><dt>中置信</dt><dd>38 条</dd></div>
+                <div><dt>保守复核</dt><dd>2 条</dd></div>
+              </dl>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-pad scale-section" aria-labelledby="scale-title">
+        <div class="section-heading reveal">
+          <p class="section-index">过往规模化建设</p>
+          <h2 id="scale-title">不同阶段，持续解决同一类问题</h2>
+          <p>历史项目单独标注，不与当前 QA-manager 的覆盖规模混写。</p>
+        </div>
+        <div class="scale-grid reveal">
+          <article>
+            <span>波克城市</span>
+            <strong>小时级 → 分钟级</strong>
+            <p>测试报告从人工书写升级为系统生成。</p>
+          </article>
+          <article>
+            <span>波克城市</span>
+            <strong>约 75% → 90%+</strong>
+            <p>多端一体自动化框架稳定性提升。</p>
+          </article>
+          <article>
+            <span>波克城市</span>
+            <strong>200+ 台</strong>
+            <p>云真机设备池支持批量任务与并行回归。</p>
+          </article>
+          <article>
+            <span>米哈游</span>
+            <strong>0 → 1 / 8 人</strong>
+            <p>组建测开团队，并建设机器云与通用自动化能力。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-pad efficiency-sop" id="feedback-loop" aria-labelledby="feedback-title">
+        <div class="sop-copy reveal">
+          <p class="section-index">上线后回流</p>
+          <h2 id="feedback-title">线上问题继续回到需求与测试</h2>
+          <p>
+            应用市场、内部运营后台等来源统一入库并每日增量同步；系统完成归并、标签和异常波动检查，
+            紧急问题直接推送，不同团队再按条件导出自己需要的格式。
+          </p>
+          <a class="text-link" href="/automation/#feedback-sop">查看用户反馈 SOP 自动化 <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="feedback-numbers reveal" aria-label="用户反馈运行数据">
+          <article><strong>3 类</strong><span>接入来源</span></article>
+          <article><strong>351 条</strong><span>反馈记录</span></article>
+          <article><strong>423 个</strong><span>附件标记</span></article>
+          <article><strong>每日</strong><span>增量同步</span></article>
+        </div>
+      </section>
     </main>
 
     <footer>
