@@ -1,0 +1,275 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050" role="img" aria-labelledby="title desc">
+  <title id="title">AI 工程治理与生成前质量合同</title>
+  <desc id="desc">Spook AI Guard 通过插件分发、全局 AGENTS 确定性触发和 Skill 主动治理，在首次写入前按仓库、路径、端类型、场景和风险装配工程规则、业务知识与历史缺陷，形成生成合同；代码写入后进入有限检查、修复、人工复核和可回放事件账本。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0L9 4.5L0 9Z" fill="#1d5fc4"/>
+    </marker>
+    <marker id="arrow-muted" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0L9 4.5L0 9Z" fill="#6f839b"/>
+    </marker>
+    <style>
+      .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+      .title { fill: #17243a; font-size: 40px; font-weight: 700; letter-spacing: -1px; }
+      .subtitle { fill: #5a687b; font-size: 17px; }
+      .layer-num { fill: #1d5fc4; font-size: 12px; font-weight: 700; }
+      .layer-title { fill: #17243a; font-size: 21px; font-weight: 700; }
+      .layer-note { fill: #5a687b; font-size: 12px; }
+      .node-title { fill: #17243a; font-size: 15px; font-weight: 650; }
+      .node-note { fill: #5a687b; font-size: 11px; }
+      .tech { fill: #1d5fc4; font-size: 10px; font-weight: 700; letter-spacing: .35px; }
+      .rail-title { fill: #356da8; font-size: 13px; font-weight: 700; }
+      .rail-item { fill: #17243a; font-size: 13px; font-weight: 650; }
+      .rail-note { fill: #5a687b; font-size: 11px; }
+      .pill { fill: #17243a; font-size: 9px; font-weight: 700; letter-spacing: .35px; }
+      .primary { fill: none; stroke: #1d5fc4; stroke-width: 2; marker-end: url(#arrow); }
+      .passive { fill: none; stroke: #6f839b; stroke-width: 1.7; stroke-dasharray: 6 5; marker-end: url(#arrow-muted); }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1050" fill="#edf5ff"/>
+  <g class="sans">
+    <text class="title" x="72" y="70">AI 工程治理与生成前质量合同</text>
+    <text class="subtitle" x="72" y="106">确定性规则下发 · 场景化策略装配 · 首次写入前约束 · 可观测验证闭环</text>
+    <g transform="translate(1180 48)">
+      <rect width="348" height="46" rx="2" fill="#ffffff" stroke="#17243a" stroke-opacity="0.42"/>
+      <rect width="7" height="46" fill="#1d5fc4"/>
+      <text class="mono" x="24" y="29" fill="#17243a" font-size="11">Plugin · AGENTS · Skill · Policy · Evidence</text>
+    </g>
+    <path d="M72 130H1528" stroke="#17243a" stroke-opacity="0.42"/>
+
+    <!-- 第 1 层：确定性接入 -->
+    <rect x="72" y="150" width="1168" height="114" fill="#ffffff" stroke="#17243a" stroke-opacity="0.18"/>
+    <path d="M300 150V264" stroke="#17243a" stroke-opacity="0.18"/>
+    <text class="layer-num" x="94" y="180">第 1 层</text>
+    <text class="layer-title" x="94" y="208">确定性接入</text>
+    <text class="layer-note" x="94" y="232">从安装能力到任务启动即生效</text>
+
+    <g transform="translate(322 171)">
+      <rect width="230" height="70" rx="2" fill="#ffffff" stroke="#17243a" stroke-opacity="0.28"/>
+      <text class="tech mono" x="18" y="22">MARKETPLACE PLUGIN · v0.16.0</text>
+      <text class="node-title" x="18" y="45">Spook AI Guard</text>
+      <text class="node-note" x="18" y="62">Skills · Policy · Runtime 打包分发</text>
+    </g>
+    <path class="primary" d="M552 206H562"/>
+    <g transform="translate(574 171)">
+      <rect width="270" height="70" rx="2" fill="#dcecff" stroke="#1d5fc4" stroke-opacity="0.68"/>
+      <text class="tech mono" x="18" y="22">MANAGED AGENTS TRIGGER</text>
+      <text class="node-title" x="18" y="45">全局 AGENTS 确定性触发</text>
+      <text class="node-note" x="18" y="62">幂等写入 · 保留用户规则 · Override 兼容</text>
+    </g>
+    <path class="primary" d="M844 206H854"/>
+    <g transform="translate(866 171)">
+      <rect width="342" height="70" rx="2" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity="0.58"/>
+      <text class="tech mono" x="18" y="22">$construct-ai-guard</text>
+      <text class="node-title" x="18" y="45">Skill 主动治理</text>
+      <text class="node-note" x="18" y="62">新任务启动加载 · 第一次实质写入前执行</text>
+    </g>
+
+    <!-- 第 2 层：策略与知识装配 -->
+    <rect x="72" y="278" width="1168" height="170" fill="#ffffff" stroke="#17243a" stroke-opacity="0.18"/>
+    <path d="M300 278V448" stroke="#17243a" stroke-opacity="0.18"/>
+    <text class="layer-num" x="94" y="308">第 2 层</text>
+    <text class="layer-title" x="94" y="336">策略与知识装配</text>
+    <text class="layer-note" x="94" y="360">只加载当前变更真正需要的约束</text>
+
+    <g transform="translate(322 300)">
+      <rect width="202" height="82" rx="2" fill="#dcecff" stroke="#1d5fc4" stroke-opacity="0.62"/>
+      <text class="tech" x="16" y="22">SCHEMA V3</text>
+      <text class="node-title" x="16" y="45">32 条规则注册表</text>
+      <text class="node-note" x="16" y="63">公共 · Web · Android · Server</text>
+      <text class="node-note" x="16" y="77">公开快照：30 条已触发</text>
+    </g>
+    <g transform="translate(536 300)">
+      <rect width="202" height="82" rx="2" fill="#ffffff" stroke="#17243a" stroke-opacity="0.28"/>
+      <text class="tech mono" x="16" y="22">.ai-guard/policy.json</text>
+      <text class="node-title" x="16" y="45">仓库级策略</text>
+      <text class="node-note" x="16" y="63">checks ∪ · requirePlan OR</text>
+      <text class="node-note" x="16" y="77">enforcement 只升不降</text>
+    </g>
+    <g transform="translate(750 300)">
+      <rect width="202" height="82" rx="2" fill="#ffffff" stroke="#17243a" stroke-opacity="0.28"/>
+      <text class="tech" x="16" y="22">BUSINESS KNOWLEDGE</text>
+      <text class="node-title" x="16" y="45">业务知识库</text>
+      <text class="node-note" x="16" y="63">文档 · 代码 · 应用截图</text>
+      <text class="node-note" x="16" y="77">业务语义与场景边界</text>
+    </g>
+    <g transform="translate(964 300)">
+      <rect width="244" height="82" rx="2" fill="#ffffff" stroke="#17243a" stroke-opacity="0.28"/>
+      <text class="tech" x="16" y="22">HISTORICAL DEFECTS</text>
+      <text class="node-title" x="16" y="45">16,041 条历史缺陷</text>
+      <text class="node-note" x="16" y="63">精确 / 混合检索 · 10 分钟增量</text>
+      <text class="node-note" x="16" y="77">单任务最多返回 5 条相似证据</text>
+    </g>
+    <path d="M423 382V392M637 382V392M851 382V392M1086 382V392" stroke="#1d5fc4" stroke-width="1.6"/>
+    <g transform="translate(322 398)">
+      <rect width="886" height="34" rx="2" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity="0.48"/>
+      <text class="mono" x="443" y="22" text-anchor="middle" fill="#17243a" font-size="12">loadPolicy() → assess(paths · repo markers · platform · scenario · risk)</text>
+    </g>
+
+    <!-- 第 3 层：生成前合同 -->
+    <rect x="72" y="462" width="1168" height="132" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity="0.46"/>
+    <path d="M300 462V594" stroke="#1d5fc4" stroke-opacity="0.24"/>
+    <text class="layer-num" x="94" y="492">第 3 层</text>
+    <text class="layer-title" x="94" y="520">生成前合同</text>
+    <text class="layer-note" x="94" y="544">不是生成后提醒，而是首写前下发</text>
+
+    <g transform="translate(322 484)">
+      <rect width="248" height="86" rx="2" fill="#ffffff" stroke="#1d5fc4" stroke-opacity="0.58"/>
+      <text class="tech mono" x="20" y="25">evidence write-check</text>
+      <text class="node-title" x="20" y="50">writeCheck(paths[])</text>
+      <text class="node-note" x="20" y="70">写入目标 · Plan 状态 · 仓库身份</text>
+    </g>
+    <path class="primary" d="M570 527H586"/>
+    <g transform="translate(598 484)">
+      <rect width="610" height="86" rx="2" fill="#ffffff" stroke="#1d5fc4" stroke-opacity="0.62"/>
+      <text class="tech mono" x="20" y="23">GENERATION CONTRACT</text>
+      <text class="node-title" x="20" y="46">applicable_rules · required_checks · risk_level · review</text>
+      <text class="node-note" x="20" y="65">路径适配规则 + 验证义务 + 人工复核边界 + historical_defect_evidence</text>
+      <g transform="translate(416 14)">
+        <rect width="174" height="22" rx="11" fill="#dcecff" stroke="#1d5fc4" stroke-opacity="0.42"/>
+        <text class="pill" x="87" y="15" text-anchor="middle">DEFAULT: OBSERVE</text>
+      </g>
+      <text class="node-note" x="20" y="80">缺陷查询失败放行；只有仓库策略显式升级时才进入 BLOCK</text>
+    </g>
+
+    <!-- 第 4 层：质量门禁决策 -->
+    <rect x="72" y="608" width="1168" height="170" fill="#ffffff" stroke="#17243a" stroke-opacity="0.18"/>
+    <path d="M300 608V778" stroke="#17243a" stroke-opacity="0.18"/>
+    <text class="layer-num" x="94" y="638">第 4 层</text>
+    <text class="layer-title" x="94" y="666">质量门禁决策</text>
+    <text class="layer-note" x="94" y="690">验证失败不被覆盖，修复必须复验</text>
+
+    <g transform="translate(322 630)">
+      <rect width="176" height="80" rx="2" fill="#ffffff" stroke="#17243a" stroke-opacity="0.28"/>
+      <text class="tech mono" x="16" y="23">write.code</text>
+      <text class="node-title" x="16" y="47">Agent 写入</text>
+      <text class="node-note" x="16" y="65">按合同实施变更</text>
+    </g>
+    <path class="primary" d="M498 670H510"/>
+    <g transform="translate(522 630)">
+      <rect width="190" height="80" rx="2" fill="#ffffff" stroke="#17243a" stroke-opacity="0.28"/>
+      <text class="tech mono" x="16" y="23">inspect()</text>
+      <text class="node-title" x="16" y="47">生成代码检查</text>
+      <text class="node-note" x="16" y="65">全量路径 · 失败保留</text>
+    </g>
+    <path class="primary" d="M712 670H722"/>
+    <g transform="translate(734 630)">
+      <rect width="214" height="80" rx="2" fill="#ffffff" stroke="#17243a" stroke-opacity="0.28"/>
+      <text class="tech mono" x="16" y="23">check()</text>
+      <text class="node-title" x="16" y="47">派生验证</text>
+      <text class="node-note" x="16" y="65">test · lint · security · e2e · trace</text>
+    </g>
+    <path class="primary" d="M948 670H958"/>
+    <g transform="translate(970 630)">
+      <rect width="238" height="80" rx="2" fill="#dcecff" stroke="#1d5fc4" stroke-opacity="0.68"/>
+      <text class="tech mono" x="16" y="23">closedLoopStatus()</text>
+      <text class="node-title" x="16" y="47">质量决策</text>
+      <g transform="translate(16 57)">
+        <rect width="42" height="16" rx="2" fill="#ffffff" stroke="#1d5fc4" stroke-opacity="0.48"/>
+        <text class="pill" x="21" y="11" text-anchor="middle">ALLOW</text>
+        <rect x="48" width="58" height="16" rx="2" fill="#ffffff" stroke="#356da8" stroke-opacity="0.48"/>
+        <text class="pill" x="77" y="11" text-anchor="middle">ATTENTION</text>
+        <rect x="112" width="50" height="16" rx="2" fill="#ffffff" stroke="#356da8" stroke-opacity="0.48"/>
+        <text class="pill" x="137" y="11" text-anchor="middle">REVIEW</text>
+        <rect x="168" width="50" height="16" rx="2" fill="#ffffff" stroke="#17243a" stroke-opacity="0.36"/>
+        <text class="pill" x="193" y="11" text-anchor="middle">BLOCK*</text>
+      </g>
+    </g>
+    <path class="primary" d="M840 710C840 752 617 752 617 716"/>
+    <text class="node-note" x="716" y="747" text-anchor="middle">低 / 中风险：repair + recheck，最多 2 轮</text>
+    <text class="node-note" x="1198" y="744" text-anchor="end">高 / 严重风险、残留失败：转人工 Review</text>
+    <text class="node-note" x="1198" y="761" text-anchor="end">* BLOCK 仅由仓库策略显式开启</text>
+
+    <!-- 第 5 层：事件账本与交叉验证 -->
+    <rect x="72" y="792" width="1168" height="158" fill="#ffffff" stroke="#17243a" stroke-opacity="0.18"/>
+    <path d="M300 792V950" stroke="#17243a" stroke-opacity="0.18"/>
+    <text class="layer-num" x="94" y="822">第 5 层</text>
+    <text class="layer-title" x="94" y="850">事件账本与交叉验证</text>
+    <text class="layer-note" x="94" y="874">可统计 · 可回放 · 可重算 · 可校正</text>
+
+    <g transform="translate(322 812)">
+      <rect width="886" height="38" rx="2" fill="#e8f1ff" stroke="#1d5fc4" stroke-opacity="0.48"/>
+      <text class="mono" x="443" y="24" text-anchor="middle" fill="#17243a" font-size="11">qualityEvent { eventId · sessionId · repo · branch · phase · policyVersion · ruleHits · evidenceRefs · verdict }</text>
+    </g>
+    <g transform="translate(322 866)">
+      <rect width="196" height="56" rx="2" fill="#ffffff" stroke="#17243a" stroke-opacity="0.28"/>
+      <text class="tech mono" x="15" y="20">ADAPTER</text>
+      <text class="node-title" x="15" y="41">生命周期事件归一</text>
+    </g>
+    <path class="primary" d="M518 894H522"/>
+    <g transform="translate(534 866)">
+      <rect width="202" height="56" rx="2" fill="#dcecff" stroke="#1d5fc4" stroke-opacity="0.58"/>
+      <text class="tech mono" x="15" y="20">IDEMPOTENT LEDGER</text>
+      <text class="node-title" x="15" y="41">幂等事件账本</text>
+    </g>
+    <path class="primary" d="M736 894H740"/>
+    <g transform="translate(752 866)">
+      <rect width="208" height="56" rx="2" fill="#ffffff" stroke="#17243a" stroke-opacity="0.28"/>
+      <text class="tech mono" x="15" y="20">CORRELATION</text>
+      <text class="node-title" x="15" y="41">分支精确关联</text>
+    </g>
+    <path class="primary" d="M960 894H964"/>
+    <g transform="translate(976 866)">
+      <rect width="232" height="56" rx="2" fill="#ffffff" stroke="#356da8" stroke-opacity="0.52"/>
+      <text class="tech mono" x="15" y="20">REPLAY / RECOMPUTE</text>
+      <text class="node-title" x="15" y="41">重放 · 重算 · 口径修正</text>
+    </g>
+    <path class="passive" d="M720 938C770 938 808 929 856 921"/>
+    <text class="node-note" x="322" y="942">GitLab 独立观测 · Agent 外变更 · unobserved ≠ violation</text>
+
+    <!-- 右侧代码轨迹 -->
+    <rect x="1262" y="150" width="266" height="800" fill="#e5edf7" stroke="#356da8" stroke-opacity="0.56"/>
+    <text class="rail-title" x="1290" y="186">代码轨迹</text>
+    <text class="layer-title" x="1290" y="216">主动治理主链</text>
+    <path d="M1302 248V746" stroke="#356da8" stroke-opacity="0.48" stroke-width="2"/>
+
+    <g>
+      <circle cx="1302" cy="268" r="7" fill="#1d5fc4"/>
+      <text class="rail-item mono" x="1326" y="265">_ensureInstruction()</text>
+      <text class="rail-note" x="1326" y="285">global AGENTS · idempotent</text>
+    </g>
+    <g transform="translate(0 96)">
+      <circle cx="1302" cy="268" r="7" fill="#356da8"/>
+      <text class="rail-item mono" x="1326" y="265">loadPolicy() · assess()</text>
+      <text class="rail-note" x="1326" y="285">baseline ⊕ repo policy</text>
+    </g>
+    <g transform="translate(0 192)">
+      <circle cx="1302" cy="268" r="7" fill="#1d5fc4"/>
+      <text class="rail-item mono" x="1326" y="265">writeCheck(paths[])</text>
+      <text class="rail-note" x="1326" y="285">plan · files · repository</text>
+    </g>
+    <g transform="translate(0 288)">
+      <circle cx="1302" cy="268" r="7" fill="#356da8"/>
+      <text class="rail-item mono" x="1326" y="265">generationContract()</text>
+      <text class="rail-note" x="1326" y="285">rules · checks · risk · review</text>
+    </g>
+    <g transform="translate(0 384)">
+      <circle cx="1302" cy="268" r="7" fill="#1d5fc4"/>
+      <text class="rail-item mono" x="1326" y="265">inspect() · check()</text>
+      <text class="rail-note" x="1326" y="285">bounded verification evidence</text>
+    </g>
+    <g transform="translate(0 480)">
+      <circle cx="1302" cy="268" r="7" fill="#356da8"/>
+      <text class="rail-item mono" x="1326" y="265">repair() · end()</text>
+      <text class="rail-note" x="1326" y="285">2 rounds · final loop status</text>
+    </g>
+
+    <g transform="translate(1288 812)">
+      <rect width="214" height="86" rx="2" fill="#ffffff" stroke="#6f839b" stroke-dasharray="6 5"/>
+      <text class="tech mono" x="16" y="24" fill="#5a687b">hooks.json</text>
+      <text class="node-title" x="16" y="49">被动观测旁路</text>
+      <text class="rail-note" x="16" y="69">PreToolUse · PostToolUse</text>
+      <text class="rail-note" x="16" y="82">补覆盖，不负责合同下发</text>
+    </g>
+
+    <path d="M72 978H1528" stroke="#17243a" stroke-opacity="0.32"/>
+    <path d="M72 1002H118" stroke="#1d5fc4" stroke-width="2" marker-end="url(#arrow)"/>
+    <text class="node-note" x="130" y="1006">主动治理主链</text>
+    <path d="M248 1002H294" stroke="#6f839b" stroke-width="1.7" stroke-dasharray="6 5" marker-end="url(#arrow-muted)"/>
+    <text class="node-note" x="306" y="1006">被动观测旁路</text>
+    <text class="node-note" x="72" y="1028">公开架构图 · 规则正文、仓库身份、源码与业务数据不出本地边界</text>
+    <text class="node-note" x="1528" y="1028" text-anchor="end">张晨 / AI 工程质量治理</text>
+  </g>
+</svg>
