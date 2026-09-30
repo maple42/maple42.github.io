@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="张晨的效能提升实践：把重复工作做成工具，再用运行数据判断优化是否真的有效。">
-    <meta name="theme-color" content="#f3f1eb">
+    <meta name="theme-color" content="#ffffff">
     <link rel="canonical" href="https://maple42.github.io/efficiency/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="zh_CN">
@@ -14,8 +14,8 @@
     <meta property="og:image" content="https://maple42.github.io/assets/rule-center-redacted.webp">
     <meta name="twitter:card" content="summary_large_image">
     <title>效能提升｜张晨</title>
-    <link rel="stylesheet" href="/styles.css?v=20260930-editorial">
-    <script src="/app.js?v=20260930-editorial" defer></script>
+    <link rel="stylesheet" href="/styles.css?v=20260930-resume">
+    <script src="/app.js?v=20260930-resume" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">跳到主要内容</a>
@@ -41,8 +41,8 @@
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="hero-copy reveal">
-          <p class="eyebrow"><span></span> 工程实践 · 效能提升</p>
-          <h1 id="hero-title">把重复工作，<br><em>做成团队能复用的工具</em></h1>
+          <p class="eyebrow"><span></span> 张晨 / 工作记录</p>
+          <h1 id="hero-title">工程效能与质量治理</h1>
           <p class="hero-lede">
             我会先找出真正消耗时间的环节，再把稳定做法做成 CLI、Skill、SOP 或工作台，
             最后用<strong>时间、成本、质量和交付稳定性</strong>检查它有没有产生收益。
@@ -52,12 +52,6 @@
             <a class="text-link" href="/evidence/">查看脱敏运行证据 <span aria-hidden="true">→</span></a>
           </div>
         </div>
-
-        <aside class="hero-panel reveal" aria-label="效能提升概览">
-          <p class="panel-kicker">关注结果</p>
-          <p class="panel-title">减少重复<br>复用经验<br>看见收益</p>
-          <div class="panel-status">不只统计调用次数和自动化任务数</div>
-        </aside>
 
         <div class="proof-strip reveal" aria-label="效能运行数据摘要">
           <article>
@@ -80,8 +74,8 @@
       </section>
 
       <section class="manifesto section-pad reveal" aria-label="效能提升定位">
-        <p class="section-index">我的判断标准</p>
-        <h2>一次优化有没有价值，<br>要看<strong>速度、质量和复用成本</strong>。</h2>
+        <p class="section-index">判断标准</p>
+        <h2>用速度、质量和复用成本判断优化是否有效</h2>
         <p>
           Agent 负责判断与生成，自动化负责稳定执行；效能提升负责衡量真实收益，
           把有效做法整理成团队能用的工具，再根据运行结果调整规则与工作流。
@@ -96,7 +90,7 @@
           </div>
           <div class="capability-copy reveal">
             <p class="section-index">工作方式</p>
-            <h2>先看真实变化，<br>再决定要不要推广。</h2>
+            <h2>效能改进的工作方法</h2>
             <p class="capability-intro">
               我把效能拆成运行数据、可复用做法和适用边界。每项优化都需要回答：
               是否降低了重复劳动，是否守住了质量，是否缩短了有效交付路径。
@@ -116,14 +110,14 @@
       <section class="case-section section-pad" aria-labelledby="case-title">
         <div class="section-heading reveal">
           <p class="section-index">代表实践</p>
-          <h2 id="case-title">让成果能够复核，<br>也能够再次使用。</h2>
+          <h2 id="case-title">已公开的四项实践</h2>
           <p>下列数据来自真实运行结果；项目名和人员名以遮罩占位呈现，公开页面不留存真实标识。</p>
         </div>
         <div class="case-grid">
           <article class="case-card reveal">
             <span class="case-number">已落地</span>
             <p class="case-label">增量补充</p>
-            <h3>只追加通过校验的结论</h3>
+            <h3>校验后增量写回</h3>
             <p class="evidence-source">项目 <span class="redaction" aria-label="项目名称已脱敏"><span aria-hidden="true">████████</span></span> · 责任人 <span class="redaction redaction-short" aria-label="人员姓名已脱敏"><span aria-hidden="true">████</span></span></p>
             <p>候选内容经过证据校验、去重与失败关闭写入后，累计形成 <strong>82 条</strong>可验证增量，安全补回 <strong>14 份</strong>既有产物，原文替换为 <strong>0 次</strong>。</p>
             <div class="case-metrics"><strong>82 条</strong><span>验证后增量</span><strong>0 次</strong><span>原文替换</span></div>
@@ -131,7 +125,7 @@
           <article class="case-card reveal">
             <span class="case-number">持续运行</span>
             <p class="case-label">质量工作台</p>
-            <h3>把反馈、附件和处理状态放到同一处</h3>
+            <h3>多来源反馈工作台</h3>
             <p class="evidence-source">项目 <span class="redaction" aria-label="项目名称已脱敏"><span aria-hidden="true">████████</span></span> · 协作方 <span class="redaction redaction-short" aria-label="人员姓名已脱敏"><span aria-hidden="true">████</span></span></p>
             <p>聚合 3 类来源的 351 条反馈与 423 个附件标记，让分析、补充、复核和安全导出在同一处完成；对外保留运行事实，不暴露用户或协作方身份。</p>
             <div class="case-metrics"><strong>351 条</strong><span>反馈记录</span><strong>423 个</strong><span>附件标记</span></div>
@@ -139,7 +133,7 @@
           <article class="case-card reveal">
             <span class="case-number">扩大验证中</span>
             <p class="case-label">证据资产治理</p>
-            <h3>先确认可归档，再释放空间</h3>
+            <h3>证据文件归档审计</h3>
             <p class="evidence-source">项目 <span class="redaction" aria-label="项目名称已脱敏"><span aria-hidden="true">████████</span></span> · 存储位置 <span class="redaction redaction-short" aria-label="环境标识已脱敏"><span aria-hidden="true">████</span></span></p>
             <p>只读审计覆盖 <strong>147 段录屏</strong>、<strong>4,047 张截图</strong>和约 <strong>1,257 份执行留痕</strong>，识别出约 <strong>6.6 GB</strong>候选释放空间。</p>
             <div class="case-metrics"><strong>约 6.6 GB</strong><span>归档校验后可释放</span><strong>尚未删除</strong><span>保留完整性门禁</span></div>
@@ -147,7 +141,7 @@
           <article class="case-card reveal">
             <span class="case-number">已复用</span>
             <p class="case-label">定点文档增补</p>
-            <h3>增加必要信息，不改写既有内容</h3>
+            <h3>既有文档定点增补</h3>
             <p class="evidence-source">文档 <span class="redaction" aria-label="文档名称已脱敏"><span aria-hidden="true">████████</span></span> · 负责人 <span class="redaction redaction-short" aria-label="人员姓名已脱敏"><span aria-hidden="true">████</span></span></p>
             <p>既有文档由 <strong>7,423</strong> 增至 <strong>10,327 字符</strong>；回读确认原文前缀保持不变、新章节唯一，且权限状态已验证。</p>
             <div class="case-metrics"><strong>7,423 → 10,327</strong><span>字符</span><strong>0 处</strong><span>原文前缀变化</span></div>
@@ -158,7 +152,7 @@
       <section class="method section-pad" id="observation" aria-labelledby="method-title">
         <div class="method-copy reveal">
           <p class="section-index">观测框架</p>
-          <h2 id="method-title">同时看成本、质量与交付，<br>避免局部最优。</h2>
+          <h2 id="method-title">成本、质量与交付指标</h2>
           <p>
             速度提升如果带来更多返工，成本下降如果损害结论可信度，都不算真正的效能收益。
             我用统一口径判断变化，并说明技术指标与业务验收之间的边界。
@@ -172,20 +166,11 @@
         </ol>
       </section>
 
-      <section class="closing section-pad reveal" aria-labelledby="closing-title">
-        <p class="eyebrow"><span></span> 我留下什么</p>
-        <h2 id="closing-title">规则、工具和数据，<br><em>下次遇到同类问题可以直接用。</em></h2>
-        <p>我希望团队下次遇到同类问题时，不必再从头走一遍。公开数据仍保留验证方式与适用边界。</p>
-        <p>
-          <a class="button button-primary" href="/">返回个人主页 <span aria-hidden="true">←</span></a>
-          <a class="text-link" href="/evidence/">查看公开证据文档 <span aria-hidden="true">→</span></a>
-        </p>
-      </section>
     </main>
 
     <footer>
       <p>张晨 · 质量工程与研发自动化</p>
-      <p>Agent × 自动化 × 效能提升</p>
+      <p>工作内容与公开记录</p>
     </footer>
   </body>
 </html>

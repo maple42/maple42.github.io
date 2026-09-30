@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="张晨的 Agent 与 Harness 工程实践：规则、权限、工具、运行时、评测和运行证据。">
-    <meta name="theme-color" content="#f3f1eb">
+    <meta name="theme-color" content="#ffffff">
     <link rel="canonical" href="https://maple42.github.io/agent/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="zh_CN">
@@ -14,8 +14,8 @@
     <meta property="og:image" content="https://maple42.github.io/assets/ai-quality-overview-redacted.webp">
     <meta name="twitter:card" content="summary_large_image">
     <title>张晨｜Agent / Harness 工程实践</title>
-    <link rel="stylesheet" href="/styles.css?v=20260930-editorial">
-    <script src="/app.js?v=20260930-editorial" defer></script>
+    <link rel="stylesheet" href="/styles.css?v=20260930-resume">
+    <script src="/app.js?v=20260930-resume" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">跳到主要内容</a>
@@ -41,8 +41,8 @@
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="hero-copy reveal">
-          <p class="eyebrow"><span></span> 工程实践 · Agent / Harness</p>
-          <h1 id="hero-title">把 Agent 做成<br><em>工程系统，而不是演示</em></h1>
+          <p class="eyebrow"><span></span> 张晨 / 工作记录</p>
+          <h1 id="hero-title">Agent / Harness 工程实践</h1>
           <p class="hero-lede">
             我负责把规则、权限、工具、执行环境和验证接到 Agent 周围，
             让任务可以暂停、恢复、复核，也能在失败时安全停下。
@@ -52,12 +52,6 @@
             <a class="text-link" href="/evidence/">查看公开证据 <span aria-hidden="true">→</span></a>
           </div>
         </div>
-
-        <aside class="hero-panel reveal" aria-label="岗位定位">
-          <p class="panel-kicker">这页讲什么</p>
-          <p class="panel-title">规划 / 工具<br>运行时 / 评测</p>
-          <div class="panel-status">4 个工程环节，均有运行记录</div>
-        </aside>
 
         <div class="proof-strip reveal" aria-label="Agent 运行数据摘要">
           <article>
@@ -80,8 +74,8 @@
       </section>
 
       <section class="manifesto section-pad reveal" aria-label="Agent 工程主张">
-        <p class="section-index">工作重点</p>
-        <h2>Agent 负责判断，<br><strong>工程系统负责让它可靠</strong>。</h2>
+        <p class="section-index">职责划分</p>
+        <h2>Agent 与 Harness 分别负责什么</h2>
         <p>
           Agent 负责判断、规划和生成；Harness 负责上下文、权限、执行环境、异常恢复与验证。
           这套分工让任务能够暂停、复核和恢复，而不是只得到一次模型输出。
@@ -96,7 +90,7 @@
           </div>
           <div class="capability-copy reveal">
             <p class="section-index">Agent 编排</p>
-            <h2>把复杂目标拆成<br>任务、依赖和验收条件。</h2>
+            <h2>Agent 编排与任务拆分</h2>
             <p class="capability-intro">
               从成功标准出发，将模糊目标转成计划、任务节点、工具动作与验收条件，
               让依赖、阻塞和下一步都处于可判断状态。
@@ -119,7 +113,7 @@
           </div>
           <div class="capability-copy reveal">
             <p class="section-index">上下文与规则</p>
-            <h2>按任务装配规则，<br>控制上下文范围。</h2>
+            <h2>规则匹配与上下文范围</h2>
             <p class="capability-intro">
               依据仓库、技术栈、任务类型和风险等级匹配必要约束，控制上下文范围，
               避免规则缺失、信息过载和跨边界执行。
@@ -142,7 +136,7 @@
           </div>
           <div class="capability-copy reveal">
             <p class="section-index">Harness 运行时</p>
-            <h2>运行时负责状态、<br>工具调用和恢复。</h2>
+            <h2>Harness 运行时</h2>
             <p class="capability-intro">
               Harness 承接模型之外的执行责任：维护任务状态、工具权限、环境隔离、异常路径与恢复策略，
               让一次执行能够安全暂停、重试和继续。
@@ -165,7 +159,7 @@
           </div>
           <div class="capability-copy reveal">
             <p class="section-index">评测与门禁</p>
-            <h2>检查、复核和结论范围，<br>一个都不能省。</h2>
+            <h2>评测、复核与结论范围</h2>
             <p class="capability-intro">
               将工程规则、确定性检查、多模型复核与人工判断组合使用。
               已有场景完成真实验证；对尚不足以形成稳定结论的方向，明确标记为扩大验证中。
@@ -177,7 +171,7 @@
             </ul>
             <section aria-labelledby="agent-evidence-title">
               <p class="section-index">运行数据</p>
-              <h3 id="agent-evidence-title">真实运行数据，<br>只隐藏身份，不隐藏结果。</h3>
+              <h3 id="agent-evidence-title">公开运行数据</h3>
               <p class="evidence-source">
                 项目
                 <span class="redaction" aria-label="项目名称已脱敏"><span aria-hidden="true">████████</span></span>
@@ -227,7 +221,7 @@
       <section class="case-section section-pad" aria-labelledby="loop-title">
         <div class="section-heading reveal">
           <p class="section-index">执行顺序</p>
-          <h2 id="loop-title">我按这四步判断任务<br>是否真的完成。</h2>
+          <h2 id="loop-title">任务完成条件</h2>
           <p>计划、执行、验证和复用都要留下记录；公开页面仅对项目、人员与内部地址做脱敏。</p>
         </div>
         <div class="case-grid">
@@ -265,7 +259,7 @@
       <section class="method section-pad" id="method" aria-labelledby="boundary-title">
         <div class="method-copy reveal">
           <p class="section-index">能力边界</p>
-          <h2 id="boundary-title">聚焦真实工程能力，<br>不扩大未经验证的标签。</h2>
+          <h2 id="boundary-title">已有经验与暂不覆盖的方向</h2>
           <p>
             当前做过的工作集中在 Agent 编排、Harness、工具集成、质量评测、运行记录与工具复用。
             基础模型训练、超大规模推理优化和成熟多智能体平台属于扩展方向，不作为既有成果呈现。
@@ -279,20 +273,11 @@
         </ol>
       </section>
 
-      <section class="closing section-pad reveal" aria-labelledby="closing-title">
-        <p class="eyebrow"><span></span> 我的关注点</p>
-        <h2 id="closing-title">任务能完成，<br><em>过程可回读，结果有证据。</em></h2>
-        <p>这也是我判断一个 Agent 系统能不能进入真实工程现场的标准。</p>
-        <div class="hero-actions" style="justify-content: center;">
-          <a class="button button-primary" href="/">返回个人主页 <span aria-hidden="true">←</span></a>
-          <a class="text-link" href="/evidence/">查看公开证据 <span aria-hidden="true">→</span></a>
-        </div>
-      </section>
     </main>
 
     <footer>
       <p>张晨 · Agent / Harness 工程实践</p>
-      <p>质量工程与研发自动化</p>
+      <p>工作内容与公开记录</p>
     </footer>
   </body>
 </html>

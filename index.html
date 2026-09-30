@@ -3,28 +3,25 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="张晨的个人工作主页：Agent 工程、研发自动化、质量治理与脱敏项目证据。">
-    <meta name="theme-color" content="#f3f1eb">
+    <meta name="description" content="张晨的个人主页：质量工程、Agent 工程、研发自动化，以及脱敏后的项目记录。">
+    <meta name="theme-color" content="#ffffff">
     <link rel="canonical" href="https://maple42.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="zh_CN">
     <meta property="og:title" content="张晨｜质量工程与研发自动化">
-    <meta property="og:description" content="Agent 工程、研发自动化、质量治理，以及脱敏后的真实项目记录。">
+    <meta property="og:description" content="质量工程、Agent 工程、研发自动化，以及脱敏后的项目记录。">
     <meta property="og:url" content="https://maple42.github.io/">
     <meta property="og:image" content="https://maple42.github.io/assets/ai-quality-overview-redacted.webp">
     <meta name="twitter:card" content="summary_large_image">
     <title>张晨｜质量工程与研发自动化</title>
-    <link rel="stylesheet" href="/styles.css?v=20260930-editorial">
-    <script src="/app.js?v=20260930-editorial" defer></script>
+    <link rel="stylesheet" href="/styles.css?v=20260930-resume">
+    <script src="/app.js?v=20260930-resume" defer></script>
   </head>
-  <body>
+  <body class="resume-home">
     <a class="skip-link" href="#main">跳到主要内容</a>
 
     <header class="site-header" data-header>
-      <a class="identity" href="#top" aria-label="返回首页">
-        <span class="identity-mark" aria-hidden="true">ZC</span>
-        <span>张晨</span>
-      </a>
+      <a class="identity" href="/" aria-label="返回张晨个人主页">张晨</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>
         <span class="sr-only">打开导航</span>
         <span></span><span></span>
@@ -34,144 +31,109 @@
         <a href="/agent/">Agent</a>
         <a href="/automation/">自动化</a>
         <a href="/efficiency/">效能提升</a>
-        <a href="/evidence/">公开证据</a>
+        <a href="/evidence/">公开记录</a>
       </nav>
     </header>
 
-    <main id="main">
-      <section class="hero home-hero" id="top" aria-labelledby="hero-title">
-        <div class="hero-copy reveal">
-          <p class="eyebrow"><span></span> 张晨 · 质量工程 / 研发自动化</p>
-          <h1 id="hero-title">张晨，<br><em>质量工程与研发自动化</em></h1>
-          <p class="hero-lede">
-            我主要做三件事：把团队规则接进编码流程，把测试、设备和协作系统串起来，
-            再用真实结果判断一次变更能不能安全交付。
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#work">查看工作内容 <span aria-hidden="true">↓</span></a>
-            <a class="text-link" href="/evidence/#snapshots">从公开证据开始 <span aria-hidden="true">→</span></a>
-          </div>
-        </div>
-
-        <aside class="hero-panel reveal" aria-label="能力概览">
-          <p class="panel-kicker">现在在做</p>
-          <p class="panel-title">Agent 工程<br>研发自动化<br>质量治理</p>
-          <div class="panel-status">内容来自脱敏后的真实项目</div>
-        </aside>
-      </section>
-
-      <section class="manifesto section-pad reveal" id="thesis" aria-label="核心主张">
-        <p class="section-index">我的工作方法</p>
-        <h2>把规则、执行和结果，<br>放进<strong>同一条工程链路</strong>。</h2>
-        <p>
-          开始前明确规则，执行中留下关键判断，合入前完成确定性验证，运行后再用真实结果修正规则。
-          每一步都要能回答：发生了什么、为什么这样做、接下来由谁处理。
+    <main id="main" class="resume-main">
+      <section class="profile-intro" aria-labelledby="profile-title">
+        <p class="profile-name">张晨</p>
+        <h1 id="profile-title">质量工程 / 研发自动化</h1>
+        <p class="profile-summary">
+          主要做 Agent 工程、测试自动化和质量治理。我的工作通常从团队规则、代码变更或项目任务开始，
+          经过工具与真实设备执行，最后把检查结果和现场记录写回原来的协作流程。
         </p>
-      </section>
-
-      <section class="capability section-pad" id="work" aria-label="三大工作方向">
-        <article class="capability-row" id="agent">
-          <div class="capability-media reveal">
-            <img src="/assets/ai-quality-overview-redacted.webp" alt="脱敏后的 AI 工程质量运行总览" width="1672" height="941" loading="lazy" decoding="async">
-            <span class="image-tag">真实系统 · 规则与门禁</span>
-          </div>
-          <div class="capability-copy reveal">
-            <p class="section-index">Agent 质量守护</p>
-            <h2>Agent 先读规则，<br>再动手改代码。</h2>
-            <p class="capability-intro">
-              按仓库、技术栈和变更场景加载团队工程规则；Plan、任务图和工具调用保留关键判断，
-              让生成过程既能追溯，也能被门禁及时打断。
-            </p>
-            <ul class="detail-list">
-              <li><span>规则</span><div><strong>生成前</strong><p>匹配团队规范、风险边界和必要验证，让 Agent 先理解工程约束。</p></div></li>
-              <li><span>证据</span><div><strong>执行中</strong><p>保留计划、依赖、工具动作与阻塞信息，让关键判断可以回读。</p></div></li>
-              <li><span>门禁</span><div><strong>合入前</strong><p>用静态检查、测试、风险信号和人工复核决定是否完成。</p></div></li>
-            </ul>
-            <div class="tag-cloud" aria-label="Agent 相关能力">
-              <span>工程规则</span><span>规则匹配</span><span>模型评测</span><span>风险识别</span>
-            </div>
-            <p><a class="text-link" href="/agent/">进入 Agent / Harness 能力页 <span aria-hidden="true">→</span></a></p>
-          </div>
-        </article>
-
-        <article class="capability-row reverse" id="automation">
-          <div class="capability-media reveal">
-            <img src="/assets/automation-layered-architecture.svg" alt="移动端自动化多层架构图" width="1600" height="1050" loading="lazy" decoding="async">
-            <span class="image-tag">真实设备 · 自动执行</span>
-          </div>
-          <div class="capability-copy reveal">
-            <p class="section-index">自动化</p>
-            <h2>需求进来后，<br>后面的事尽量自动走完。</h2>
-            <p class="capability-intro">
-              从协作平台的节点触发，到代码分析、测试生成、真实设备执行和结果回写，
-              自动化负责搬运与编排，人把注意力留给判断。
-            </p>
-            <ul class="detail-list">
-              <li><span>协作</span><div><strong>协作自动化</strong><p>将需求评审、验收标准、白盒分析和测试用例接入项目流程节点。</p></div></li>
-              <li><span>真机</span><div><strong>真实设备自动化</strong><p>统一设备租约、安装包、账号前置、录屏与报告，保证任务可复现。</p></div></li>
-              <li><span>验证</span><div><strong>验证自动化</strong><p>覆盖多语言、多页面状态与稳定帧，问题直接映射到现场证据。</p></div></li>
-            </ul>
-            <div class="tag-cloud" aria-label="自动化相关能力">
-              <span>Webhook</span><span>真实设备</span><span>测试生成</span><span>证据回写</span>
-            </div>
-            <p><a class="text-link" href="/automation/">进入自动化能力页 <span aria-hidden="true">→</span></a></p>
-          </div>
-        </article>
-
-        <article class="capability-row" id="efficiency">
-          <div class="capability-media reveal">
-            <img src="/assets/rule-center-redacted.webp" alt="脱敏后的工程规则中心" width="1672" height="941" loading="lazy" decoding="async">
-            <span class="image-tag">工程效能 · 复用与度量</span>
-          </div>
-          <div class="capability-copy reveal">
-            <p class="section-index">效能提升</p>
-            <h2>有效的方法，<br>做成下一次还能用的工具。</h2>
-            <p class="capability-intro">
-              用统一入口、增量机制和可观测数据减少重复劳动；同时测量成本、质量与交付速度，
-              让优化从“感觉更快”变成“知道哪里变好”。
-            </p>
-            <ul class="detail-list">
-              <li><span>增量</span><div><strong>增量补充</strong><p>第二模型只追加通过校验的结论，失败时关闭写入，避免改坏已有成果。</p></div></li>
-              <li><span>治理</span><div><strong>质量工作台</strong><p>聚合多渠道反馈、附件和用户线索，让分析、翻译与导出集中完成。</p></div></li>
-              <li><span>复用</span><div><strong>公共工具与流程</strong><p>把高频做法整理成 CLI、Skill、SOP 和仪表盘，减少重复配置。</p></div></li>
-            </ul>
-            <div class="tag-cloud" aria-label="效能提升相关能力">
-              <span>流程复用</span><span>成本观测</span><span>反馈治理</span><span>交付度量</span>
-            </div>
-            <p><a class="text-link" href="/efficiency/">进入效能提升能力页 <span aria-hidden="true">→</span></a></p>
-          </div>
-        </article>
-      </section>
-
-      <section class="method section-pad" id="method" aria-labelledby="method-title">
-        <div class="method-copy reveal">
-          <p class="section-index">工作流程</p>
-          <h2 id="method-title">规则先进入任务，<br>结果再用于修正规则。</h2>
-          <p>
-            首页只呈现核心工作方式；详细运行数据、系统快照和结论边界放在独立证据页，
-            需要时可以下钻核验，但不再用数量代替能力。
-          </p>
-          <p><a class="text-link" href="/evidence/#snapshots">查看脱敏后的真实运行证据 <span aria-hidden="true">→</span></a></p>
+        <dl class="profile-meta">
+          <div><dt>工作方向</dt><dd>Agent / Harness、研发自动化、工程效能</dd></div>
+          <div><dt>关注问题</dt><dd>执行是否可靠、结果能否复核、工具能否重复使用</dd></div>
+          <div><dt>页面内容</dt><dd>来自真实项目的脱敏记录，不包含公司内部地址和人员信息</dd></div>
+        </dl>
+        <div class="intro-links">
+          <a class="button button-primary" href="/evidence/">查看公开记录</a>
+          <a class="text-link" href="#work">查看工作内容</a>
         </div>
-        <ol class="method-flow reveal">
-          <li><span>规则</span><div><strong>规则匹配</strong><p>生成前匹配团队标准</p></div></li>
-          <li><span>生成</span><div><strong>过程留证</strong><p>关键判断与过程可回读</p></div></li>
-          <li><span>验证</span><div><strong>质量门禁</strong><p>测试、静态检查与人工复核</p></div></li>
-          <li><span>反馈</span><div><strong>持续改进</strong><p>真实结果用于调整下一轮</p></div></li>
-        </ol>
       </section>
 
-      <section class="closing section-pad reveal" aria-labelledby="closing-title">
-        <p class="eyebrow"><span></span> 从证据页开始</p>
-        <h2 id="closing-title">想快速了解我的工作，<br><em>先看真实记录。</em></h2>
-        <p>公开页保留了运行数据、系统快照和结论边界；项目名与人员信息已脱敏。</p>
-        <a class="button button-primary" href="/evidence/#snapshots">查看公开证据 <span aria-hidden="true">→</span></a>
+      <section class="resume-section" id="work" aria-labelledby="work-title">
+        <header class="resume-section-heading">
+          <h2 id="work-title">工作内容</h2>
+          <p>下面是目前公开的三个方向。详情页保留实现方式、运行数据和结论范围。</p>
+        </header>
+
+        <div class="work-list">
+          <article>
+            <div class="work-title-row">
+              <h3>Agent / Harness 工程</h3>
+              <a href="/agent/">查看详情</a>
+            </div>
+            <p>把规则、权限、工具、任务状态和验证接到 Agent 周围，使任务可以暂停、恢复、复核，并在失败时安全停止。</p>
+            <ul class="fact-list">
+              <li><strong>468</strong> 个受控性能压测单元</li>
+              <li><strong>82</strong> 条校验后增量安全写回</li>
+              <li><strong>0</strong> 次既有原文替换</li>
+            </ul>
+          </article>
+
+          <article>
+            <div class="work-title-row">
+              <h3>研发自动化</h3>
+              <a href="/automation/">查看详情</a>
+            </div>
+            <p>连接协作平台、代码分析、测试设计和真实设备，把执行状态、截图、录屏与异常结果写回原工作项。</p>
+            <ul class="fact-list">
+              <li><strong>64</strong> 个真机多语言场景</li>
+              <li><strong>116</strong> 份现场截图与标注</li>
+              <li><strong>74</strong> 项自动回归检查</li>
+            </ul>
+          </article>
+
+          <article>
+            <div class="work-title-row">
+              <h3>效能与质量治理</h3>
+              <a href="/efficiency/">查看详情</a>
+            </div>
+            <p>把重复操作整理成命令行工具、工作流和固定检查，并用运行数据判断优化是否真的减少返工和等待。</p>
+            <ul class="fact-list">
+              <li><strong>351</strong> 条多来源反馈记录</li>
+              <li><strong>423</strong> 个附件标记</li>
+              <li><strong>281 / 281</strong> 条目标记录完成字段回补</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="resume-section" aria-labelledby="records-title">
+        <header class="resume-section-heading">
+          <h2 id="records-title">公开记录</h2>
+          <p>为了便于核验，数据页同时保留成功、失败、待确认和阻断结果。</p>
+        </header>
+        <div class="records-table-wrap">
+          <table class="records-table">
+            <thead>
+              <tr><th>记录</th><th>内容</th><th>说明</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>工程质量总览</td><td>任务、规则、能力覆盖与验证状态</td><td>身份和仓库已脱敏</td></tr>
+              <tr><td>规则中心</td><td>规则数量、触发情况与适用范围</td><td>内部策略标识已脱敏</td></tr>
+              <tr><td>风险观察</td><td>变更场景、风险等级、命中规则与文件规模</td><td>仓库和分支已脱敏</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="section-link"><a href="/evidence/">打开公开记录页</a></p>
+      </section>
+
+      <section class="resume-section resume-note" aria-labelledby="note-title">
+        <h2 id="note-title">说明</h2>
+        <p>
+          本站只展示可以公开的工程过程和点时数据。项目名称、人员、内部链接、用户信息和原始日志不对外发布；
+          页面中的数字用于说明系统确实运行过，不用于团队或个人绩效排名。
+        </p>
       </section>
     </main>
 
     <footer>
       <p>张晨 · 质量工程与研发自动化</p>
-      <p>Agent 工程 · 自动化 · 质量治理</p>
+      <p>公开脱敏版</p>
     </footer>
   </body>
 </html>

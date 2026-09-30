@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="张晨的研发自动化实践：把协作平台、代码分析、测试生成、真实设备与证据回写连接成稳定执行链路。">
-    <meta name="theme-color" content="#f3f1eb">
+    <meta name="theme-color" content="#ffffff">
     <link rel="canonical" href="https://maple42.github.io/automation/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="zh_CN">
@@ -14,8 +14,8 @@
     <meta property="og:image" content="https://maple42.github.io/assets/risk-observations-redacted.webp">
     <meta name="twitter:card" content="summary_large_image">
     <title>自动化｜张晨</title>
-    <link rel="stylesheet" href="/styles.css?v=20260930-editorial">
-    <script src="/app.js?v=20260930-editorial" defer></script>
+    <link rel="stylesheet" href="/styles.css?v=20260930-resume">
+    <script src="/app.js?v=20260930-resume" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">跳到主要内容</a>
@@ -41,8 +41,8 @@
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="hero-copy reveal">
-          <p class="eyebrow"><span></span> 工程实践 · 研发自动化</p>
-          <h1 id="hero-title">把需求、代码、设备和报告<br><em>接成一条可追踪的链路</em></h1>
+          <p class="eyebrow"><span></span> 张晨 / 工作记录</p>
+          <h1 id="hero-title">研发自动化</h1>
           <p class="hero-lede">
             一次任务从协作平台进入，经过代码分析、测试设计和真实设备执行，
             最后把结果、录屏和异常现场写回原来的工作项。
@@ -52,12 +52,6 @@
             <a class="text-link" href="/evidence/">查看公开证据 <span aria-hidden="true">→</span></a>
           </div>
         </div>
-
-        <aside class="hero-panel reveal" aria-label="自动化运行模型">
-          <p class="panel-kicker">链路范围</p>
-          <p class="panel-title">触发 / 执行<br>验证 / 回写</p>
-          <div class="panel-status">覆盖真实设备、异常恢复和现场证据</div>
-        </aside>
 
         <div class="proof-strip reveal" aria-label="自动化运行数据摘要">
           <article>
@@ -80,8 +74,8 @@
       </section>
 
       <section class="manifesto section-pad reveal" aria-label="自动化职责">
-        <p class="section-index">为什么做自动化</p>
-        <h2>重复动作交给系统，<br>人留下来处理<strong>风险与例外</strong>。</h2>
+        <p class="section-index">职责划分</p>
+        <h2>系统处理重复执行，人处理风险和例外</h2>
         <p>
           每一次自动执行都要有明确入口、可追踪状态和可复核结果。
           成功时保存记录，失败时保留现场并进入恢复路径，而不是静默结束。
@@ -91,7 +85,7 @@
       <section class="architecture-section section-pad" id="architecture" aria-labelledby="architecture-title">
         <div class="section-heading reveal">
           <p class="section-index">实现架构</p>
-          <h2 id="architecture-title">识别方式可以替换，<br><strong>业务语义和执行链路保持稳定。</strong></h2>
+          <h2 id="architecture-title">移动端自动化分层架构</h2>
           <p>
             业务用例只描述要完成的动作和判断。结构化 UI 优先处理稳定控件，OCR 识别多语言文字，
             CV 覆盖图标、Canvas 与游戏画面；当传统识别结果缺失或置信度不足时，由大模型视觉理解进行语义兜底，
@@ -137,7 +131,7 @@
           </div>
           <div class="capability-copy reveal">
             <p class="section-index">执行链路</p>
-            <h2>从协作节点出发，<br>把结果带回现场。</h2>
+            <h2>协作流程中的自动化执行</h2>
             <p class="capability-intro">
               项目节点或协作动作触发任务后，系统获取必要上下文，完成代码与变更分析，生成测试资产，
               调度真实设备执行，再把结论、附件和状态回写到原协作节点。
@@ -159,7 +153,7 @@
       <section class="case-section section-pad" aria-labelledby="flow-title">
         <div class="section-heading reveal">
           <p class="section-index">运行阶段</p>
-          <h2 id="flow-title">每个阶段都有输入、状态与交付物。</h2>
+          <h2 id="flow-title">任务受理、设计、执行与回传</h2>
           <p>下方数据来自真实执行与结果回读，只对项目与人员身份做视觉脱敏。</p>
         </div>
         <div class="case-grid">
@@ -173,7 +167,7 @@
           <article class="case-card reveal">
             <span class="case-number">设计</span>
             <p class="case-label">分析与设计</p>
-            <h3>把代码变化转成可执行验证</h3>
+            <h3>代码变化与验证范围</h3>
             <p>结合变更范围、工程规则和风险信号形成检查点，让测试用例与真实改动保持关联。</p>
             <div class="case-metrics"><strong>已复用</strong><span>分析与生成能力</span></div>
           </article>
@@ -237,7 +231,7 @@
           </div>
           <div class="capability-copy reveal">
             <p class="section-index">异常恢复</p>
-            <h2>失败不消失，<br>任务可以继续。</h2>
+            <h2>异常状态与断点恢复</h2>
             <p class="capability-intro">
               网络波动、设备占用、账号前置不满足或外部系统暂时不可用，都应成为明确状态。
               自动化保留现场、释放资源，并从可恢复节点继续，而不是重复整条链路。
@@ -257,7 +251,7 @@
       <section class="method section-pad" id="method" aria-labelledby="method-title">
         <div class="method-copy reveal">
           <p class="section-index">状态可观测</p>
-          <h2 id="method-title">不仅知道跑没跑，<br>还知道卡在哪里。</h2>
+          <h2 id="method-title">运行状态与问题定位</h2>
           <p>
             运行状态同时服务于现场处理与持续改进：触发是否有效、任务是否开始、资源是否就绪、
             检查是否通过、证据是否回写，以及还剩哪些风险，都可以被追踪。
@@ -272,20 +266,11 @@
         </ol>
       </section>
 
-      <section class="closing section-pad reveal" aria-labelledby="closing-title">
-        <p class="eyebrow"><span></span> 想看实际结果</p>
-        <h2 id="closing-title">设备、反馈和风险记录，<br><em>都放在证据页。</em></h2>
-        <p>那里保留了真实运行数据和脱敏系统快照，也说明了数据边界。</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="/">返回个人主页 <span aria-hidden="true">←</span></a>
-          <a class="text-link" href="/evidence/">查看公开证据 <span aria-hidden="true">→</span></a>
-        </div>
-      </section>
     </main>
 
     <footer>
       <p>张晨 · 研发自动化</p>
-      <p>稳定执行 · 证据回写</p>
+      <p>工作内容与公开记录</p>
     </footer>
   </body>
 </html>
