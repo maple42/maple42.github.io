@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050" role="img" aria-labelledby="title desc">
   <title id="title">移动端自动化多层架构</title>
-  <desc id="desc">从协作编排、业务场景、统一语义操作到 Poco、UIAutomator2、OCR、CV 多模态识别与大模型视觉兜底，再由 Airtest 原生执行并在真实设备上留存证据的分层架构。</desc>
+  <desc id="desc">从协作编排、业务场景、统一语义操作到 Poco、UIAutomator2、OCR、CV 多模态识别与大模型视觉兜底，再由 Airtest 原生执行并在真实设备上留存数据的分层架构。</desc>
   <defs>
     <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto" markerUnits="strokeWidth">
       <path d="M0 0L9 4.5L0 9Z" fill="#1f5b4c"/>
@@ -190,10 +190,10 @@
     <path d="M758 678V694" stroke="#1f5b4c" stroke-width="2" marker-end="url(#arrow)"/>
     <path d="M758 818V834" stroke="#1f5b4c" stroke-width="2" marker-end="url(#arrow)"/>
 
-    <!-- 证据链 -->
+    <!-- 数据链 -->
     <rect x="1270" y="150" width="258" height="800" fill="#eeeae0" stroke="#9a4b2f" stroke-opacity="0.56"/>
-    <text class="rail-title" x="1300" y="188">证据链</text>
-    <text class="layer-title" x="1300" y="220">证据记录与回传</text>
+    <text class="rail-title" x="1300" y="188">数据链</text>
+    <text class="layer-title" x="1300" y="220">数据记录与回传</text>
     <path d="M1312 256V854" stroke="#9a4b2f" stroke-opacity="0.48" stroke-width="2"/>
     <g>
       <circle cx="1312" cy="292" r="7" fill="#9a4b2f"/>
@@ -202,7 +202,7 @@
     </g>
     <g transform="translate(0 136)">
       <circle cx="1312" cy="292" r="7" fill="#1f5b4c"/>
-      <text class="rail-item" x="1338" y="288">现场证据</text>
+      <text class="rail-item" x="1338" y="288">现场数据</text>
       <text class="rail-note" x="1338" y="311">截图 · 录屏 · 动作轨迹</text>
     </g>
     <g transform="translate(0 272)">
@@ -221,7 +221,7 @@
       <text class="rail-note" x="1338" y="311">规则 · Selector · Case 资产</text>
     </g>
     <path d="M1312 880C1262 880 1257 550 1224 550" fill="none" stroke="#9a4b2f" stroke-opacity="0.62" stroke-width="2" marker-end="url(#arrow)"/>
-    <text x="1399" y="910" text-anchor="middle" fill="#9a4b2f" font-size="11" font-weight="700">失败证据回到规则与用例</text>
+    <text x="1399" y="910" text-anchor="middle" fill="#9a4b2f" font-size="11" font-weight="700">失败数据回到规则与用例</text>
 
     <path d="M72 978H1528" stroke="#1b1b19" stroke-opacity="0.42"/>
     <text x="72" y="1010" fill="#66655f" font-size="11">公开架构图 · 内部地址、账号与设备标识已脱敏</text>
