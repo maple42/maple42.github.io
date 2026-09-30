@@ -146,6 +146,7 @@ strong { font-weight: 650; }
 
 .resume-main,
 .hero,
+.agent-architecture-intro,
 .section-pad,
 footer {
   width: min(calc(100% - 48px), var(--max));
@@ -353,7 +354,9 @@ footer {
   margin-bottom: 36px;
 }
 
+.section-heading h1,
 .section-heading h2 { margin-bottom: 16px; color: var(--accent-deep); }
+.section-heading h1 { font-size: clamp(26px, 3vw, 34px); letter-spacing: -.015em; }
 .section-heading > p:last-child { margin-bottom: 0; color: var(--muted); }
 
 .control-plane { border-top: 1px solid var(--line-strong); }
@@ -743,6 +746,7 @@ footer {
   display: grid;
   align-items: center;
   width: min(calc(100% - 32px), 1500px);
+  min-width: 0;
   min-height: calc(100vh - 64px);
   min-height: calc(100svh - 64px);
   margin-inline: auto;
@@ -751,6 +755,7 @@ footer {
 
 .architecture-board-primary {
   width: 100%;
+  min-width: 0;
   margin: 0;
   background: var(--surface);
 }
@@ -930,6 +935,7 @@ footer p { margin: 0; }
 
   .resume-main,
   .hero,
+  .agent-architecture-intro,
   .section-pad,
   footer { width: min(calc(100% - 32px), var(--max)); }
 
@@ -1032,6 +1038,8 @@ footer p { margin: 0; }
     border-right: 0;
     border-left: 0;
   }
+
+  .architecture-board-primary > a { justify-content: flex-start; }
 
   .architecture-board-primary img {
     width: 100%;

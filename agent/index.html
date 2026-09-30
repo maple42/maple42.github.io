@@ -40,7 +40,16 @@
 
     <main id="main">
       <section class="agent-architecture-hero" id="top" aria-labelledby="agent-architecture-title">
-        <h1 class="sr-only" id="agent-architecture-title">Spook AI Guard：AI 工程治理与生成前质量合同</h1>
+        <div class="agent-architecture-intro">
+          <div class="section-heading reveal">
+            <p class="section-index">大模型代码生成过程治理与监控</p>
+            <h1 id="agent-architecture-title">Spook AI Guard</h1>
+            <p>
+              通过本地 Skill 或插件，将 Codex、Claude Code 等 AI 编码任务的生命周期事件<strong>自动上报</strong>至治理平台；代码生成前，按仓库、语言和任务场景装配工程规则、历史缺陷库与业务知识库，形成可追溯的<strong>生成前上下文</strong>。
+              执行过程中，通过 GitLab、Codeup 等代码库 API 回读提交、分支、MR 与流水线事件，并与本地 Agent 轨迹进行<strong>交叉验证与风险识别</strong>；最终依据业务规则完成<strong>风险路由与责任人推送</strong>，将风险项和处置建议定向送达研发、QA 与产运，形成生成前约束、过程观测、结果验证和风险处置闭环。
+            </p>
+          </div>
+        </div>
         <figure class="architecture-board architecture-board-primary">
           <a href="/assets/ai-engineering-governance-architecture.svg" aria-label="查看 Spook AI Guard 架构图原图">
             <img
