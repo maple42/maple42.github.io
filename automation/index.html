@@ -14,7 +14,7 @@
     <meta property="og:image" content="https://maple42.github.io/assets/risk-observations-redacted.webp">
     <meta name="twitter:card" content="summary_large_image">
     <title>自动化应用｜张晨</title>
-    <link rel="stylesheet" href="/styles.css?v=20260930-case-carousel">
+    <link rel="stylesheet" href="/styles.css?v=20261001-multimodal-engineering">
     <script src="/app.js?v=20260930-case-carousel" defer></script>
   </head>
   <body>
@@ -31,7 +31,7 @@
       </button>
       <nav class="primary-nav" id="primary-nav" aria-label="主要导航" data-nav>
         <a href="/agent/">Agent</a>
-        <a class="active" href="/automation/" aria-current="page">自动化</a>
+        <a class="active" href="/automation/" aria-current="page">自动化应用</a>
         <a href="/efficiency/">效能与左移</a>
         <a href="/evidence/">部分脱敏数据</a>
       </nav>
@@ -150,17 +150,67 @@
         <p class="evidence-note"><strong>数据范围：</strong>App 与 H5 依据完整报告；游戏部分依据运行态截图库，只用于说明动态画面识别与标注能力。</p>
       </section>
 
+      <section class="generation-section section-pad" id="multimodal-case-engineering" aria-labelledby="multimodal-case-engineering-title">
+        <div class="section-heading reveal">
+          <p class="section-index">多渠道驱动 · 多端一体</p>
+          <h2 id="multimodal-case-engineering-title">多渠道驱动的 Agent 自动化工程化服务</h2>
+          <p>
+            统一接入 PRD、飞书、XMind、产品录屏、截图与图片流，以及代码、API 和既有框架资产，由 Agent 完成业务理解、场景映射与工程分层生成；
+            同一执行底座覆盖 <strong>App、H5 / WebView、游戏动态界面与多设备协作场景</strong>，再通过真实环境运行与证据回传持续收敛。
+          </p>
+        </div>
+
+        <div class="generation-source-grid reveal" aria-label="业务语义、视觉流程与工程上下文三类输入渠道">
+          <article class="generation-source-card">
+            <span>业务语义 · 结构化输入</span>
+            <h3>PRD / 飞书 / XMind</h3>
+            <p>读取业务目标、模块、前置、步骤和预期，将需求语义转换为测试场景、动作约束与验收条件。</p>
+          </article>
+          <article class="generation-source-card">
+            <span>视觉流程 · 多模态理解</span>
+            <h3>录屏 / 截图 / 图片流</h3>
+            <p>从连续画面中识别页面、角色、交互路径与业务终态，结合 OCR、CV 与 VLM 建立流程地图和视觉断言。</p>
+          </article>
+          <article class="generation-source-card">
+            <span>工程上下文 · 资产复用</span>
+            <h3>代码 / API / 既有框架</h3>
+            <p>读取已有分层、业务服务、选择器与接口能力，复用稳定资产并生成适配当前场景的工程增量。</p>
+          </article>
+        </div>
+
+        <ol class="generation-flow reveal" aria-label="从多渠道输入到多端自动化工程与真实环境验证的流程">
+          <li><span>01</span><strong>多渠道输入装配</strong><p>文本 · 录屏 · 图片 · 代码 · API</p></li>
+          <li><span>02</span><strong>业务流程与用例映射</strong><p>页面 · 角色 · 操作 · 状态 · 断言</p></li>
+          <li><span>03</span><strong>多端工程生成</strong><p><code>selectors · services · tests · fixtures</code></p></li>
+          <li><span>04</span><strong>真实环境验证与收敛</strong><p>真机 · 多设备 · OCR / CV / VLM · 证据回传</p></li>
+        </ol>
+
+        <div class="generation-experiment reveal">
+          <span>多端一体 · 已在 NIMI / Mochi 等项目落地</span>
+          <strong>同一套 Agent 工程链路适配不同产品形态</strong>
+          <p>不是为每个终端重新拼装脚本，而是统一业务语义、工程分层、设备动作与证据模型，再按 App、H5、游戏和多设备场景生成对应实现。</p>
+        </div>
+
+        <p class="generation-boundary reveal">
+          <strong>能力边界：</strong>已验证的是“多渠道输入 → Agent 场景理解与工程生成 → 多端执行 → 证据回读与人工迭代”的完整链路；
+          具体项目会按业务复杂度组合输入渠道，复杂路径仍需人工复核和真实环境校正，不将任一单一输入描述为无监督的一键转换。
+        </p>
+      </section>
+
       <section class="case-section section-pad" id="specialties" aria-labelledby="specialties-title">
         <div class="section-heading reveal">
-          <p class="section-index">专项应用</p>
-          <h2 id="specialties-title">客户端性能与深度兼容</h2>
-          <p>专项能力直接接入现有自动化场景和真机资源，采集、执行、数据与报告不再是彼此割裂的工具。</p>
+          <p class="section-index">高价值衍生专项</p>
+          <h2 id="specialties-title">从自动化底座延伸到性能与深度兼容</h2>
+          <p>
+            多渠道输入、多端执行和真机证据底座不只服务功能回归，也直接衍生出客户端性能与深度兼容两类可独立交付的高价值专项；
+            将版本性能回退与终端碎片化风险纳入同一业务场景、同一运行标识和同一验证闭环。
+          </p>
         </div>
         <div class="case-grid">
           <article class="case-card reveal">
-            <span class="case-number">客户端性能专项</span>
+            <span class="case-number">高价值专项 · 客户端性能</span>
             <p class="case-label">perfX × 自动化框架</p>
-            <h3>性能采集跟随业务场景自动启停</h3>
+            <h3>让性能采集跟随真实业务路径，识别版本回退</h3>
             <p>
               自研 perfX 通过 ADB、设备端采集进程与 gRPC 通道连接 Android 真机，
               再由适配层接入自动化框架，让性能数据与具体业务步骤处于同一次运行中。
@@ -168,14 +218,14 @@
             <ul class="detail-list" aria-label="perfX 客户端性能能力">
               <li><span>采集</span><div><strong>资源、流畅度与链路指标</strong><p>覆盖 CPU、内存、FPS / 卡顿、GPU、网络与电量，并保留过程截图。</p></div></li>
               <li><span>联动</span><div><strong>用例控制采集边界</strong><p>业务场景开始时启动采集，结束时停止并关联步骤、时间线与设备信息。</p></div></li>
-              <li><span>交付</span><div><strong>功能与性能数据一起归档</strong><p>报告、测试附件与云端数据使用同一运行标识，减少人工对齐。</p></div></li>
+              <li><span>对比</span><div><strong>版本基线与场景级回退识别</strong><p>按相同业务路径对比版本数据，异常可回到具体步骤、设备和现场。</p></div></li>
             </ul>
-            <div class="case-metrics"><strong>已接入自动化</strong><span>当前公开范围未公布性能收益比例</span></div>
+            <div class="case-metrics"><strong>功能与性能同场验证</strong><span>支持业务场景级版本数据对比</span></div>
           </article>
           <article class="case-card reveal">
-            <span class="case-number">深度兼容专项</span>
+            <span class="case-number">高价值专项 · 深度兼容</span>
             <p class="case-label">并行回归 × 真机池 × 统一报告</p>
-            <h3>把设备矩阵从串行操作变成可追踪的并发任务</h3>
+            <h3>把终端碎片化风险转成可追踪的并发验证</h3>
             <p>
               按系统版本、机型、分辨率、语言与网络条件生成兼容矩阵；多线程分发回归任务，
               通过异步调用接收设备状态和执行结果，并与真机池租约统一管理。
@@ -185,7 +235,7 @@
               <li><span>真机</span><div><strong>租约、安装、恢复与释放</strong><p>自动选择可用设备并管理占用关系，支持多设备互动与远程链路长稳复验。</p></div></li>
               <li><span>报告</span><div><strong>矩阵结果与现场数据整合</strong><p>按设备、用例和失败类型汇总，截图、日志、录屏与结论可回到同一报告。</p></div></li>
             </ul>
-            <div class="case-metrics"><strong>并行执行</strong><span>每台设备的结果和数据分别保留</span></div>
+            <div class="case-metrics"><strong>多维兼容矩阵</strong><span>每台设备的结果和现场数据分别保留</span></div>
           </article>
         </div>
       </section>

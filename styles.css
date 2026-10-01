@@ -744,14 +744,18 @@ footer {
 
 .agent-architecture-hero {
   display: grid;
-  align-items: center;
+  grid-template-rows: max-content max-content;
+  align-content: start;
+  align-items: start;
+  row-gap: 24px;
   width: min(calc(100% - 32px), 1500px);
   min-width: 0;
-  min-height: calc(100vh - 64px);
-  min-height: calc(100svh - 64px);
+  min-height: 0;
   margin-inline: auto;
-  padding: 20px 0 30px;
+  padding: clamp(44px, 5vh, 64px) 0 30px;
 }
+
+.agent-architecture-intro .section-heading { margin-bottom: 0; }
 
 .architecture-board-primary {
   width: 100%;
@@ -1384,6 +1388,128 @@ footer {
 .evidence-mechanism-card .case-metrics { margin-top: auto; }
 .evidence-numbers.evidence-cost-numbers { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
+.generation-section {
+  padding-top: 52px;
+  padding-bottom: 52px;
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line);
+}
+
+.generation-section .section-heading {
+  max-width: 900px;
+  margin-bottom: 28px;
+}
+
+.generation-section .section-heading h2 { text-wrap: balance; }
+
+.generation-source-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.generation-source-card {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  background: #fff;
+}
+
+.generation-source-card > span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .03em;
+}
+
+.generation-source-card h3 {
+  margin-bottom: 8px;
+  color: var(--accent-deep);
+  font-size: 18px;
+}
+
+.generation-source-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.generation-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin: 14px 0 0;
+  padding: 1px;
+  background: var(--line);
+  list-style: none;
+}
+
+.generation-flow li {
+  min-width: 0;
+  min-height: 124px;
+  padding: 16px;
+  background: var(--surface);
+}
+
+.generation-flow li > span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.generation-flow strong {
+  display: block;
+  color: var(--accent-deep);
+  font-size: 15px;
+}
+
+.generation-flow p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.generation-flow code {
+  color: #294a72;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 11px;
+}
+
+.generation-experiment {
+  display: grid;
+  grid-template-columns: 150px 210px minmax(0, 1fr);
+  gap: 12px 20px;
+  align-items: center;
+  margin-top: 14px;
+  padding: 14px 16px;
+  border: 1px dashed var(--line-strong);
+  background: #fff;
+}
+
+.generation-experiment > span {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.generation-experiment > strong { color: var(--accent-deep); font-size: 14px; }
+.generation-experiment p { margin: 0; color: var(--muted); font-size: 12px; }
+.generation-experiment code { color: #294a72; font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; font-size: 11px; }
+
+.generation-boundary {
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  border-left: 3px solid var(--accent);
+  color: var(--muted);
+  background: var(--accent-soft);
+  font-size: 13px;
+}
+
 .evidence-links {
   display: flex;
   flex-wrap: wrap;
@@ -1489,6 +1615,7 @@ footer p { margin: 0; }
 
   .architecture-principles { grid-template-columns: 1fr; gap: 20px; }
   .evidence-mechanism-grid { grid-template-columns: 1fr; }
+  .generation-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .case-grid { gap: 28px; }
 }
 
@@ -1615,6 +1742,11 @@ footer p { margin: 0; }
   .evidence-numbers { grid-template-columns: 1fr; }
   .evidence-numbers.evidence-cost-numbers { grid-template-columns: 1fr; }
   .evidence-numbers.case-carousel-numbers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .generation-section { padding-top: 40px; padding-bottom: 40px; }
+  .generation-source-grid,
+  .generation-flow { grid-template-columns: 1fr; }
+  .generation-flow li { min-height: 0; }
+  .generation-experiment { grid-template-columns: 1fr; gap: 4px; }
 
   .case-carousel-toolbar { flex-wrap: wrap; gap: 8px 18px; padding-inline: 14px; }
   .case-carousel-tabs { flex: 1 1 auto; justify-content: space-between; gap: 18px; }
@@ -1632,6 +1764,7 @@ footer p { margin: 0; }
   .agent-architecture-hero {
     width: 100%;
     min-height: 0;
+    row-gap: 16px;
     padding: 12px 0 26px;
   }
 
