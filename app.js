@@ -137,7 +137,9 @@
   });
 
   const activeNavLink = nav?.querySelector('a[aria-current="page"]');
-  const nextNavLink = activeNavLink?.nextElementSibling;
+  const nextNavLink = document.body.classList.contains('resume-home')
+    ? nav?.querySelector('a[href]')
+    : activeNavLink?.nextElementSibling;
 
   if (nextNavLink?.matches('a[href]')) {
     const scrollingElement = () => document.scrollingElement || document.documentElement;
