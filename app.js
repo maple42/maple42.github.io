@@ -136,6 +136,105 @@
     syncCarousel(0);
   });
 
+  const activeNavLink = nav?.querySelector('a[aria-current="page"]');
+  const nextNavLink = activeNavLink?.nextElementSibling;
+
+  if (nextNavLink?.matches('a[href]')) {
+    const scrollingElement = () => document.scrollingElement || document.documentElement;
+    const isAtPageEnd = () => {
+      const page = scrollingElement();
+      return page.scrollHeight - page.scrollTop - page.clientHeight <= 4;
+    };
+    const navigationBlocked = () => (
+      document.body.classList.contains('menu-open')
+      || Boolean(document.querySelector('dialog[open]'))
+    );
+
+    let navigatingToNextPage = false;
+    let wheelIntent = 0;
+    let wheelIntentTimer;
+    let touchStart = null;
+
+    const resetWheelIntent = () => {
+      wheelIntent = 0;
+      window.clearTimeout(wheelIntentTimer);
+    };
+
+    const openNextPage = () => {
+      if (navigatingToNextPage) return;
+      navigatingToNextPage = true;
+      window.location.assign(nextNavLink.href);
+    };
+
+    window.addEventListener('wheel', (event) => {
+      const verticalDistance = Math.abs(event.deltaY);
+      const horizontalDistance = Math.abs(event.deltaX);
+
+      if (
+        navigatingToNextPage
+        || event.defaultPrevented
+        || event.ctrlKey
+        || navigationBlocked()
+        || event.deltaY <= 0
+        || verticalDistance <= horizontalDistance
+        || !isAtPageEnd()
+      ) {
+        resetWheelIntent();
+        return;
+      }
+
+      const deltaUnit = event.deltaMode === 1
+        ? 16
+        : event.deltaMode === 2
+          ? window.innerHeight
+          : 1;
+      wheelIntent += event.deltaY * deltaUnit;
+      window.clearTimeout(wheelIntentTimer);
+      wheelIntentTimer = window.setTimeout(resetWheelIntent, 600);
+
+      if (wheelIntent >= 160) openNextPage();
+    }, { passive: true });
+
+    window.addEventListener('scroll', () => {
+      if (!isAtPageEnd()) resetWheelIntent();
+    }, { passive: true });
+
+    window.addEventListener('touchstart', (event) => {
+      if (
+        navigatingToNextPage
+        || navigationBlocked()
+        || event.touches.length !== 1
+        || !isAtPageEnd()
+      ) {
+        touchStart = null;
+        return;
+      }
+
+      const touch = event.touches[0];
+      touchStart = { x: touch.clientX, y: touch.clientY };
+    }, { passive: true });
+
+    window.addEventListener('touchend', (event) => {
+      if (!touchStart || navigatingToNextPage || navigationBlocked()) {
+        touchStart = null;
+        return;
+      }
+
+      const touch = event.changedTouches[0];
+      const horizontalDistance = Math.abs(touch.clientX - touchStart.x);
+      const upwardDistance = touchStart.y - touch.clientY;
+      touchStart = null;
+
+      if (isAtPageEnd() && upwardDistance >= 64 && upwardDistance > horizontalDistance) {
+        openNextPage();
+      }
+    }, { passive: true });
+
+    window.addEventListener('touchcancel', () => {
+      touchStart = null;
+    }, { passive: true });
+  }
+
   const previewLinks = [...document.querySelectorAll('.snapshot-image-link, .architecture-board > a')];
   if (!previewLinks.length || !('HTMLDialogElement' in window)) return;
 
